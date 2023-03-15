@@ -9,7 +9,7 @@ function TopTen (){
             </h1>
 
            <div className={"bottomleft"} >
-               <Fader  text={"Press the spacebar to return to the main menu"}></Fader>
+               <Fader text={"Press the spacebar to return to the main menu"}></Fader>
            </div>
 
             <table className={"leaderboard"}>

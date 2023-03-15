@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="" />
+    <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/topten.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/topten.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +78,8 @@
       <workItem from="1675729513301" duration="28176000" />
       <workItem from="1676518053209" duration="2168000" />
       <workItem from="1676689742629" duration="5216000" />
-      <workItem from="1677459338815" duration="20660000" />
+      <workItem from="1677459338815" duration="21851000" />
+      <workItem from="1678820621082" duration="1237000" />
     </task>
     <servers />
   </component>
