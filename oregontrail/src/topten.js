@@ -2,6 +2,7 @@ import React from "react";
 import bg from "./images/gettyimages-3090888-2.jpg";
 import "./topten..css"
 import Fader from "./components/Fader";
+import Navigation from "./components/Navigation";
 function TopTen (){
     return(
         <div className = "leaderboard" style={{backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
@@ -19,7 +20,7 @@ function TopTen (){
                    <th className={"score"}>Score</th>
                    <th>Date</th>
                </tr>
-
+                <input onKeyDown={Navigation} />
            </table>
         </div>
     )

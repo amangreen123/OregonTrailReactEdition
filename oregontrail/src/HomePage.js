@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import bg from "./images/gettyimages-3090888-2.jpg";
 import Fader from "./components/Fader";
+import Navigation from "./components/Navigation";
 
 function HomePage () {
 
@@ -16,6 +17,7 @@ function HomePage () {
     <div className="App" style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
         <h1>{message}</h1>
         <h2 className="h2"><Fader text={"Press SPACEBAR TO START"}></Fader></h2>
+        <input onKeyDown={Navigation} />
     </div>
     )
 

@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/oregontrailServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/oregontrailServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/topten.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/topten.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,10 +84,29 @@
       <workItem from="1676689742629" duration="5216000" />
       <workItem from="1677459338815" duration="21851000" />
       <workItem from="1678820621082" duration="1237000" />
+      <workItem from="1680915809624" duration="8905000" />
+      <workItem from="1681440326787" duration="10133000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

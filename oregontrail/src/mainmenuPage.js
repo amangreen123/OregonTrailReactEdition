@@ -1,9 +1,11 @@
 import React from "react";
 import "./mainmenu.css"
 import bg from "./images/gettyimages-3090888-2.jpg";
-import Fader from "./components/Fader";
+import Navigation from "./components/Navigation";
+
 
 function MainmenuPage (){
+
 
     return(
         <div className="App" style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
@@ -17,6 +19,7 @@ function MainmenuPage (){
             <p>3. See the Oregon top 10</p>
             <p>4. Turn Sound (Off / On)</p>
             </body>
+            <input onKeyDown={Navigation} />
         </div>
     )
 
