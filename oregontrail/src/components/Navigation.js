@@ -16,7 +16,6 @@ const Navigation = (event) => {
       else if (event.key === 'n') {
          alert('The sky is your limit👀')
       }
-
    }
    if (event.key === ' ') {
       window.location.href = "/mainmenu"

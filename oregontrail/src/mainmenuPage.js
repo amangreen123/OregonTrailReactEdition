@@ -14,14 +14,16 @@ function MainmenuPage (){
             <h1>Of The Oregon Trail</h1>
             <h1>Choose one of the Options</h1>
             <p>1. Travel the trail</p>
-            <p>2. Learn about the trail
-            </p>
+            <p>2. Learn about the trail</p>
             <p>3. See the Oregon top 10</p>
             <p>4. Turn Sound (Off / On)</p>
+            <audio id="audio" loop autoPlay>
+                <source src={`${process.env.PUBLIC_URL}/trailMusic.mp3`} type="audio/mpeg" />
+            </audio>
             </body>
-            <input onKeyDown={Navigation} />
+            <input onKeyDown={Navigation}/>
         </div>
-    )
+    );
 
 }
 
