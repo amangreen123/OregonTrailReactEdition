@@ -2,6 +2,7 @@ import React from "react";
 import "./mainmenu.css"
 import bg from "./images/gettyimages-3090888-2.jpg";
 import Navigation from "./components/Navigation";
+import AudioPlayer from "./components/AudioPlayer";
 
 
 function MainmenuPage (){
@@ -17,9 +18,10 @@ function MainmenuPage (){
             <p>2. Learn about the trail</p>
             <p>3. See the Oregon top 10</p>
             <p>4. Turn Sound (Off / On)</p>
-            <audio id="audio" loop autoPlay>
-                <source src={`${process.env.PUBLIC_URL}/trailMusic.mp3`} type="audio/mpeg" />
-            </audio>
+            <p></p>
+            {/*<audio id="audio" loop autoPlay>*/}
+            {/*    <source src={`${process.env.PUBLIC_URL}/trailMusic.mp3`} type="audio/mpeg" />*/}
+            {/*</audio>*/}
             </body>
             <input onKeyDown={Navigation}/>
         </div>

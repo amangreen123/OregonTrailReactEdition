@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/oregontrail/public/trailMusic.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oregontrail/src/components/AudioPlayer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oregontrail/src/music/MenuMusic.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/global.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +59,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\public" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\music" />
+      <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\public" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\components" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail" />
@@ -87,7 +91,7 @@
       <workItem from="1678820621082" duration="1237000" />
       <workItem from="1680915809624" duration="8905000" />
       <workItem from="1681440326787" duration="15647000" />
-      <workItem from="1684368518973" duration="8327000" />
+      <workItem from="1684368518973" duration="17449000" />
     </task>
     <servers />
   </component>

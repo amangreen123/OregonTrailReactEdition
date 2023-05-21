@@ -8,15 +8,6 @@ const Navigation = (event) => {
    let a = document.getElementsByClassName(id);
    a.tabIndex = '0';
    a.onclick = (event) => { event.target.focus()}
-   a.onkeydown = (event) => {
-      if(event.key === 'y'){
-         alert('The sky is your starting point!')
-      }
-
-      else if (event.key === 'n') {
-         alert('The sky is your limit👀')
-      }
-   }
    if (event.key === ' ') {
       window.location.href = "/mainmenu"
    }
