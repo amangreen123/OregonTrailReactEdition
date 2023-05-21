@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/oregontrail/src/components/AudioPlayer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oregontrail/src/music/MenuMusic.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/AudioPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/AudioPlayer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/global.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/topten.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/topten.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +87,7 @@
       <workItem from="1678820621082" duration="1237000" />
       <workItem from="1680915809624" duration="8905000" />
       <workItem from="1681440326787" duration="15647000" />
-      <workItem from="1684368518973" duration="17449000" />
+      <workItem from="1684368518973" duration="18363000" />
     </task>
     <servers />
   </component>

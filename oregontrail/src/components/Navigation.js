@@ -8,6 +8,7 @@ const Navigation = (event) => {
    let a = document.getElementsByClassName(id);
    a.tabIndex = '0';
    a.onclick = (event) => { event.target.focus()}
+
    if (event.key === ' ') {
       window.location.href = "/mainmenu"
    }
@@ -20,6 +21,7 @@ const Navigation = (event) => {
    if (event.key === "1") {
       window.location.href = "/trail"
    }
+
 }
 
 

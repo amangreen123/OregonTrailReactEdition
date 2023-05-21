@@ -20,7 +20,7 @@ function TopTen (){
                    <th className={"score"}>Score</th>
                    <th>Date</th>
                </tr>
-                <input onKeyDown={Navigation} />
+                <div onKeyDown={Navigation} />
            </table>
         </div>
     )

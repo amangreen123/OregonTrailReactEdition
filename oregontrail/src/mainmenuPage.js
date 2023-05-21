@@ -18,10 +18,6 @@ function MainmenuPage (){
             <p>2. Learn about the trail</p>
             <p>3. See the Oregon top 10</p>
             <p>4. Turn Sound (Off / On)</p>
-            <p></p>
-            {/*<audio id="audio" loop autoPlay>*/}
-            {/*    <source src={`${process.env.PUBLIC_URL}/trailMusic.mp3`} type="audio/mpeg" />*/}
-            {/*</audio>*/}
             </body>
             <input onKeyDown={Navigation}/>
         </div>

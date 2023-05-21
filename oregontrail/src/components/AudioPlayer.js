@@ -24,10 +24,5 @@ const AudioPlayer = (event) => {
         };
     }, [isSoundOn, playSound, pause]);
 
-    return(
-        <div>
-            <div>Press the "4" key to {isSoundOn ? "turn sound off" : "turn sound on"}.</div>;
-        </div>
-    )
 };
 export default AudioPlayer;
