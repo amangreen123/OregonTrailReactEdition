@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/mainmenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/mainmenu.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +47,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -85,6 +87,8 @@
       <workItem from="1680915809624" duration="8905000" />
       <workItem from="1681440326787" duration="15647000" />
       <workItem from="1684368518973" duration="21244000" />
+      <workItem from="1685131432473" duration="2106000" />
+      <workItem from="1685324052255" duration="6431000" />
     </task>
     <servers />
   </component>
