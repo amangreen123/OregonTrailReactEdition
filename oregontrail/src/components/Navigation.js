@@ -14,10 +14,10 @@ const Navigation = (event) => {
          if (event.key === " ") {
             window.location.href = "/mainmenu"
          }
-         if (event.key === "3") {
+         if (event.key === "3" ) {
             window.location.href = "/topten"
          }
-          if (event.key === "2") {
+          if (event.key === "2"  ) {
              window.location.href = "/setup"
           }
           if (event.key === "1") {

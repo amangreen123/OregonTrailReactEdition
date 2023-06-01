@@ -1,5 +1,6 @@
 import React from "react";
 import "./trail.css"
+import Navigation from "./components/Navigation";
 function Trail (){
 
     return(
@@ -23,6 +24,7 @@ function Trail (){
                 <button className="game-control-button">Attempt to Trade</button>
                 <button className="game-control-button">Hunt for Food</button>
                 <button className="game-control-button">Quit Game</button>
+                <Navigation></Navigation>
             </div>
         </div>
     )

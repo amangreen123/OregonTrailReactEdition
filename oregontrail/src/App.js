@@ -11,7 +11,7 @@ import AudioPlayer from './components/AudioPlayer';
 
 import {
     Route,
-    Routes
+    Routes,
 } from "react-router-dom";
 
 

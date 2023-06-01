@@ -28,6 +28,15 @@
     font-weight: bold;
 }
 
+.h2{
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+}
+
 
 .bottomleft{
     position: absolute;

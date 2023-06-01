@@ -2,6 +2,7 @@ import React from "react";
 import "./setup.css"
 import bg from "./images/gettyimages-3090888-2.jpg";
 import Fader from "./components/Fader";
+import Navigation from "./components/Navigation";
 function SetUp (){
     return(
         <div className={"setup"} style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
@@ -16,11 +17,9 @@ function SetUp (){
             </p>
             <p>4. Find out the differences between the choices
             </p>
-
-
               <h2>
-                  <Fader  text={"Press Space Bar to Go Back To The Main Menu"}>
-                  </Fader>
+                  <Fader text={"Press Space Bar to Go Back To The Main Menu"}></Fader>
+                  <Navigation/>
               </h2>
         </div>
     )
