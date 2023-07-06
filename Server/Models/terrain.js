@@ -1,9 +1,9 @@
-function terrain(name, url) {
+function Terrain(name, url) {
     this.name = name;
     this.imageUrl = url;
 }
 
-var allTerrains = [];
+const allTerrains = [];
 
 allTerrains.push(new terrain("Mountains", "images/terrains/mountains.jpg"));
 allTerrains.push(new terrain("Grassland", "images/terrains/grassland.jpg"));
@@ -16,7 +16,6 @@ exports.getRandomTerrain = function() {
     return allTerrains[rand];
 }
 
-
-exports.newterrain = function() {
+exports.newTerrain = function() {
     return allTerrains;
 }

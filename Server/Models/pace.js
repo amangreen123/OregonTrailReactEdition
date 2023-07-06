@@ -11,3 +11,10 @@ paces.push(new allPaces("Steady",20,0));
 paces.push(new allPaces("Strenuous",25,-3));
 paces.push(new allPaces("Grueling",30,-8));
 paces.push(new allPaces("Resting",0,5));
+
+function currentPace (){
+    return paces[Math.floor(Math.random()*paces.length)];
+}
+exports.getAllPaces = function() {
+    return currentPace();
+}

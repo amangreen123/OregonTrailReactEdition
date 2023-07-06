@@ -36,3 +36,7 @@ function gameData() {
 exports.getgameData = function () {
     return new gameData();
 }
+
+exports.gameData = function () {
+    return gameData;
+}
