@@ -1,9 +1,9 @@
 
-let terrain = require('../Models/terrain');
-let weather = require('../Models/weather');
-let pace = require('../Models/pace');
-let gameData = require('../Models/gameData');
-let startGameData = gameData.getgameData()
+const terrain = require('../Models/terrain');
+const weather = require('../Models/weather');
+const pace = require('../Models/pace');
+const gameData = require('../Models/gameData');
+const startGameData = gameData.getgameData()
 
 
 exports.paces = function (req,res) {
@@ -12,7 +12,6 @@ exports.paces = function (req,res) {
 }
 
 exports.newterrain = function (req,res) {
-    console.log(typeof res);
     res.setHeader('Content-Type', 'application/json');
     res.send(terrain.newTerrain())
 }
@@ -85,13 +84,7 @@ exports.updateGame = function(req, res) {
 
     } else {
     }
-
-
-
-
-
     // every time the game updates a day is recorded
-
     if (startGameData.daysOnTrail < 45) {
         startGameData.daysOnTrail += 1;
     } else {
@@ -134,7 +127,7 @@ exports.updateGame = function(req, res) {
         startGameData.message = "very poor";
 
         for (i = 0; i < 5; i++){
-            var chance = Math.floor(Math.random() * 100) + 1;
+            const chance = Math.floor(Math.random() * 100) + 1;
             if (chance <= 10){
                 startGameData.playerStatus[i] = "Dead";
             } else {

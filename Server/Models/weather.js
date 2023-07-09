@@ -20,19 +20,9 @@ allWeather.push(new weather(9, "Snow", -15, .3, .05));
 allWeather.push(new weather(10, "Blizzard", -30, .1, .05));
 allWeather.push(new weather(11, "Heavy Fog", -3, .5, .05));
 
-// exports.getWeather = function (id) {
-//     for (let i = 0; i < allWeather.length; i++) {
-//         if (allWeather[i].id == id) {
-//             return allWeather[i];
-//         }
-//     }
-// }
-
-
 exports.getRandomWeather = function() {
     return allWeather[Math.floor(Math.random()*allWeather.length)];
 }
-
 
 exports.newWeather = function () {
     return allWeather;
