@@ -4,9 +4,11 @@ import "./topten..css"
 import Fader from "./components/Fader";
 import Navigation from "./components/Navigation";
 import sortScore from "./components/Sortscore";
+import { useState } from "react";
 
 function TopTen (){
     const sortedScores = sortScore()
+
     return(
         <div className = "leaderboard" style={{backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
             <h1>TOPTEN</h1>

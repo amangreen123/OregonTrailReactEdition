@@ -1,3 +1,4 @@
+// Purpose: To control the game data and update it
 
 const terrain = require('../Models/terrain');
 const weather = require('../Models/weather');

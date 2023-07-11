@@ -1,7 +1,7 @@
 exports.GameScreens = [];
 
-var gameInfo =  require('../Models/gameData');
-var startGameData = gameInfo.getgameData()
+const gameInfo =  require('../Models/gameData');
+const startGameData = gameInfo.getgameData()
 
 
 var gameScreen1 = "<p>Choose your Profession.</p>"
@@ -67,7 +67,7 @@ exports.GameScreens.push(gameScreen5);
 // };
 
 exports.getGameScreen = function(req,res){
-    var  gameScreen = exports.GameScreens[req.params.id];
+    const gameScreen = exports.GameScreens[req.params.id];
     res.setHeader('Content-Type', 'application/json');
     res.send(gameScreen);
 }
