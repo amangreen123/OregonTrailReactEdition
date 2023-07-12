@@ -1,8 +1,7 @@
 exports.GameScreens = [];
 
-const gameInfo =  require('../Models/gameData');
+const gameInfo =  require("../Models/gameData");
 const startGameData = gameInfo.getgameData()
-
 
 var gameScreen1 = "<p>Choose your Profession.</p>"
 
@@ -60,17 +59,18 @@ exports.GameScreens.push(gameScreen4);
 exports.GameScreens.push(gameScreen5);
 
 
-// exports.saveStartMonth = function(req, res) {
-//     gameController.getData().startMonth = req.body.month;
-//     res.setHeader('Content-Type', 'text/plain');
-//     res.send(gameController.getData().startMonth);
-// };
+exports.getGameScreen = function(req, res) {
+    const gameId = parseInt(req.params.id);
+    const gameScreen = exports.GameScreens[gameId];
 
-exports.getGameScreen = function(req,res){
-    const gameScreen = exports.GameScreens[req.params.id];
-    res.setHeader('Content-Type', 'application/json');
-    res.send(gameScreen);
-}
+    if (gameScreen) {
+        res.setHeader('Content-Type', 'text/html');
+        res.send(gameScreen);
+    } else {
+        res.status(404).json({ message: "Game screen not found" });
+    }
+};
+
 
 exports.saveProfession = function(req, res) {
     startGameData.playerProfession = req.body.playerProfession;
