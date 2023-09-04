@@ -12,15 +12,19 @@ const Navigation = (event) => {
    useEffect(() => {
        const handleKeyPress = (event) => {
          if (event.key === " ") {
+             event.preventDefault();
             window.location.href = "/mainmenu"
          }
          if (event.key === "3" ) {
+             event.preventDefault();
             window.location.href = "/topten"
          }
           if (event.key === "2"  ) {
+              event.preventDefault();
              window.location.href = "/setup"
           }
           if (event.key === "1") {
+              event.preventDefault();
              window.location.href = "/trail"
           }
        };

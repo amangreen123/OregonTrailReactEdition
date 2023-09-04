@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Controllers/setupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/setupController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/setup.css" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/setup.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/setup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +93,11 @@
       <workItem from="1686183617771" duration="3258000" />
       <workItem from="1688523523959" duration="353000" />
       <workItem from="1688523935213" duration="11706000" />
-      <workItem from="1689107945381" duration="18313000" />
+      <workItem from="1689107945381" duration="22423000" />
+      <workItem from="1689787435731" duration="6041000" />
+      <workItem from="1690847595439" duration="1202000" />
+      <workItem from="1692813828823" duration="2408000" />
+      <workItem from="1693607874369" duration="3452000" />
     </task>
     <servers />
   </component>
@@ -114,5 +120,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Server/oregontrailServer.js</url>
+          <line>38</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

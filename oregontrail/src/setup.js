@@ -44,7 +44,6 @@ function SetUp() {
                 <Navigation />
             </h2>
             <div id="data" />
-
             <div id="selectedOption" onClick={() => {setScreenId(screenId + 1);
             getSetUpData(screenId)} }>Click Me</div>
 </div>

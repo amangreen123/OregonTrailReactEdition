@@ -38,3 +38,14 @@ button {
 button:hover {
     background-color: green;
 }
+
+#selectedOption{
+    font-size: 20px;
+    width: 75px;
+    background-color: red;
+}
+
+#data {
+    font-size: 40px;
+    color: gold;
+}
