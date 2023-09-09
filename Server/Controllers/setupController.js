@@ -1,5 +1,11 @@
 exports.GameScreens = [];
 
+// this is the setup screen information that will be displayed on the screen for the client
+// it gameScreens is an array of strings that will be displayed on the screen
+// each string is a different screen that will be displayed on the screen
+// the client will be able to click on the screen and the screen will change to the next screen
+
+
 const gameInfo =  require("../Models/gameData");
 const startGameData = gameInfo.getgameData()
 
@@ -23,6 +29,7 @@ var gameScreen2 = "<p>What is the name of the leader?</p>"
     + "Leader Name: <input id=\"player0\" />"
     + "<input type=\"button\" class=\"button-1\" id=\"page1sub\" value=\"Next\" />";
 
+
 var gameScreen3 = "<p>What are the first names of the other members of your party?</p>"
 
     + "Player Name: <input id=\"player1\" /><br />"
@@ -40,6 +47,7 @@ var gameScreen4 = "<p>Which month would like to leave</p>"
     + "<li id=\"julyItem\">July</li>"
     + "</ol>"
     + "<div id=\"selectedOption\">What is your choice?</div>";
+
 
 
 

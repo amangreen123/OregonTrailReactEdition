@@ -1,3 +1,7 @@
+// this is the server file for the oregon trail game
+// this file will be used to connect to the database and to the client side
+// this file will also be used to run the server and to run the game
+
 const express = require("express");
 const cors = require("cors");
 const app = express();

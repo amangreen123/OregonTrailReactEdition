@@ -1,4 +1,12 @@
 let topTen = require('../Models/topTen');
+// this is the topTenController.js file
+// it will handle all requests to the /topTen endpoint
+// it will use the topTen.js model to get the top ten scores
+// and send them back to the client
+// it will also use the topTen.js model to save a new score
+// and send back the new top ten scores
+// it will also use the topTen.js model to get the current top ten scores
+// and send them back to the client
 
 exports.currentTopScores = [];
 

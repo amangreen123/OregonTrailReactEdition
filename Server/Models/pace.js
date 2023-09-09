@@ -1,3 +1,6 @@
+// this is the pace model
+// this contains the pace information
+// this is used to get the pace information
 function allPaces(name,miles,healthChange){
     this.name = name;
     this.miles = miles;

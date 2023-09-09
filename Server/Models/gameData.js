@@ -2,6 +2,8 @@ const terrain = require("./terrain");
 const  weather = require("./weather");
 const  pace = require("./pace");
 
+// gameData class
+// This class is used to store the game data
 function gameData() {
 
     this.groupHealth = 100;

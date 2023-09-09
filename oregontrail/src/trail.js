@@ -1,6 +1,12 @@
 import React from "react";
 import "./trail.css"
 import Navigation from "./components/Navigation";
+
+//this the trail page of the app
+//it is the page that is rendered when the player starts the game
+//it displays the game map and the game controls
+//the game map is a picture of the Oregon Trail
+//the game controls are buttons that the player can click to play the game
 function Trail (){
 
     return(

@@ -1,4 +1,7 @@
 // Purpose: To control the game data and update it
+// this is the controller for the game data
+// it will update the game data and send it to the front end
+// called by the game routes
 
 const terrain = require('../Models/terrain');
 const weather = require('../Models/weather');
@@ -96,8 +99,8 @@ exports.updateGame = function(req, res) {
 
     if (startGameData.groupHealth > 100){
         startGameData.groupHealth = 100;
-
     } else {
+
     }
 
     if (startGameData.groupHealth <= 100 && startGameData.groupHealth >= 80){
@@ -112,7 +115,6 @@ exports.updateGame = function(req, res) {
         startGameData.message = "poor";
 
 
-//chance if the ey will die
         for (i = 0; i < 5; i++){
             var chance = Math.floor(Math.random() * 100) + 1;
 

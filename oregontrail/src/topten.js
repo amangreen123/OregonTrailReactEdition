@@ -6,6 +6,11 @@ import Navigation from "./components/Navigation";
 import sortScore from "./components/Sortscore";
 import { useState } from "react";
 
+//this is the topten page of the app
+//it is the page that is rendered when the topten button is clicked
+//it displays the top ten scores of the game
+//the scores are fetched from the server
+
 function TopTen (){
     const sortedScores = sortScore()
 

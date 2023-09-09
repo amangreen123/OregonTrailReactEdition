@@ -1,3 +1,5 @@
+// This file contains the weather class and the weather array
+// This file is used to get the weather information
 function weather(id, type, healthChange, mileChange, probability) {
     this.id = id;
     this.type = type;

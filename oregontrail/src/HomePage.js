@@ -3,6 +3,13 @@ import bg from "./images/gettyimages-3090888-2.jpg";
 import Fader from "./components/Fader";
 import Navigation from "./components/Navigation";
 
+//This is the home page of the app
+//It is the first page that is rendered when the app is started
+//It displays a message and a button to start the game
+//The message is fetched from the server
+//The button is a link to the main menu page
+//The background image is a picture of the Oregon Trail
+//The background image is from https://www.gettyimages.com/detail/photo/oregon-trail-high-res-stock-photography/3090888?adppopup=true
 function HomePage () {
 
     const [message, setMessage] = useState("");
