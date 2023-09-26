@@ -12,16 +12,12 @@ const startGameData = gameInfo.getgameData()
 var gameScreen1 = "<p>Choose your Profession.</p>"
 
     + "<p>You may:</p>"
-
     + "<ol id=\"setupQuestions1\" >"
-
     + "<li id=\"bankerMenuItem\">Be a banker from Boston</li>"
     + "<li id=\"carpenterMenuItem\">Be a carpenter from Ohio</li>"
     + "<li id=\"farmerMenuItem\">Be a farmer from Illinois</li>"
     + "<li id=\"differencesMenuItem\">Find out the differences between the choices</li>"
-
     + "</ol>"
-
     + "<div id=\"selectedOption\">What is your choice?</div>";
 
 
@@ -70,7 +66,6 @@ exports.GameScreens.push(gameScreen5);
 exports.getGameScreen = function(req, res) {
     const gameId = parseInt(req.params.id);
     const gameScreen = exports.GameScreens[gameId];
-
     if (gameScreen) {
         res.setHeader('Content-Type', 'text/html');
         res.send(gameScreen);
@@ -78,6 +73,18 @@ exports.getGameScreen = function(req, res) {
         res.status(404).json({ message: "Game screen not found" });
     }
 };
+
+exports.savePlayerName = function(req, res) {
+    startGameData.playerNames[0] = req.body.playerName;
+    res.setHeader('Content-Type', 'text/html');
+    res.send(startGameData.playerNames[0]);
+}
+
+exports.savePartyNames = function(req, res) {
+    startGameData.playerNames[1,2,3,4] = req.body.playerNames;
+    res.setHeader('Content-Type', 'text/html');
+    res.send(startGameData.playerNames[1,2,3,4]);
+}
 
 
 exports.saveProfession = function(req, res) {
@@ -101,3 +108,4 @@ exports.saveMonth = function(req, res) {
     res.setHeader('Content-Type', 'text/html');
     res.send(startGameData.startMonth);
 };
+
