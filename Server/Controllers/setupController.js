@@ -44,9 +44,6 @@ var gameScreen4 = "<p>Which month would like to leave</p>"
     + "</ol>"
     + "<div id=\"selectedOption\">What is your choice?</div>";
 
-
-
-
 var gameScreen5 = "<p>Here is the information you put in. </p>"
 
     + "<li> Leader's Profession:" + startGameData.playerProfession + ""
@@ -92,8 +89,6 @@ exports.saveProfession = function(req, res) {
     res.setHeader('Content-Type', 'text/html');
     res.send(startGameData.playerProfession);
 };
-
-
 
 exports.saveMoney = function(req, res) {
     startGameData.playerMoney = req.body.playerMoney;

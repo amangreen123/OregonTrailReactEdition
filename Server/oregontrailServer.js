@@ -48,6 +48,16 @@ app.route('/api/setup/month')
     .post(setupController.saveMonth);
 app.route('/api/setup/screen/:id')
     .get(setupController.getGameScreen);
+app.route('/api/setup/profession/:profession')
+    .post(setupController.saveProfession);
+app.route('/api/setup/name/:name')
+    .post(setupController.savePlayerName);
+app.route('/api/setup/partyNames/:partyNames')
+    .post(setupController.savePartyNames);
+app.route('/api/setup/money/:money')
+    .post(setupController.saveMoney);
+
+
 
 
 app.get('/', function (req, res) {
