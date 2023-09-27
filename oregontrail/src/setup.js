@@ -3,7 +3,7 @@ import "./setup.css";
 import bg from "./images/gettyimages-3090888-2.jpg";
 import Fader from "./components/Fader";
 import Navigation from "./components/Navigation";
-import {func} from "prop-types";
+
 
 ///This is the setup page of the app
 //It is the first page that is rendered when the app is started
@@ -19,7 +19,7 @@ import {func} from "prop-types";
 
 function SetUp() {
    let [data,setData]= useState("")
-    let [screenId, setScreenId] = useState(0)
+    // let [screenId, setScreenId] = useState(0)
     async function getGameScreens(screenId){
         let responseData = {};
         try {
@@ -40,77 +40,19 @@ function SetUp() {
        getGameScreens(0);
      }, []);
 
-    document.addEventListener("click", function(event) {
-        var targetElement = event.target || event.srcElement;
-        if(targetElement.id == "bankerMenuItem") {
-            savePlayerProfession("Banker");
-            saveMoney(2000);
-        }
-        if(targetElement.id == "carpenterMenuItem") {
-            savePlayerProfession("Carpenter");
-            saveMoney(1800);
-        }
-        if(targetElement.id == "farmerMenuItem") {
-            savePlayerProfession("Farmer");
-            saveMoney(1500);
-        }
-        if(targetElement.id == "differencesMenuItem") {
-            console.log("learn more!");
-        }
-    });
-
-    document.addEventListener(("click"), function(event) {
-        var targetElement = event.target || event.srcElement;
-        if(targetElement.id == "page1sub") {
-            savePlayerName(document.getElementById("player0").value);
-        }
-    });
-
-    document.addEventListener(("click"), function(event) {
-        var targetElement = event.target || event.srcElement;
-        if(targetElement.id == "page2sub") {
-            savePartyNames([
-                 document.getElementById("player1").value
-                , document.getElementById("player2").value,
-                document.getElementById("player3").value,
-                document.getElementById("player4").value]);
-        }
-    });
-
-    document.addEventListener("click", function(event) {
-        var targetElement = event.target || event.srcElement;
-        if(targetElement.id == "marchItem") {
-            saveStartMonth("March");
-        }
-        if(targetElement.id == "aprilItem") {
-            saveStartMonth("April");
-        }
-        if(targetElement.id == "mayItem") {
-            saveStartMonth("May");
-        }
-        if(targetElement.id == "juneItem") {
-            saveStartMonth("June");
-        }
-        if(targetElement.id == "julyItem") {
-            saveStartMonth("July");
-        }
-
-    });
-
     function savePlayerProfession(profession) {
         fetch("http://localhost:8000/api/setup/profession/" + profession, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                playerProfession: profession
-            })
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    playerProfession: profession
+                })
             }
         ).then(function(response) {
-            if(response.status != 200) {
+            if(response.status !== 200) {
                 console.log("Error saving player profession");
-
                 return;
             }else{
                 console.log("Player" + profession + "profession saved");
@@ -130,7 +72,7 @@ function SetUp() {
                 playerName: name
             })
         }).then(function(response) {
-            if(response.status != 200) {
+            if(response.status !== 200) {
                 console.log("Error saving" + name + "name");
                 return;
             }
@@ -151,7 +93,7 @@ function SetUp() {
                 playerNames: partyNames
             })
         }).then(function(response) {
-            if(response.status != 200) {
+            if(response.status !== 200) {
                 console.log("Error saving" + partyNames + "name");
                 return;
             }else{
@@ -170,7 +112,7 @@ function SetUp() {
                 startMonth: month
             })
         }).then(function(response) {
-            if(response.status != 200) {
+            if(response.status !== 200) {
                 console.log("Error saving" + month + "month");
                 return;
             }else{
@@ -185,18 +127,74 @@ function SetUp() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                playerMoney: money
-            })
+            body: '{"playerMoney": ' + money + '"}'
         }).then(function(response) {
-            if(response.status != 200) {
-                console.log("Error saving" + money + "money");
+            if(response.status !== 200) {
+                console.log("Error saving" + money + " money " + response.status + "Message" + response.value);
                 return;
             }else{
                 console.log("Player" + money + "money saved");
             }
         })
     }
+
+    document.addEventListener("click", function(event) {
+        var targetElement = event.target || event.srcElement;
+        if(targetElement.id === "bankerMenuItem") {
+            //savePlayerProfession("Banker");
+            saveMoney(2000);
+        }
+        if(targetElement.id === "carpenterMenuItem") {
+           // savePlayerProfession("Carpenter");
+           // saveMoney(1800);
+        }
+        if(targetElement.id === "farmerMenuItem") {
+           // savePlayerProfession("Farmer");
+           // saveMoney(1500);
+        }
+        if(targetElement.id === "differencesMenuItem") {
+            console.log("learn more!");
+        }
+    });
+
+    document.addEventListener(("click"), function(event) {
+        var targetElement = event.target || event.srcElement;
+        if(targetElement.id === "page1sub") {
+            savePlayerName(document.getElementById("player0").value);
+        }
+    });
+
+    document.addEventListener(("click"), function(event) {
+        var targetElement = event.target || event.srcElement;
+        if(targetElement.id === "page2sub") {
+            savePartyNames([
+                 document.getElementById("player1").value
+                , document.getElementById("player2").value,
+                document.getElementById("player3").value,
+                document.getElementById("player4").value]);
+        }
+    });
+
+    document.addEventListener("click", function(event) {
+        var targetElement = event.target || event.srcElement;
+        if(targetElement.id === "marchItem") {
+            saveStartMonth("March");
+        }
+        if(targetElement.id === "aprilItem") {
+            saveStartMonth("April");
+        }
+        if(targetElement.id === "mayItem") {
+            saveStartMonth("May");
+        }
+        if(targetElement.id === "juneItem") {
+            saveStartMonth("June");
+        }
+        if(targetElement.id === "julyItem") {
+            saveStartMonth("July");
+        }
+
+    });
+
 
     return (
         <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>

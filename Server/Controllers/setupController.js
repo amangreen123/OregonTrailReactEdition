@@ -94,7 +94,6 @@ exports.saveMoney = function(req, res) {
     startGameData.playerMoney = req.body.playerMoney;
     res.setHeader('Content-Type', 'text/html');
     res.send(startGameData.playerMoney);
-
 };
 
 
