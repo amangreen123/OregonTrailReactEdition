@@ -24,8 +24,7 @@ const Fader = ({text}) => {
     },  [fadeProp])
 
     return(
-       <><text className={fadeProp.fade}>{text}</text>
-       </>
+       <><text className={fadeProp.fade}>{text}</text> </>
     )
 }
 

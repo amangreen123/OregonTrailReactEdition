@@ -4,37 +4,25 @@ const  pace = require("./pace");
 
 // gameData class
 // This class is used to store the game data
-function gameData() {
 
-    this.groupHealth = 100;
-    this.currentTerrain = terrain.getRandomTerrain();
-    this.currentWeather = weather.getRandomWeather();
 
-    this.milesTraveled = 0;
+ const gameData = {
+    groupHealth: 100,
+    currentTerrain: terrain.getRandomTerrain(),
+    currentWeather: weather.getRandomWeather(),
+    milesTraveled: 0,
+    currentPace: pace.getAllPaces(),
+    daysOnTrail: 0,
+    message: "",
+    playerNames: ["Aaron", "Jasmine", "Warren", "Winter", "Withney"],
+    playerStatus: ["Alive", "Alive", "Alive", "Alive", "Alive"],
+    playerProfession: "",
+    playerMoney: 0,
+    startMonth: ""
+}
 
-    this.currentPace = pace.getAllPaces();
-
-    this.daysOnTrail = 0;
-
-    this.message = "";
-
-    this.message2 = "";
-
-    this.playerNames = ["Aaron", "Jasmine", "Warren", "Winter", "Withney"];
-
-    this.playerStatus = ["Alive", "Alive", "Alive", "Alive", "Alive"];
-
-    this.playerProfession = "";
-
-    this.playerMoney = 0;
-
-    this.startMonth ="";
-
+exports.getgameData = () => {
+    return structuredClone(gameData);
 }
 
 
-
-
-exports.getgameData = function () {
-    return new gameData();
-}

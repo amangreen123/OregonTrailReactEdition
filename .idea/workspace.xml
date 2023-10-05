@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/setup.css" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/setup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Controllers/setupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/setupController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Models/gameData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Models/gameData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/oregontrailServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/oregontrailServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Fader.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Fader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/setup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +33,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2LO5uTPVslJNmnYCyu54qBACWbC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -42,6 +47,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aaron/Downloads/coding-interview-university-main&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -62,12 +68,43 @@
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
     <configuration name="localhost:3000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
+    <configuration name="Unnamed" type="NodeJSConfigurationType" nameIsGenerated="true" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.localhost:3000" />
+      <item itemvalue="Node.js.Unnamed" />
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.start" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.start" />
         <item itemvalue="JavaScript Debug.localhost:3000" />
       </list>
     </recent_temporary>
@@ -98,6 +135,13 @@
       <workItem from="1690847595439" duration="1202000" />
       <workItem from="1692813828823" duration="2408000" />
       <workItem from="1693607874369" duration="3452000" />
+      <workItem from="1695768766943" duration="5658000" />
+      <workItem from="1695774532252" duration="1278000" />
+      <workItem from="1695839445573" duration="30000" />
+      <workItem from="1695941596668" duration="9787000" />
+      <workItem from="1696015598597" duration="588000" />
+      <workItem from="1696264671197" duration="429000" />
+      <workItem from="1696296778671" duration="1359000" />
     </task>
     <servers />
   </component>
@@ -120,17 +164,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Server/oregontrailServer.js</url>
-          <line>38</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -30,7 +30,6 @@ app.get("/message", (req, res) => {
     res.json({ message: "Welcome to the Oregon Trail" });
 });
 
-
 app.route('/api/topTen')
     .get(topTenController.getCurrentScores)
     .post(topTenController.saveTopScore)
@@ -44,20 +43,10 @@ app.route('/api/getAllPaces')
     .get(gameController.paces);
 app.route('/api/terrain')
     .get(gameController.newterrain);
-app.route('/api/setup/month')
-    .post(setupController.saveMonth);
 app.route('/api/setup/screen/:id')
     .get(setupController.getGameScreen);
-app.route('/api/setup/profession/:profession')
-    .post(setupController.saveProfession);
-app.route('/api/setup/name/:name')
-    .post(setupController.savePlayerName);
-app.route('/api/setup/partyNames/:partyNames')
-    .post(setupController.savePartyNames);
-app.route('/api/setup/money/:money')
-    .post(setupController.saveMoney);
-
-
+app.route('/api/setup/updatePlayer')
+    .post(setupController.saveGameData);
 
 
 app.get('/', function (req, res) {
@@ -75,10 +64,6 @@ app.get('/setup', function (req, res) {
 app.get('/trail', function (req, res) {
     res.sendFile('trail.html', {root: './client/views' })
 })
-
-
-
-
 
 app.listen(8000, () => {
     console.log(`Server is running on port 8000.`);

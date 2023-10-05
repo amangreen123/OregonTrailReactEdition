@@ -6,8 +6,8 @@ exports.GameScreens = [];
 // the client will be able to click on the screen and the screen will change to the next screen
 
 
-const gameInfo =  require("../Models/gameData");
-const startGameData = gameInfo.getgameData()
+const gameData =  require("../Models/gameData");
+const startGameData = gameData.getgameData()
 
 var gameScreen1 = "<p>Choose your Profession.</p>"
 
@@ -71,35 +71,14 @@ exports.getGameScreen = function(req, res) {
     }
 };
 
-exports.savePlayerName = function(req, res) {
+exports.saveGameData = function(req, res) {
     startGameData.playerNames[0] = req.body.playerName;
-    res.setHeader('Content-Type', 'text/html');
-    res.send(startGameData.playerNames[0]);
-}
-
-exports.savePartyNames = function(req, res) {
-    startGameData.playerNames[1,2,3,4] = req.body.playerNames;
-    res.setHeader('Content-Type', 'text/html');
-    res.send(startGameData.playerNames[1,2,3,4]);
-}
-
-
-exports.saveProfession = function(req, res) {
+    startGameData.playerNames = startGameData.playerNames.concat(req.body.playerNames);
     startGameData.playerProfession = req.body.playerProfession;
-    res.setHeader('Content-Type', 'text/html');
-    res.send(startGameData.playerProfession);
-};
-
-exports.saveMoney = function(req, res) {
+    startGameData.playerStatus = ["Alive", "Alive", "Alive", "Alive", "Alive"];
     startGameData.playerMoney = req.body.playerMoney;
-    res.setHeader('Content-Type', 'text/html');
-    res.send(startGameData.playerMoney);
-};
-
-
-exports.saveMonth = function(req, res) {
     startGameData.startMonth = req.body.startMonth;
-    res.setHeader('Content-Type', 'text/html');
-    res.send(startGameData.startMonth);
-};
+    res.setHeader('Content-Type', 'application/json');
+    res.send(startGameData);
+}
 
