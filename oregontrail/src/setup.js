@@ -21,6 +21,7 @@ function SetUp() {
    let [data,setData]= useState("")
     // let [screenId, setScreenId] = useState(0)
     async function getGameScreens(screenId){
+
         let responseData = {};
         try {
             const response = await fetch("http://localhost:8000/api/setup/screen/" + screenId );
@@ -37,35 +38,51 @@ function SetUp() {
         return responseData;
     }
      useEffect(() => {
+         console.log("useEffect called and goes to screen 0");
        getGameScreens(0);
      }, []);
 
     function updatePlayerData() {
         fetch("http://localhost:8000/api/setup/updatePlayer", {
             method: "POST",
-            headers: {
+            Headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                playerName: document.getElementById("player0").value,
-                playerProfession: document.getElementById("playerProfession").value,
-                playerMoney: document.getElementById("playerMoney").value,
-                startMonth: document.getElementById("startMonth").value
+                playerName: document.getElementById("player0"),
+                playerProfession: document.getElementById("playerProfession"),
+                playerMoney: document.getElementById("playerMoney"),
+                startMonth: document.getElementById("startMonth")
             })
+        }).then(function(response){
+            if(response.ok === true) {
+                console.log("fetch worked and goes to screen 1")
+                getGameScreens(1)
+
+            }else{
+                console.log("Error saving player data");
+                throw new Error("Network response was not OK");
+            }
         })
     }
 
     //click handlers
+
     document.addEventListener("click", function(event) {
         var targetElement = event.target || event.srcElement;
+
         if(targetElement.id === "bankerMenuItem") {
-            updatePlayerData({playerProfession: "Banker", playerMoney: 2000});
+            //call the updatePlayerData function and pass in the player profession and money
+            updatePlayerData({playerProfession: "Banker"});
+
         }
         if(targetElement.id === "carpenterMenuItem") {
-            updatePlayerData({playerProfession: "Carpenter", playerMoney: 1800});
+            updatePlayerData({playerProfession: "Carpenter"});
+            console.log("Carpenter");
         }
         if(targetElement.id === "farmerMenuItem") {
-            updatePlayerData({playerProfession: "Farmer", playerMoney: 1500});
+            updatePlayerData({playerProfession: "Farmer"});
+            console.log("Farmer");
         }
         if(targetElement.id === "differencesMenuItem") {
             console.log("learn more!");
@@ -74,19 +91,30 @@ function SetUp() {
 
     document.addEventListener(("click"), function(event) {
         var targetElement = event.target || event.srcElement;
+
         if(targetElement.id === "page1sub") {
-            updatePlayerData(document.getElementById("player0").value);
+            //call the updatePlayerData function and pass in the player name
+            //updatePlayerData({playerName: document.getElementById("player0").value});
+            getGameScreens(2)
         }
     });
 
     document.addEventListener(("click"), function(event) {
         var targetElement = event.target || event.srcElement;
         if(targetElement.id === "page2sub") {
-            updatePlayerData([
-                 document.getElementById("player1").value
-                , document.getElementById("player2").value,
-                document.getElementById("player3").value,
-                document.getElementById("player4").value]);
+            getGameScreens(3)
+            // updatePlayerData([
+            //      document.getElementById("player1").value
+            //     , document.getElementById("player2").value,
+            //     document.getElementById("player3").value,
+            //     document.getElementById("player4").value]);
+        }
+    });
+
+    document.addEventListener(("click"), function(event) {
+        var targetElement = event.target || event.srcElement;
+        if(targetElement.id === "page3sub") {
+            getGameScreens(4)
         }
     });
 
@@ -111,12 +139,11 @@ function SetUp() {
     });
 
 
+
     return (
         <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>
             <h1>SETUP</h1>
-            <h2>
-                <Fader text="Press Space Bar to Go Back To The Main Menu" /><Navigation />
-            </h2>
+            <h2> <Navigation /> </h2>
              <div id="data" />
 </div>
     );

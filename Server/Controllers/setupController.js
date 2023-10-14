@@ -10,7 +10,6 @@ const gameData =  require("../Models/gameData");
 const startGameData = gameData.getgameData()
 
 var gameScreen1 = "<p>Choose your Profession.</p>"
-
     + "<p>You may:</p>"
     + "<ol id=\"setupQuestions1\" >"
     + "<li id=\"bankerMenuItem\">Be a banker from Boston</li>"
@@ -22,12 +21,11 @@ var gameScreen1 = "<p>Choose your Profession.</p>"
 
 
 var gameScreen2 = "<p>What is the name of the leader?</p>"
-    + "Leader Name: <input id=\"player0\" />"
+    + "Leader Name: <input id=\"player0\" type='text\' placeholder='nameInput' /> <br /> "
     + "<input type=\"button\" class=\"button-1\" id=\"page1sub\" value=\"Next\" />";
 
 
 var gameScreen3 = "<p>What are the first names of the other members of your party?</p>"
-
     + "Player Name: <input id=\"player1\" /><br />"
     + "Player Name: <input id=\"player2\" /><br />"
     + "Player Name: <input id=\"player3\" /><br />"
@@ -45,19 +43,18 @@ var gameScreen4 = "<p>Which month would like to leave</p>"
     + "<div id=\"selectedOption\">What is your choice?</div>";
 
 var gameScreen5 = "<p>Here is the information you put in. </p>"
-
     + "<li> Leader's Profession:" + startGameData.playerProfession + ""
-    + "<li> Leader's Name:" + startGameData.playerNames[0] + ""
+    + "<li> Leader's Name:" + startGameData.playerNames[0] + " "
     + "<li> Party Members " + startGameData.playerNames[1] + ", "
     + startGameData.playerNames[2] + ", " + startGameData.playerNames[3] + ", "
     + startGameData.playerNames[4] + ""
     + "<li> Starting Month:" + startGameData.startMonth + "";
 
-exports.GameScreens.push(gameScreen1);
-exports.GameScreens.push(gameScreen2);
-exports.GameScreens.push(gameScreen3);
-exports.GameScreens.push(gameScreen4);
-exports.GameScreens.push(gameScreen5);
+exports.GameScreens.push(gameScreen1); //index 0
+exports.GameScreens.push(gameScreen2); //index 1
+exports.GameScreens.push(gameScreen3); //index 2
+exports.GameScreens.push(gameScreen4); //index 3
+exports.GameScreens.push(gameScreen5); //index 4
 
 
 exports.getGameScreen = function(req, res) {
@@ -71,9 +68,11 @@ exports.getGameScreen = function(req, res) {
     }
 };
 
+
+
 exports.saveGameData = function(req, res) {
     startGameData.playerNames[0] = req.body.playerName;
-    startGameData.playerNames = startGameData.playerNames.concat(req.body.playerNames);
+    startGameData.playerNames = startGameData.playerNames.concat(req.body.playerName);
     startGameData.playerProfession = req.body.playerProfession;
     startGameData.playerStatus = ["Alive", "Alive", "Alive", "Alive", "Alive"];
     startGameData.playerMoney = req.body.playerMoney;

@@ -33,10 +33,6 @@ exports.allWeather = function(req,res){
     res.setHeader('Content-Type', 'application/json');
     res.send(weather.newWeather())
 }
-exports.weather = function (req,res) {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(weather.getRandomWeather)
-}
 
 exports.getgameData = function(req, res) { //
     res.setHeader('Content-Type', 'application/json');
@@ -87,6 +83,7 @@ exports.updateGame = function(req, res) {
         startGameData.message = "You Won!"
 
     } else {
+        startGameData.message = "";
     }
     // every time the game updates a day is recorded
     if (startGameData.daysOnTrail < 45) {
@@ -96,11 +93,9 @@ exports.updateGame = function(req, res) {
     }
 
     //if health happens to go over dont allow it
-
     if (startGameData.groupHealth > 100){
         startGameData.groupHealth = 100;
     } else {
-
     }
 
     if (startGameData.groupHealth <= 100 && startGameData.groupHealth >= 80){
@@ -114,7 +109,6 @@ exports.updateGame = function(req, res) {
 
         startGameData.message = "poor";
 
-
         for (i = 0; i < 5; i++){
             var chance = Math.floor(Math.random() * 100) + 1;
 
@@ -123,8 +117,6 @@ exports.updateGame = function(req, res) {
             } else{
             }
         }
-
-
 
     } else if (startGameData.groupHealth < 20 && startGameData.groupHealth > 0){
         startGameData.message = "very poor";
@@ -138,7 +130,6 @@ exports.updateGame = function(req, res) {
         }
     }else{
         startGameData.message = "Everyone is dead";
-
         for (i = 0; i < 5; i++){
             startGameData.playerStatus[i] = "Dead";
         }
@@ -146,7 +137,6 @@ exports.updateGame = function(req, res) {
     }
 
     res.setHeader('Content-Type', 'application/json');
-
     res.send(startGameData);
 
 }

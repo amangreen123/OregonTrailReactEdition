@@ -7,18 +7,18 @@ const  pace = require("./pace");
 
 
  const gameData = {
-    groupHealth: 100,
-    currentTerrain: terrain.getRandomTerrain(),
-    currentWeather: weather.getRandomWeather(),
-    milesTraveled: 0,
-    currentPace: pace.getAllPaces(),
-    daysOnTrail: 0,
-    message: "",
-    playerNames: ["Aaron", "Jasmine", "Warren", "Winter", "Withney"],
-    playerStatus: ["Alive", "Alive", "Alive", "Alive", "Alive"],
-    playerProfession: "",
-    playerMoney: 0,
-    startMonth: ""
+    playerNames: [],// name of group members
+    playerStatus: ["Alive", "Alive", "Alive", "Alive", "Alive"],//checks if player is alive or dead
+    playerProfession: "",//role of the leader
+    playerMoney: 0,//money the player has
+    startMonth: "",// the month the player chooses to start the game
+    milesTraveled: 0,// keeps track of how far wagon team has progressed
+    groupHealth: 100,//represents the health of the wagon group
+    currentPace: pace.getAllPaces(),//assigns a random pace
+    daysOnTrail: 0,//days on trail
+    currentWeather: weather.getRandomWeather(),//assigns a random weather
+    currentTerrain: terrain.getRandomTerrain(),//assigns a random terrain
+    message: "", //Message to display on client side like "You have died of dysentery"
 }
 
 exports.getgameData = () => {

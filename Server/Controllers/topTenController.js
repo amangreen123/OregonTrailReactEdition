@@ -9,7 +9,7 @@ let topTen = require('../Models/topTen');
 // and send them back to the client
 
 exports.currentTopScores = [];
-
+// data being displayed in the get request in the postman
 exports.currentTopScores.push(topTen.topTen("Winter", 5));
 
 exports.currentTopScores.push(topTen.topTen("Aaron", 50));

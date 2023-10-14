@@ -21,6 +21,7 @@ toptenList.topTen();
 const topTenController = require("./Controllers/topTenController");
 const gameController = require("./Controllers/gameController");
 const setupController = require("./Controllers/setupController");
+const {post} = require("axios");
 
 app.use(cors());
 app.use(express.json());
@@ -34,7 +35,7 @@ app.route('/api/topTen')
     .get(topTenController.getCurrentScores)
     .post(topTenController.saveTopScore)
 app.route('/api/setup/player')
-    .get(gameController.getgameData)
+    .get(gameController.getgameData);
 app.route('/api/updateGame')
     .get(gameController.updateGame);
 app.route('/api/resetGame')
