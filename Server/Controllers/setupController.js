@@ -19,13 +19,15 @@ var gameScreen1 = "<p>Choose your Profession.</p>"
     + "</ol>"
     + "<div id=\"selectedOption\">What is your choice?</div>";
 
-
-var gameScreen2 = "<p>What is the name of the leader?</p>"
-    + "Leader Name: <input id=\"player0\" type='text\' placeholder='nameInput' /> <br /> "
+var gameScreen2 =
+    "<p>What is the name of the leader?</p>"
+    //how type in a value and save it to the database
+    // This input not allowing me to type in a value
+    // why is it not allowing me to type in a value
+    + "Leader Name: <input id=\"player0\" />"
     + "<input type=\"button\" class=\"button-1\" id=\"page1sub\" value=\"Next\" />";
 
-
-var gameScreen3 = "<p>What are the first names of the other members of your party?</p>"
+var gameScreen3 = "<p>What are the names of the Wagon Party</p>"
     + "Player Name: <input id=\"player1\" /><br />"
     + "Player Name: <input id=\"player2\" /><br />"
     + "Player Name: <input id=\"player3\" /><br />"
@@ -50,6 +52,7 @@ var gameScreen5 = "<p>Here is the information you put in. </p>"
     + startGameData.playerNames[4] + ""
     + "<li> Starting Month:" + startGameData.startMonth + "";
 
+
 exports.GameScreens.push(gameScreen1); //index 0
 exports.GameScreens.push(gameScreen2); //index 1
 exports.GameScreens.push(gameScreen3); //index 2
@@ -67,7 +70,6 @@ exports.getGameScreen = function(req, res) {
         res.status(404).json({ message: "Game screen not found" });
     }
 };
-
 
 
 exports.saveGameData = function(req, res) {

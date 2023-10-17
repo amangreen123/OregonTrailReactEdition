@@ -45,29 +45,29 @@ function SetUp() {
     function updatePlayerData() {
         fetch("http://localhost:8000/api/setup/updatePlayer", {
             method: "POST",
-            Headers: {
+            headers: { // Change "Headers" to "headers"
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                playerName: document.getElementById("player0"),
-                playerProfession: document.getElementById("playerProfession"),
-                playerMoney: document.getElementById("playerMoney"),
-                startMonth: document.getElementById("startMonth")
+                playerProfession: "Banker",
+                playerMoney: 1600,
+                startMonth: "March",
+                playerNames: ["", "", "", ""]
             })
-        }).then(function(response){
-            if(response.ok === true) {
-                console.log("fetch worked and goes to screen 1")
-                getGameScreens(1)
-
-            }else{
+        }).then(function(response) {
+            if (response.ok) {
+                console.log("Fetch worked and goes to screen 1");
+                getGameScreens(1);
+            } else {
                 console.log("Error saving player data");
                 throw new Error("Network response was not OK");
             }
-        })
+        }).catch(function(error) {
+            console.error("An error occurred:", error);
+        });
     }
 
     //click handlers
-
     document.addEventListener("click", function(event) {
         var targetElement = event.target || event.srcElement;
 
@@ -91,10 +91,11 @@ function SetUp() {
 
     document.addEventListener(("click"), function(event) {
         var targetElement = event.target || event.srcElement;
-
-        if(targetElement.id === "page1sub") {
+        //if the target element is the next button on the first screen
+        //and the player name is not null
+        //then call the updatePlayerData function and pass in the player name
+        if(targetElement.id === "page1sub" && document.getElementById("player0").value !== null) {
             //call the updatePlayerData function and pass in the player name
-            //updatePlayerData({playerName: document.getElementById("player0").value});
             getGameScreens(2)
         }
     });
@@ -135,17 +136,14 @@ function SetUp() {
         if(targetElement.id === "julyItem") {
             updatePlayerData({startMonth: "July"});
         }
-
     });
-
-
 
     return (
         <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>
             <h1>SETUP</h1>
-            <h2> <Navigation /> </h2>
-             <div id="data" />
-</div>
+            <h2> <Navigation /></h2>
+            <div id="data"/>
+        </div>
     );
 }
 
