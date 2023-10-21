@@ -3,8 +3,7 @@ import "./setup.css";
 import bg from "./images/gettyimages-3090888-2.jpg";
 import Fader from "./components/Fader";
 import Navigation from "./components/Navigation";
-
-
+import { useParams } from "react-router-dom";
 ///This is the setup page of the app
 //It is the first page that is rendered when the app is started
 //It displays a message and a button to start the game
@@ -18,10 +17,11 @@ import Navigation from "./components/Navigation";
 // when button is clicked, it sends a req to the endpoint to get the next screen data
 
 function SetUp() {
-   let [data,setData]= useState("")
-    // let [screenId, setScreenId] = useState(0)
+    let [data,setData]= useState("")
+    const [playerName, setPlayerName] = useState("");
+    const [playerProfession, setPlayerProfession] = useState("");
+    //let [screenId, setScreenId] = useState(0)
     async function getGameScreens(screenId){
-
         let responseData = {};
         try {
             const response = await fetch("http://localhost:8000/api/setup/screen/" + screenId );
@@ -42,30 +42,33 @@ function SetUp() {
        getGameScreens(0);
      }, []);
 
-    function updatePlayerData() {
-        fetch("http://localhost:8000/api/setup/updatePlayer", {
-            method: "POST",
-            headers: { // Change "Headers" to "headers"
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                playerProfession: "Banker",
-                playerMoney: 1600,
-                startMonth: "March",
-                playerNames: ["", "", "", ""]
-            })
-        }).then(function(response) {
-            if (response.ok) {
-                console.log("Fetch worked and goes to screen 1");
-                getGameScreens(1);
-            } else {
-                console.log("Error saving player data");
-                throw new Error("Network response was not OK");
-            }
-        }).catch(function(error) {
-            console.error("An error occurred:", error);
-        });
-    }
+
+
+    
+    // function updatePlayerData() {
+    //     fetch("http://localhost:8000/api/setup/updatePlayer", {
+    //         method: "POST",
+    //         headers: { // Change "Headers" to "headers"
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             playerProfession: "Banker",
+    //             playerMoney: 1600,
+    //             startMonth: "March",
+    //             playerNames: ["", "", "", ""]
+    //         })
+    //     }).then(function(response) {
+    //         if (response.ok) {
+    //             console.log("Fetch worked and goes to screen 1");
+    //             getGameScreens(1);
+    //         } else {
+    //             console.log("Error saving player data");
+    //             throw new Error("Network response was not OK");
+    //         }
+    //     }).catch(function(error) {
+    //         console.error("An error occurred:", error);
+    //     });
+    // }
 
     //click handlers
     document.addEventListener("click", function(event) {
@@ -96,6 +99,9 @@ function SetUp() {
         //then call the updatePlayerData function and pass in the player name
         if(targetElement.id === "page1sub" && document.getElementById("player0").value !== null) {
             //call the updatePlayerData function and pass in the player name
+            //  updatePlayerData([
+            //     document.getElementById("player0").value
+            //  ]);
             getGameScreens(2)
         }
     });
@@ -112,17 +118,11 @@ function SetUp() {
         }
     });
 
-    document.addEventListener(("click"), function(event) {
-        var targetElement = event.target || event.srcElement;
-        if(targetElement.id === "page3sub") {
-            getGameScreens(4)
-        }
-    });
-
     document.addEventListener("click", function(event) {
         var targetElement = event.target || event.srcElement;
         if(targetElement.id === "marchItem") {
          updatePlayerData({startMonth: "March"});
+         getGameScreens(4)
         }
         if(targetElement.id === "aprilItem") {
             updatePlayerData({startMonth: "April"});

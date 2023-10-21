@@ -1,10 +1,8 @@
 exports.GameScreens = [];
-
 // this is the setup screen information that will be displayed on the screen for the client
 // it gameScreens is an array of strings that will be displayed on the screen
 // each string is a different screen that will be displayed on the screen
 // the client will be able to click on the screen and the screen will change to the next screen
-
 
 const gameData =  require("../Models/gameData");
 const startGameData = gameData.getgameData()
@@ -20,12 +18,12 @@ var gameScreen1 = "<p>Choose your Profession.</p>"
     + "<div id=\"selectedOption\">What is your choice?</div>";
 
 var gameScreen2 =
+    //The input is not allwoing to type inside the box
+    //the button is working
     "<p>What is the name of the leader?</p>"
-    //how type in a value and save it to the database
-    // This input not allowing me to type in a value
-    // why is it not allowing me to type in a value
-    + "Leader Name: <input id=\"player0\" />"
+    + "Leader Name: <input id=\"player0\" type='text' />"
     + "<input type=\"button\" class=\"button-1\" id=\"page1sub\" value=\"Next\" />";
+
 
 var gameScreen3 = "<p>What are the names of the Wagon Party</p>"
     + "Player Name: <input id=\"player1\" /><br />"
