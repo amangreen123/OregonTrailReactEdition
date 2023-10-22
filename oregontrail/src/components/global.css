@@ -1,0 +1,51 @@
+.global {
+    background-color: black;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    color: firebrick;
+    margin-bottom: 30px;
+}
+
+p{
+    font-size: 40px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+h2{
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+button {
+    background-color: brown;
+    border: none;
+    color: beige;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: green;
+}
+
+#selectedOption{
+    font-size: 20px;
+    width: 75px;
+    background-color: red;
+}
+
+#data {
+    font-size: 40px;
+    color: gold;
+}

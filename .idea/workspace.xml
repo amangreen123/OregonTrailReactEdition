@@ -8,8 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Controllers/setupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/setupController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/oregontrailServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/oregontrailServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/setup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,11 +62,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\components" />
+      <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\Server\node_modules\call-bind" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\music" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\public" />
-      <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\components" />
-      <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.localhost:3000">
@@ -152,7 +153,8 @@
       <workItem from="1697315234433" duration="3618000" />
       <workItem from="1697492086480" duration="33843000" />
       <workItem from="1697662513113" duration="3436000" />
-      <workItem from="1697851251327" duration="2676000" />
+      <workItem from="1697851251327" duration="11553000" />
+      <workItem from="1697907339173" duration="9576000" />
     </task>
     <servers />
   </component>
