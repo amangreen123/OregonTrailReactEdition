@@ -7,11 +7,11 @@ import TopTen from "./topten";
 import Setup from "./setup";
 import Trail from "./trail";
 import AudioPlayer from './components/AudioPlayer';
-import GameScreen1 from "./components/GameScreen1";
-import GameScreen3 from "./components/GameScreen3";
-import GameScreen4 from "./components/GameScreen4";
-import GameScreen5 from "./components/GameScreen5";
-import GameScreen2 from "./components/GameScreen2";
+import GameScreen1 from "./pages/GameScreen1";
+import GameScreen3 from "./pages/GameScreen3";
+import GameScreen4 from "./pages/GameScreen4";
+import GameScreen5 from "./pages/GameScreen5";
+import GameScreen2 from "./pages/GameScreen2";
 
 
 import {
@@ -34,11 +34,11 @@ function App() {
                 <Route path={"/topten"} element={<TopTen />}> </Route>
                 <Route path={"/setup"} element={<Setup />}> </Route>
                 <Route path={"/trail"} element={<Trail />}> </Route>
-                <Route path={"/GameScreen1"} element={<GameScreen1 />}> </Route>
-                <Route path={"/GameScreen2"} element={<GameScreen2 />}> </Route>
-                <Route path={"/GameScreen3"} element={<GameScreen3 />}> </Route>
-                <Route path={"/GameScreen4"} element={<GameScreen4 />}> </Route>
-                <Route path={"/GameScreen5"} element={<GameScreen5 />}> </Route>
+                <Route path={"/GameScreen1"} element={<GameScreen1 />}></Route>
+                <Route path={"/GameScreen2"} element={<GameScreen2 />}></Route>
+                <Route path={"/GameScreen3"} element={<GameScreen3 />}></Route>
+                <Route path={"/GameScreen4"} element={<GameScreen4 />}></Route>
+                <Route path={"/GameScreen5"} element={<GameScreen5 />}></Route>
             </Routes>
             <AudioPlayer/>
         </div>

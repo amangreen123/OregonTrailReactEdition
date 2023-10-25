@@ -2,11 +2,11 @@ import React, { useEffect, useState} from "react";
 import "./setup.css";
 import bg from "./images/gettyimages-3090888-2.jpg";
 import Navigation from "./components/Navigation";
-import gameScreen1 from "./components/GameScreen1";
-import gameScreen2 from "./components/GameScreen2";
-import gameScreen3 from "./components/GameScreen3";
-import gameScreen4 from "./components/GameScreen4";
-import gameScreen5 from "./components/GameScreen5";
+import gameScreen1 from "./pages/GameScreen1";
+import gameScreen2 from "./pages/GameScreen2";
+import gameScreen3 from "./pages/GameScreen3";
+import gameScreen4 from "./pages/GameScreen4";
+import gameScreen5 from "./pages/GameScreen5";
 
 
 ///This is the setup page of the app

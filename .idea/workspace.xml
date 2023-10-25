@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Controllers/setupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/setupController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/oregontrailServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/oregontrailServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Models/gameData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Models/gameData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/GameScreen1.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/GameScreen2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/GameScreen3.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/GameScreen4.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/GameScreen5.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/setup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,11 +66,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\pages" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\components" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\Server\node_modules\call-bind" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\music" />
-      <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\public" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.localhost:3000">
@@ -154,7 +158,8 @@
       <workItem from="1697492086480" duration="33843000" />
       <workItem from="1697662513113" duration="3436000" />
       <workItem from="1697851251327" duration="11553000" />
-      <workItem from="1697907339173" duration="9576000" />
+      <workItem from="1697907339173" duration="23994000" />
+      <workItem from="1698160127509" duration="228000" />
     </task>
     <servers />
   </component>

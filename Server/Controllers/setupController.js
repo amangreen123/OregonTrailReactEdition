@@ -70,7 +70,9 @@ const startGameData = gameData.getgameData()
 // };
 
 
+
 exports.saveGameData = function(req, res) {
+
     startGameData.playerNames[0] = req.body.playerName;
     startGameData.playerNames = startGameData.playerNames.concat(req.body.playerName);
     startGameData.playerProfession = req.body.playerProfession;

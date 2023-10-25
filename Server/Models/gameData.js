@@ -22,6 +22,7 @@ const  pace = require("./pace");
 }
 
 exports.getgameData = () => {
+
     return structuredClone(gameData);
 }
 

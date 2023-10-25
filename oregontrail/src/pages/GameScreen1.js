@@ -1,5 +1,5 @@
 import React from 'react';
-import "./global.css";
+import "../components/global.css";
 import bg from "../images/gettyimages-3090888-2.jpg";
 
 import {useState, useEffect} from "react";
