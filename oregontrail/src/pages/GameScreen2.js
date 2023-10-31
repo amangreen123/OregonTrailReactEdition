@@ -4,9 +4,9 @@ import axios from 'axios';
 function GameScreen2() {
     const [playerName, setPlayerName] = useState('');
 
-    const handleNameChange = (e) => {
-        setPlayerName(e.target.value);
-        console.log("Player Name:", e.target.value)
+    const handleNameChange = (text) => {
+        setPlayerName(text);
+        console.log("Player Name:", text)
     };
 
     const updatePlayerName = async () => {
@@ -25,7 +25,9 @@ function GameScreen2() {
             <p>What is the name of the leader?</p>
             <label>
                 Leader Name:
-                <input type="text" value={playerName} onChange={handleNameChange} name="playerName" />
+                <input onChange={(event)=>{
+                    handleNameChange(event.target.value);
+                }} type="text" value={playerName} name="playerName" />
             </label>
             <button className="button-1" id="page1sub" onClick={updatePlayerName}>
                 Next</button>

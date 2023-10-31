@@ -8,7 +8,6 @@ const AudioPlayer = (event) => {
 
     useEffect(() => {
         const handleKeyPress = (event) => {
-            event.preventDefault();
             if (event.key === "4") {
                 if (isSoundOn) {
                     pause();

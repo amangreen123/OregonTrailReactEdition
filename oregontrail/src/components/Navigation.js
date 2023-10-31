@@ -11,20 +11,17 @@ const Navigation = (event) => {
    a.onkeydown = (event) => { event.target.focus()}
    useEffect(() => {
        const handleKeyPress = (event) => {
+           alert('test4');
          if (event.key === " ") {
-             event.preventDefault();
             window.location.href = "/mainmenu"
          }
          if (event.key === "3" && window.location.href === "http://localhost:3000/mainmenu" ) {
-             event.preventDefault();
             window.location.href = "/topten"
          }
           if (event.key === "2" && window.location.href === "http://localhost:3000/mainmenu") {
-              event.preventDefault();
              window.location.href = "/setup"
           }
           if (event.key === "1" && window.location.href === "http://localhost:3000/mainmenu") {
-              event.preventDefault();
              window.location.href = "/trail"
           }
        };
