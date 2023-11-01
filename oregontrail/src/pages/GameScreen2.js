@@ -4,17 +4,17 @@ import axios from 'axios';
 function GameScreen2() {
     const [playerName, setPlayerName] = useState('');
 
-    const handleNameChange = (text) => {
-        setPlayerName(text);
-        console.log("Player Name:", text)
+    const handleNameChange = (event) => {
+        setPlayerName(event);
+        console.log("Player Name:", event)
     };
 
     const updatePlayerName = async () => {
         try {
             const response = await axios.post('http://localhost:8000/api/setup/updatePlayer', {
-                playerName: playerName,
+                playerNames: [playerName],
             });
-            setPlayerName(response.data.playerName);
+            setPlayerName(response.data.playerNames[0]);
         } catch (error) {
             console.error('Error updating player name:', error);
         }
@@ -27,12 +27,13 @@ function GameScreen2() {
                 Leader Name:
                 <input onChange={(event)=>{
                     handleNameChange(event.target.value);
-                }} type="text" value={playerName} name="playerName" />
+                }} type="text" value={playerName}/>
             </label>
             <button className="button-1" id="page1sub" onClick={updatePlayerName}>
                 Next</button>
         </div>
     );
+
 }
 
 export default GameScreen2;

@@ -1,5 +1,20 @@
+import React, { useState } from 'react';
+import axios from "axios";
+
 const GameScreen4 = () => {
 
+    const updateMonth = (event) => {
+        let month = event.target.id;
+        console.log(month);
+        try {
+            const response = axios.post('http://localhost:8000/api/setup/updatePlayer', {
+                startMonth: month
+            });
+            console.log(response);
+        } catch (error) {
+            console.error('Error updating player names:', error);
+        }
+    }
 
 
     return (

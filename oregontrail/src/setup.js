@@ -7,6 +7,7 @@ import gameScreen2 from "./pages/GameScreen2";
 import gameScreen3 from "./pages/GameScreen3";
 import gameScreen4 from "./pages/GameScreen4";
 import gameScreen5 from "./pages/GameScreen5";
+import GameScreen1 from "./pages/GameScreen1";
 
 
 ///This is the setup page of the app
@@ -134,7 +135,6 @@ function SetUp() {
     //         updatePlayerData({startMonth: "July"});
     //     }
     // });
-
 
     return (
         <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>

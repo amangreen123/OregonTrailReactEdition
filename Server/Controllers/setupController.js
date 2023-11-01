@@ -69,12 +69,12 @@ const startGameData = gameData.getgameData()
 //     }
 // };
 
-
-
 exports.saveGameData = function(req, res) {
-
     startGameData.playerNames[0] = req.body.playerName;
     startGameData.playerNames = startGameData.playerNames.concat(req.body.playerName);
+    console.log("req.body:", req.body);
+    console.log("req.body.playerName:", req.body.playerName);
+    console.log("startGameData.playerNames:", startGameData.playerNames);
     startGameData.playerProfession = req.body.playerProfession;
     startGameData.playerStatus = ["Alive", "Alive", "Alive", "Alive", "Alive"];
     startGameData.playerMoney = req.body.playerMoney;
