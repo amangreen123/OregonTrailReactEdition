@@ -5,7 +5,6 @@ function allPaces(name,miles,healthChange){
     this.name = name;
     this.miles = miles;
     this.healthChange = healthChange;
-
 }
 
 var paces = [];

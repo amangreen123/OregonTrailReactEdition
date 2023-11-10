@@ -7,9 +7,11 @@
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Controllers/setupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/setupController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Models/pace.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Models/pace.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen2.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen3.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen4.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen4.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/setup.js" afterDir="false" />
     </list>
@@ -48,7 +50,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/aaron/Downloads/coding-interview-university-main",
+    "last_opened_file_path": "C:/Users/aaron/Desktop/Algo/parking-app-react-native",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -158,7 +160,8 @@
       <workItem from="1698160127509" duration="228000" />
       <workItem from="1698768153539" duration="15601000" />
       <workItem from="1698855886576" duration="398000" />
-      <workItem from="1698856322834" duration="8989000" />
+      <workItem from="1698856322834" duration="9974000" />
+      <workItem from="1698976731025" duration="13591000" />
     </task>
     <servers />
   </component>

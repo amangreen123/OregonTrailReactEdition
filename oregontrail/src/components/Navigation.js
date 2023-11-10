@@ -11,7 +11,6 @@ const Navigation = (event) => {
    a.onkeydown = (event) => { event.target.focus()}
    useEffect(() => {
        const handleKeyPress = (event) => {
-           alert('test4');
          if (event.key === " ") {
             window.location.href = "/mainmenu"
          }
@@ -25,6 +24,7 @@ const Navigation = (event) => {
              window.location.href = "/trail"
           }
        };
+
        document.addEventListener("keydown", handleKeyPress);
        return () => {
           document.removeEventListener("keydown", handleKeyPress);

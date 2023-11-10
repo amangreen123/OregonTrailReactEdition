@@ -1,6 +1,5 @@
 import React from 'react';
 import "../components/global.css";
-import bg from "../images/gettyimages-3090888-2.jpg";
 
 import {useState, useEffect} from "react";
 import axios from "axios";
@@ -42,7 +41,7 @@ const GameScreen1 = () => {
     }
 
     return (
-        <div className="global" style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
+        <div>
             <p>Choose your Profession.</p>
             <p>You may:</p>
             <ol id="setupQuestions1">

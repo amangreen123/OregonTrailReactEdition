@@ -5,7 +5,7 @@ const GameScreen5 = () => {
 
 
     return (
-        <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>
+        <div>
             <p>Here is the information you put in.</p>
                <li> Leader's Profession:</li>
                   <li> Leader's Name: </li>

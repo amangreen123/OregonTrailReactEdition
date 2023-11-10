@@ -2,12 +2,11 @@ import React, { useEffect, useState} from "react";
 import "./setup.css";
 import bg from "./images/gettyimages-3090888-2.jpg";
 import Navigation from "./components/Navigation";
-import gameScreen1 from "./pages/GameScreen1";
-import gameScreen2 from "./pages/GameScreen2";
-import gameScreen3 from "./pages/GameScreen3";
-import gameScreen4 from "./pages/GameScreen4";
-import gameScreen5 from "./pages/GameScreen5";
 import GameScreen1 from "./pages/GameScreen1";
+import GameScreen2 from "./pages/GameScreen2";
+import GameScreen3 from "./pages/GameScreen3";
+import GameScreen4 from "./pages/GameScreen4";
+import GameScreen5 from "./pages/GameScreen5";
 
 
 ///This is the setup page of the app
@@ -139,7 +138,7 @@ function SetUp() {
     return (
         <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>
             <h1>SETUP</h1>
-            <h2> <Navigation /></h2>
+            <h2><Navigation /></h2>
             <div id="data"/>
         </div>
     );
