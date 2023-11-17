@@ -2,18 +2,17 @@ import React, { useState } from 'react';
 import axios from "axios";
 
 const GameScreen3 = () => {
+    const [groupNames, setGroupNames] = useState({
+        player1: "",
+        player2: "",
+        player3: "",
+        player4: "",
+    });
 
-    const [groupNames, setGroupNames] = useState(["", "", "", ""]);
-
-    const handleGroupNameChange = (text) => {
-        setGroupNames(text.target.value);
-        //console.log("Leader Name:", text)
-    }
-
-    const updateGroupName  = async () => {
+    const updateGroupName = async () => {
         try {
             const response = await axios.post('http://localhost:8000/api/setup/updatePlayer', {
-                   playerNames: groupNames,
+                playerNames: groupNames,
             });
             setGroupNames(response.data.playerNames);
             console.log("Player Names :", response.data.playerNames)
@@ -21,23 +20,30 @@ const GameScreen3 = () => {
         } catch (error) {
             console.error('Error updating player name:', error);
         }
-    }
+    };
 
+    const handleGroupNameChange = (e) => {
+        const {name, value} = e.target;
+        console.log("name:", name);
+        console.log("value:", value);
+        setGroupNames((prev) => {
+            return {
+                ...prev,
+                [name]: value,
+            };
+        })
+    }
     return (
         <div>
             <p>What are the names of the Wagon Party</p>
-            Player Name: <input id="player1" onChange={(text)=>{
-            handleGroupNameChange(text);
-            }}type="text" value={groupNames}/><br />
-            Player Name: <input id="player2" onChange={(text)=>{
-            handleGroupNameChange(text);
-            }}type="text" value={groupNames}/><br />
-            Player Name: <input id="player3" /><br />
-            Player Name: <input id="player4" /><br />
+            Player Name: <input name="player1" type="text" onChange={handleGroupNameChange}/><br/>
+            Player Name: <input name="player2" type="text" onChange={handleGroupNameChange}/><br/>
+            Player Name: <input name="player3" type="text" onChange={handleGroupNameChange}/><br/>
+            Player Name: <input name="player4"/><br/>
             <input type="button" class="button-1" id="page2sub" value="Next" onClick={updateGroupName}/>
         </div>
     );
-
 };
+
 
 export default GameScreen3;
