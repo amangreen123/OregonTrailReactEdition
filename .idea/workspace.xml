@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen3.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Controllers/setupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/setupController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen4.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +160,9 @@
       <workItem from="1699920776144" duration="73000" />
       <workItem from="1700094145590" duration="639000" />
       <workItem from="1700095062737" duration="922000" />
-      <workItem from="1700183981878" duration="6042000" />
+      <workItem from="1700183981878" duration="6663000" />
+      <workItem from="1700266772364" duration="726000" />
+      <workItem from="1700320284058" duration="10963000" />
     </task>
     <servers />
   </component>
