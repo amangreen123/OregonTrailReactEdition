@@ -34,7 +34,7 @@ exports.allWeather = function(req,res){
     res.send(weather.newWeather())
 }
 
-exports.getgameData = function(req, res) { //
+exports.getgameData = function(req, res) {
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Origin', "*");
     res.send(startGameData);
@@ -135,8 +135,6 @@ exports.updateGame = function(req, res) {
         }
 
     }
-
     res.setHeader('Content-Type', 'application/json');
     res.send(startGameData);
-
 }

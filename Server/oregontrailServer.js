@@ -47,7 +47,9 @@ app.route('/api/terrain')
 //app.route('/api/setup/screen/:id')
    // .get(setupController.getGameScreen);
 app.route('/api/setup/updatePlayer')
-    .post(setupController.saveGameData);
+    .get(setupController.saveGameData)
+    .post(setupController.saveGameData)
+    .put(setupController.saveGameData);
 
 
 app.get('/', function (req, res) {

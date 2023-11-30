@@ -6,7 +6,8 @@ const GameScreen4 = () => {
 
 
     const updateMonth = (event) => {
-        let month = event.target.id;
+
+        let month = event.target.textContent;
         console.log(month);
         try {
             const response = axios.post('http://localhost:8000/api/setup/updatePlayer', {
@@ -18,18 +19,15 @@ const GameScreen4 = () => {
             console.error('Error updating player names:', error);
         }
     }
-
-
-
     return (
         <div>
             <p>Which month would like to leave</p>
             <ol id="setupQuestions2">
-                <li id="marchItem" onClick={updateMonth}>March</li>
-                <li id="aprilItem">April</li>
-                <li id="mayItem">May</li>
-                <li id="juneItem">June</li>
-                <li id="julyItem">July</li>
+                <li id="march" onClick={updateMonth}>March</li>
+                <li id="april" onClick={updateMonth}>April</li>
+                <li id="mayItem"onClick={updateMonth}>May</li>
+                <li id="juneItem"onClick={updateMonth}>June</li>
+                <li id="julyItem"onClick={updateMonth}>July</li>
             </ol>
             <div id="selectedOption">What is your choice?</div>
         </div>

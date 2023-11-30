@@ -73,13 +73,12 @@ exports.saveGameData = function(req, res) {
     startGameData.playerNames = [req.body.playerName];
     startGameData.playerNames = startGameData.playerNames.concat(req.body.playerNames);
     console.log("req.body:", req.body);
-    console.log("req.body.playerName:", req.body.playerNames);
+    console.log("req.body.playerName:", req.body.playerName);
     console.log("req.body.playerNames:", req.body.playerNames);
     startGameData.playerProfession = req.body.playerProfession;
     startGameData.playerStatus = ["Alive", "Alive", "Alive", "Alive", "Alive"];
     startGameData.playerMoney = req.body.playerMoney;
     startGameData.startMonth = req.body.startMonth;
-    console.log("startMonth:", req.body.startMonth);
     res.setHeader('Content-Type', 'application/json');
     res.send(startGameData);
 }

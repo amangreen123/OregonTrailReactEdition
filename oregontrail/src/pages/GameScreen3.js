@@ -12,7 +12,7 @@ const GameScreen3 = () => {
     const updateGroupName = async () => {
         try {
             const response = await axios.post('http://localhost:8000/api/setup/updatePlayer', {
-                playerNames: groupNames,
+                playerNames: [groupNames.player1, groupNames.player2, groupNames.player3, groupNames.player4],
             });
             setGroupNames(response.data.playerNames);
             console.log("Player Names :", response.data.playerNames)
