@@ -12,7 +12,7 @@ function GameScreen2() {
     const updatePlayerName = async () => {
         try {
             const response = await axios.post('http://localhost:8000/api/setup/updatePlayer', {
-                    playerName: [leaderName]
+                    playerName: leaderName
             });
                 setleaderName(response.data.playerName);
                 console.log("Player Name :", response.data.playerName)

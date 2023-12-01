@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Controllers/gameController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/gameController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Controllers/setupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/setupController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Models/gameData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Models/gameData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/oregontrailServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/oregontrailServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen2.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen3.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen4.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +162,7 @@
       <workItem from="1700266772364" duration="726000" />
       <workItem from="1700320284058" duration="10963000" />
       <workItem from="1701126229605" duration="6121000" />
-      <workItem from="1701218789301" duration="17290000" />
+      <workItem from="1701218789301" duration="22932000" />
     </task>
     <servers />
   </component>
