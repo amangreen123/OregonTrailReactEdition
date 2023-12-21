@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import {Provider} from "react-redux";
 import {BrowserRouter} from "react-router-dom";
+import store from "./store/index";
+
 
 // this is the new way to render in React 18
 //this is the root of the app
@@ -13,9 +16,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 root.render(
- <BrowserRouter>
-     <App />
- </BrowserRouter>
+    <Provider store={store}>
+    <BrowserRouter>
+            <App />
+    </BrowserRouter>
+    </Provider>
 );
 
 
