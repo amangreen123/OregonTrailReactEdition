@@ -1,6 +1,8 @@
 import React from 'react';
 import "../components/global.css";
 import {useState, useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
+
 
 
 import axios from "axios";

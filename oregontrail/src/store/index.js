@@ -6,11 +6,9 @@ const oregonTrailReducer = (state = initialState, action) => {
 
     if(action.type === "updatePlayer") {
         return {
-            playerProfession: action.playerProfession,
-            playerMoney: action.playerMoney,
+            playerProfession: action.playerProfession
         };
     }
-
     // if(action.type === "updatePlayerName") {
     //     return {
     //         playerName: action.playerName,

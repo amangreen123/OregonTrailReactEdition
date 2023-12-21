@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/oregontrail/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/oregon-redux.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +169,7 @@
       <workItem from="1702610232641" duration="3000" />
       <workItem from="1703112314514" duration="31000" />
       <workItem from="1703112409727" duration="2545000" />
-      <workItem from="1703115562164" duration="3750000" />
+      <workItem from="1703115562164" duration="5146000" />
     </task>
     <servers />
   </component>
