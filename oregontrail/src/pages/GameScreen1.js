@@ -6,13 +6,19 @@ import {useSelector, useDispatch} from "react-redux";
 
 
 import axios from "axios";
+import Navigation from "../components/Navigation";
 
 const GameScreen1 = () => {
 
     const [playerProfession, setPlayerProfession] = useState("");
     const [playerMoney, setPlayerMoney] = useState(0);
+    const playerProf = useSelector((state) => state.playerProfession);
+    const dispatch = useDispatch();
 
     const updatePlayerData = async () => {
+
+
+
         try {
           const response = await axios.post("http://localhost:8000/api/setup/updatePlayer", {
               playerProfession: playerProfession,
@@ -22,7 +28,8 @@ const GameScreen1 = () => {
             console.log("Player Money:", response.data.playerMoney);
             console.log("StatusCode:",response.status);
             console.log("Response:", response.data);
-      } catch (error) {
+
+        } catch (error) {
             console.error("Error fetching setup data:", error);
         }
     };
@@ -54,7 +61,11 @@ const GameScreen1 = () => {
     //the button will also update the playerMoney state variable
 
     const playerSubmit = () => {
-        updatePlayerData();
+        //navigate to the next screen
+        dispatch(updatePlayerData({
+            playerProfession: playerProfession,
+            playerMoney: playerMoney,
+        }));
         console.log(playerProfession);
         console.log(playerMoney);
     }
@@ -64,14 +75,14 @@ const GameScreen1 = () => {
             <p>Choose your Profession.</p>
             <p>You may:</p>
             <ol id="setupQuestions1">
-                <li id="bankerMenuItem" onClick={() => handleProfession("Banker")} onChange={playerSubmit}>Be a banker from Boston</li>
+                <li id="bankerMenuItem" onClick={() => handleProfession("Banker")} onChange={playerSubmit}>Be a banker from Boston </li>
                 <li id="carpenterMenuItem" onClick={() => handleProfession("Carpenter")} onChange={playerSubmit}>Be a carpenter from Ohio</li>
                 <li id="farmerMenuItem" onClick={() => handleProfession("Farmer")} onChange={playerSubmit}>Be a farmer from Illinois</li>
                 <li id="differencesMenuItem">Find out the differences between the choices</li>
             </ol>
             <div id="selectedOption">What is your choice?</div>
             <div>You Have Chosen {playerProfession} You have this Amount of Money {playerMoney}</div>
-
+            <Navigation />
         </div>
     );
 };
