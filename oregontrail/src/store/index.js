@@ -1,6 +1,6 @@
 import {createStore} from "redux";
 
-const initialState = { playerName: "", groupNames: "", startMonth: "", playerProfession: "", playerMoney: 0};
+const initialState = { playerName: "", groupNames: "", Month: "", playerProfession: "", playerMoney: 0};
 
 
 const oregonTrailReducer = (state = initialState, action) => {
@@ -9,6 +9,25 @@ const oregonTrailReducer = (state = initialState, action) => {
         return {
             ...state,
             playerProfession: action.payload.playerProfession,
+        };
+    }
+    if (action.type === "updatePlayerName") {
+        return {
+            ...state,
+            playerName: action.payload.playerName,
+        };
+    }
+    if (action.type === "updateGroupNames") {
+        return {
+            ...state,
+            groupNames: action.payload.groupNames,
+        };
+    }
+
+    if (action.type === "updateStartMonth") {
+        return {
+            ...state,
+            startMonth: action.payload.startMonth,
         };
     }
     return state;
@@ -46,6 +65,7 @@ const persistedState = loadState();
 const store = createStore(oregonTrailReducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(
 ));
 
+//This calls every time when store is saved
 store.subscribe(() => {
     saveState(store.getState());
 });

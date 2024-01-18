@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import {useDispatch} from "react-redux";
 import axios from 'axios';
 
 function GameScreen2() {
     const [leaderName, setleaderName] = useState('');
+    const dispatch = useDispatch();
 
     const handleNameChange = (event) => {
         setleaderName(event.target.value);
@@ -12,15 +14,21 @@ function GameScreen2() {
     const updatePlayerName = async () => {
         try {
             const response = await axios.post('http://localhost:8000/api/setup/updatePlayer', {
-                    playerName: leaderName
+                    playerNames: leaderName
             });
-                setleaderName(response.data.playerName);
+
+                setleaderName(response.data.playerNames);
+                dispatch({
+                    type: "updatePlayerName",
+                    payload: { playerName: leaderName},
+                });
+
                 console.log("Player Name :", response.data.playerName)
+                console.log("Status Code:", response.status)
         } catch (error) {
             console.error('Error updating player name:', error);
         }
     };
-
 
     return (
         <div>
