@@ -6,11 +6,6 @@ const GameScreen4 = () => {
     const [startMonth, setStartMonth] = useState("");
     const dispatch = useDispatch();
 
-    const handleMonthChange = (event) => {
-        setStartMonth(event.target.value);
-        console.log("Month:", event.target.value);
-    }
-
     const updateMonth = async (event) => {
         let month = event.target.id; // Use event.target.id to get the selected month
         try {
