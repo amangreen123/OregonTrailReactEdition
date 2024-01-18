@@ -12,9 +12,9 @@ import store from "./store/index";
 //it renders the app component
 //it is wrapped in a BrowserRouter component
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 root.render(<Provider store={store}><BrowserRouter> <App /> </BrowserRouter></Provider> );
-
 

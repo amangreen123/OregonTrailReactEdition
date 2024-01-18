@@ -1,11 +1,11 @@
 import React from 'react';
-import {useSelector,useDispatch} from "react-redux";
+import {useSelector} from "react-redux";
 
 
-// display the information that the user put in
-// from the previous game screens (1-4)
 const GameScreen5 = () => {
     const playerProfession = useSelector((state) =>  state.playerProfession);
+    console.log("Redux State:", useSelector((state) => state));
+    console.log("Player Profession:", playerProfession);
 
     return (
         <div>
@@ -16,7 +16,6 @@ const GameScreen5 = () => {
                 <li>Party Members</li>
                 <li>Starting Month:</li>
             </ul>
-
         </div>
     );
 };

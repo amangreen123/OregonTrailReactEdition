@@ -2,9 +2,6 @@ import React from 'react';
 import "../components/global.css";
 import {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
-
-
-
 import axios from "axios";
 import Navigation from "../components/Navigation";
 
@@ -12,13 +9,18 @@ const GameScreen1 = () => {
 
     const [playerProfession, setPlayerProfession] = useState("");
     const [playerMoney, setPlayerMoney] = useState(0);
-    const playerProf = useSelector((state) => state.playerProfession);
     const dispatch = useDispatch();
 
+    console.log("Redux State:", useSelector((state) => state));
+    //update the playerProfession state variable
+    //update the playerMoney state variable
+    //update the playerProfession state variable in the redux store
+    //update the playerMoney state variable in the redux store
+
+    //can you write a function that will do the axios and the dispatch to display the info on gamescreen 5?
+    //how to use axios post with redux to display the info on gamescreen 5?
+
     const updatePlayerData = async () => {
-
-
-
         try {
           const response = await axios.post("http://localhost:8000/api/setup/updatePlayer", {
               playerProfession: playerProfession,
@@ -28,6 +30,7 @@ const GameScreen1 = () => {
             console.log("Player Money:", response.data.playerMoney);
             console.log("StatusCode:",response.status);
             console.log("Response:", response.data);
+
 
         } catch (error) {
             console.error("Error fetching setup data:", error);
@@ -52,7 +55,12 @@ const GameScreen1 = () => {
                 setPlayerMoney(0);
                 break;
         }
+        dispatch({
+            type: "updatePlayerData",
+            payload: { playerProfession: e},
+        });
         setPlayerProfession(e);
+        //dispatch({type: "updatePlayerData", payload: {playerProfession: playerProfession, playerMoney: playerMoney}})
     }
 
     //make a button appear when the user clicks on one of the options
@@ -62,10 +70,6 @@ const GameScreen1 = () => {
 
     const playerSubmit = () => {
         //navigate to the next screen
-        dispatch(updatePlayerData({
-            playerProfession: playerProfession,
-            playerMoney: playerMoney,
-        }));
         console.log(playerProfession);
         console.log(playerMoney);
     }
