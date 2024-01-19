@@ -1,34 +1,108 @@
 import React from "react";
 import "./trail.css"
+import {useState, useEffect} from "react";
+import axios from "axios";
 import Navigation from "./components/Navigation";
+import bg from "./images/gettyimages-3090888-2.jpg";
 
 //this the trail page of the app
 //it is the page that is rendered when the player starts the game
 //it displays the game map and the game controls
 //the game map is a picture of the Oregon Trail
 //the game controls are buttons that the player can click to play the game
-function Trail (){
+function Trail () {
+    const [groupHealth, setGroupHealth] = useState(100);
+    const [milesTraveled, setMilesTraveled] = useState(0);
+    const [daysOnTrail, setDaysOnTrail] = useState(0);
+    const [message, setMessage] = useState("");
+    const [playerNames, setPlayerNames] = useState("");
+    const [playerStatus, setPlayerStatus] = useState("");
+    const [playerProfession, setPlayerProfession] = useState("");
+    const [playerMoney, setPlayerMoney] = useState(0);
+    const [startMonth, setStartMonth] = useState("");
+    const [pace, setPace] = useState("");
+    const [weatherConditions, setWeatherConditions] = useState("");
+    const [terrain, setTerrain] = useState("");
+    const [image, setImage] = useState("")
 
-    return(
-        <div className={"trail"}>
+    //getting Json API route Update
+    const updateGame = async () => {
+        try {
+            const response = await axios.get("http://localhost:8000/api/updateGame", {
+                groupHealth: groupHealth,
+                milesTraveled: milesTraveled,
+                daysOnTrail: daysOnTrail,
+                message: message,
+                playerNames: playerNames,
+                playerStatus: playerStatus,
+                playerProfession: playerProfession,
+                playerMoney: playerMoney,
+                startMonth: startMonth,
+                pace: pace,
+                weather: weatherConditions,
+                currentTerrain: terrain,
+            });
+
+            setGroupHealth(response.data.groupHealth);
+            setMilesTraveled(response.data.milesTraveled);
+            setDaysOnTrail(response.data.daysOnTrail);
+            setMessage(response.data.message);
+            setPlayerNames(response.data.playerNames);
+            setPlayerStatus(response.data.playerStatus);
+            setPlayerProfession(response.data.playerProfession);
+            setPlayerMoney(response.data.playerMoney);
+            setStartMonth(response.data.startMonth);
+            setPace(response.data.pace);
+            setWeatherConditions(response.data.currentWeather.type);
+            setTerrain(response.data.currentTerrain.name);
+            setImage(response.data.currentTerrain.imageUrl);
+
+            //Buffer.from(response.data.currentTerrain.imageUrl, 'base64').toString('ascii');
+            // console.log("Group Health:", response.data.groupHealth);
+            // console.log("Miles Traveled:", response.data.milesTraveled);
+            // console.log("Days On Trail:", response.data.daysOnTrail);
+            // console.log("Message:", response.data.message);
+            // console.log("Player Names:", response.data.playerNames);
+            // console.log("Player Status:", response.data.playerStatus);
+            // console.log("Player Profession:", response.data.playerProfession);
+            // console.log("Player Money:", response.data.playerMoney);
+            // console.log("Start Month:", response.data.startMonth);
+            // console.log("StatusCode:",response.status);
+            console.log("Weather", response.data.weather);
+            console.log("Terrain:", response.data.currentTerrain.imageUrl);
+            // console.log("Response:", response.data);
+
+        } catch (error) {
+            console.error("Error fetching game data:", error);
+        }
+    };
+    //<img hidden src="#" onError= "SHow error"> </img>
+
+    useEffect(() => {
+        updateGame();
+    }, []);
+
+    return (
+        <div className={"trail"} style={{backgroundImage: `url(${image})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center", position: "relative", zIndex: -1}}>
             <h1>Oregon Trail</h1>
             <div className="player-info">
-                <p>Player Name: John Smith</p>
-                <p>Occupation: Banker</p>
-                <p>Starting City: Independence, MO</p>
-                <p>Starting Date: March 1, 1848</p>
+                <p>Player Names: {playerNames}</p>
+                <p>Player Status:{playerStatus[0]}</p>
+                <p>Player Profession: {playerProfession}</p>
+                <p>Player Money: {playerMoney}</p>
+                <p>Start Month: {startMonth}</p>
+                <p>Group Health: {groupHealth}</p>
+                <p>Miles Traveled: {milesTraveled}</p>
+                <p>Days On Trail: {daysOnTrail}</p>
+                <p>Message: {message}</p>
             </div>
             <div className="game-map">
-                <p>Map goes here</p>
+                <p> {terrain} </p>
+                <p>{weatherConditions}</p>
             </div>
             <div className="game-controls">
                 <button className="game-control-button">Travel Trail</button>
-                <button className="game-control-button">Check Supplies</button>
-                <button className="game-control-button">Change Pace</button>
-                <button className="game-control-button">Change Rations</button>
                 <button className="game-control-button">Stop to Rest</button>
-                <button className="game-control-button">Attempt to Trade</button>
-                <button className="game-control-button">Hunt for Food</button>
                 <button className="game-control-button">Quit Game</button>
                 <Navigation></Navigation>
             </div>

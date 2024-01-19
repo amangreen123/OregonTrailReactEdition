@@ -28,6 +28,15 @@ const GameScreen4 = () => {
         }
     }
 
+    const buttonClick = () => {
+        if (startMonth === "") {
+            alert("Please select a month")
+            return;
+        }
+        updateMonth()
+        window.location.href = "/GameScreen5"
+    }
+
     return (
         <div>
             <p>Which month would you like to leave</p>
@@ -38,7 +47,8 @@ const GameScreen4 = () => {
                 <li id="June" onClick={updateMonth}>June</li>
                 <li id="July" onClick={updateMonth}>July</li>
             </ol>
-            <div id="selectedOption">What is your choice?</div>
+            <button className="button-1" id="page1sub" onClick={buttonClick} >Next Page</button>
+
         </div>
     );
 };

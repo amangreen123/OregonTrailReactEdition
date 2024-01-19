@@ -24,12 +24,6 @@ const Navigation = (event) => {
           if (event.key === "1" && window.location.href === "http://localhost:3000/mainmenu") {
              window.location.href = "/trail"
           }
-
-          if (window.location.href === "http://localhost:3000/GameScreen1") {
-             if (event.key === "1") {
-                window.location.href = "/GameScreen2"
-             }
-          }
        };
        document.addEventListener("keydown", handleKeyPress);
        return () => {

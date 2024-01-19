@@ -30,6 +30,11 @@ function GameScreen2() {
         }
     };
 
+    const buttonClick = () => {
+        updatePlayerName();
+        window.location.href = "/GameScreen3"
+    }
+
     return (
         <div>
             <p>What is the name of the leader?</p>
@@ -39,7 +44,8 @@ function GameScreen2() {
                     handleNameChange(event);
                 }} type="text" value={leaderName}/>
             </label>
-            <button className="button-1" id="page1sub" onClick={updatePlayerName}>Next</button>
+            <button className="button-1" id="page1sub" onClick={buttonClick} >Next Page</button>
+
         </div>
     );
 }

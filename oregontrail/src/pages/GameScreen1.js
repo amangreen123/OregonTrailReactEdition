@@ -74,6 +74,8 @@ const GameScreen1 = () => {
         console.log(playerMoney);
     }
 
+
+
     return (
         <div>
             <p>Choose your Profession.</p>
@@ -84,8 +86,8 @@ const GameScreen1 = () => {
                 <li id="farmerMenuItem" onClick={() => handleProfession("Farmer")} onChange={playerSubmit}>Be a farmer from Illinois</li>
                 <li id="differencesMenuItem">Find out the differences between the choices</li>
             </ol>
-            <div id="selectedOption">What is your choice?</div>
             <div>You Have Chosen {playerProfession} You have this Amount of Money {playerMoney}</div>
+            <button onClick={event => window.location.href="/GameScreen2"}> Next Page </button>
             <Navigation />
         </div>
     );

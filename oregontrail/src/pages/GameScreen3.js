@@ -59,6 +59,11 @@ const GameScreen3 = () => {
         console.log("value:", value);
     }
 
+    const buttonClick = () => {
+        updateGroupName();
+        window.location.href = "/GameScreen4"
+    }
+
     return (
         <div>
             <p>What are the names of the Wagon Party</p>
@@ -66,7 +71,7 @@ const GameScreen3 = () => {
             Player Name: <input name="player2" type="text" onChange={handleGroupNameChange}/><br/>
             Player Name: <input name="player3" type="text" onChange={handleGroupNameChange}/><br/>
             Player Name: <input name="player4" type="text" onChange={handleGroupNameChange}/><br/>
-            <input type="button" class="button-1" id="page2sub" value="Next" onClick={updateGroupName}/>
+            <input type="button" class="button-1" id="page2sub" value="Next" onClick={buttonClick}/>
         </div>
     );
 };

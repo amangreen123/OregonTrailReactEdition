@@ -7,7 +7,6 @@ const GameScreen5 = () => {
     const playerName = useSelector((state) => state.playerName);
     const groupNames = useSelector((state) => state.groupNames);
     const startMonth = useSelector((state) => state.startMonth);
-
     console.log("Redux State:", useSelector((state) => state));
     console.log("Player Profession:", playerProfession);
 
