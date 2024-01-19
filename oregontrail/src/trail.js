@@ -4,6 +4,8 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 import Navigation from "./components/Navigation";
 import bg from "./images/gettyimages-3090888-2.jpg";
+import {useHref} from "react-router-dom";
+import mainmenuPage from "./mainmenuPage";
 
 //this the trail page of the app
 //it is the page that is rendered when the player starts the game
@@ -11,6 +13,7 @@ import bg from "./images/gettyimages-3090888-2.jpg";
 //the game map is a picture of the Oregon Trail
 //the game controls are buttons that the player can click to play the game
 function Trail () {
+
     const [groupHealth, setGroupHealth] = useState(100);
     const [milesTraveled, setMilesTraveled] = useState(0);
     const [daysOnTrail, setDaysOnTrail] = useState(0);
@@ -24,6 +27,16 @@ function Trail () {
     const [weatherConditions, setWeatherConditions] = useState("");
     const [terrain, setTerrain] = useState("");
     const [image, setImage] = useState("")
+
+    const [restartgroupHealth,setRestartGroupHealth] = useState(100);
+    const [restartmilesTraveled, setRestartMilesTraveled] = useState(0);
+    const [restartdaysOnTrail, setRestartDaysOnTrail] = useState(0);
+    const [restartmessage, setRestartMessage] = useState("");
+    const [restartplayerNames, setRestartPlayerNames] = useState("");
+    const [restartplayerStatus, setRestartPlayerStatus] = useState("");
+    const [restartplayerProfession, setRestartPlayerProfession] = useState("");
+    const [restartplayerMoney, setRestartPlayerMoney] = useState(0);
+    const [restartstartMonth, setRestartStartMonth] = useState("");
 
     //getting Json API route Update
     const updateGame = async () => {
@@ -82,6 +95,37 @@ function Trail () {
         updateGame();
     }, []);
 
+    const ResetGame = async () => {
+        try {
+            const response = await axios.get("http://localhost:8000/api/resetGame", {
+                groupHealth: restartgroupHealth,
+                milesTraveled: restartmilesTraveled,
+                daysOnTrail: restartdaysOnTrail,
+                message: restartmessage,
+                playerNames: restartplayerNames,
+                playerStatus:restartplayerStatus,
+                playerProfession: restartplayerProfession,
+                playerMoney: restartplayerMoney,
+                startMonth: restartstartMonth,
+            });
+
+                setRestartGroupHealth(response.data.groupHealth);
+                setRestartMilesTraveled(response.data.milesTraveled);
+                setRestartDaysOnTrail(response.data.daysOnTrail);
+                setRestartMessage(response.data.message);
+                setRestartPlayerNames(response.data.playerNames);
+                setRestartPlayerStatus(response.data.playerStatus);
+                setRestartPlayerProfession(response.data.playerProfession);
+                setRestartPlayerMoney(response.data.playerMoney);
+                setRestartStartMonth(response.data.startMonth);
+        }
+        catch (error) {
+            console.error("Error fetching Reset data:", error);
+        }
+
+    }
+
+
     return (
         <div className={"trail"} style={{backgroundImage: `url(${image})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center", position: "relative", zIndex: -1}}>
             <h1>Oregon Trail</h1>
@@ -97,13 +141,16 @@ function Trail () {
                 <p>Message: {message}</p>
             </div>
             <div className="game-map">
-                <p> {terrain} </p>
+                <p>{terrain} </p>
+                <p>&nbsp;&nbsp;</p>
                 <p>{weatherConditions}</p>
+                <p>{pace}</p>
             </div>
             <div className="game-controls">
-                <button className="game-control-button">Travel Trail</button>
+            <button className="game-control-button">Travel Trail</button>
                 <button className="game-control-button">Stop to Rest</button>
-                <button className="game-control-button">Quit Game</button>
+                <button className="game-control-button" onClick={event => window.location.href="/mainmenu"}>Quit Game</button>
+                <button className="game-control-button" onClick={()=>ResetGame()}>Reset Game</button>
                 <Navigation></Navigation>
             </div>
         </div>
