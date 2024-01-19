@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import {useDispatch} from "react-redux";
+import {useDispatch,useSelector} from "react-redux";
 
 const GameScreen3 = () => {
+
     const [groupNames, setGroupNames] = useState({
         player1: "",
         player2: "",
@@ -11,22 +12,32 @@ const GameScreen3 = () => {
     });
 
     const dispatch = useDispatch();
-
-
+    console.log("Redux", useSelector((state) => state));
     const updateGroupName = async () => {
+
         try {
             const response = await axios.post('http://localhost:8000/api/setup/updatePlayer', {
                 playerNames: [groupNames.player1, groupNames.player2, groupNames.player3, groupNames.player4],
             });
 
-            setGroupNames(response.data.playerNames);
+            const updatedPlayerNames = response.data.playerNames;
+
+            setGroupNames((prev) => ({
+                ...prev,
+                player1: updatedPlayerNames[0],
+                player2: updatedPlayerNames[1],
+                player3: updatedPlayerNames[2],
+                player4: updatedPlayerNames[3],
+            }));
+
 
             dispatch ({
-                type: "updatePlayerName",
+                type: "updateGroupNames",
                 payload: {playerNames: [groupNames.player1, groupNames.player2, groupNames.player3, groupNames.player4]},
             });
 
             console.log("Player Names :", response.data.playerNames)
+            console.log("Group Names :", groupNames.player1)
             console.log(response.status)
 
         } catch (error) {
@@ -35,16 +46,19 @@ const GameScreen3 = () => {
     };
 
     const handleGroupNameChange = (e) => {
+        // Destructure the 'name' and 'value' properties from the event target
         const {name, value} = e.target;
+        // Update the state using the previous state
         setGroupNames((prev) => {
             return {
-                ...prev,
-                [name]: value,
+                ...prev, // Spread the previous state to keep existing values
+                [name]: value, // Update the specific property with the new value
             };
         })
         console.log("name:", name);
         console.log("value:", value);
     }
+
     return (
         <div>
             <p>What are the names of the Wagon Party</p>

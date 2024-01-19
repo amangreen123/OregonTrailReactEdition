@@ -1,6 +1,14 @@
 import {createStore} from "redux";
 
-const initialState = { playerName: "", groupNames: "", Month: "", playerProfession: "", playerMoney: 0};
+const initialState = { playerName: "", groupNames: {
+        player1: "",
+        player2: "",
+        player3: "",
+        player4: "",
+    },
+    Month: "",
+    playerProfession: ""
+};
 
 
 const oregonTrailReducer = (state = initialState, action) => {
@@ -20,10 +28,9 @@ const oregonTrailReducer = (state = initialState, action) => {
     if (action.type === "updateGroupNames") {
         return {
             ...state,
-            groupNames: action.payload.groupNames,
+            groupNames: action.payload.playerNames,
         };
     }
-
     if (action.type === "updateStartMonth") {
         return {
             ...state,

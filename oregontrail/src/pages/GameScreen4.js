@@ -32,11 +32,11 @@ const GameScreen4 = () => {
         <div>
             <p>Which month would you like to leave</p>
             <ol id="setupQuestions2">
-                <li id="march" onClick={updateMonth}>March</li>
-                <li id="april" onClick={updateMonth}>April</li>
-                <li id="mayItem" onClick={updateMonth}>May</li>
-                <li id="juneItem" onClick={updateMonth}>June</li>
-                <li id="julyItem" onClick={updateMonth}>July</li>
+                <li id="March" onClick={updateMonth}>March</li>
+                <li id="April" onClick={updateMonth}>April</li>
+                <li id="May" onClick={updateMonth}>May</li>
+                <li id="June" onClick={updateMonth}>June</li>
+                <li id="July" onClick={updateMonth}>July</li>
             </ol>
             <div id="selectedOption">What is your choice?</div>
         </div>
