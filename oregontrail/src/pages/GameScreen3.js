@@ -30,14 +30,15 @@ const GameScreen3 = () => {
                 player4: updatedPlayerNames[3],
             }));
 
-
             dispatch ({
                 type: "updateGroupNames",
                 payload: {playerNames: [groupNames.player1, groupNames.player2, groupNames.player3, groupNames.player4]},
             });
 
             console.log("Player Names :", response.data.playerNames)
+            console.log("Repsonse :", response.data)
             console.log("Group Names :", groupNames.player1)
+            console.log("Response :", response)
             console.log(response.status)
 
         } catch (error) {

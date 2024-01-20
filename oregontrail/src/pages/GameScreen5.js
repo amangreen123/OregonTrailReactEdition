@@ -10,6 +10,7 @@ const GameScreen5 = () => {
     console.log("Redux State:", useSelector((state) => state));
     console.log("Player Profession:", playerProfession);
 
+
     return (
         <div>
             <p>Here is the information you put in.</p>
@@ -24,7 +25,7 @@ const GameScreen5 = () => {
                     <li>{groupNames[3]}</li>
                 </ul>
                 </li>
-                <li>Starting Month:  {startMonth}</li>
+                <li>Starting Month:{startMonth}</li>
             </ul>
         </div>
     );
