@@ -13,12 +13,18 @@ const GameScreen4 = () => {
                 startMonth: month,
             });
 
+            console.log("Response:", response);
+            console.log("Response Data:", response.data);
+            console.log("Response Data Start Month:", response.data.startMonth);
+
             if (response && response.data) {
                 setStartMonth(response.data.startMonth);
+
                 dispatch({
                     type: "updateStartMonth",
                     payload: { startMonth: response.data.startMonth },
                 });
+
                 console.log("Start Month:", response.data.startMonth);
             } else {
                 console.error("Error updating Month");
@@ -26,6 +32,7 @@ const GameScreen4 = () => {
         } catch (error) {
             console.error('Error updating Month', error);
         }
+
     }
 
     const buttonClick = () => {

@@ -7,6 +7,7 @@ function GameScreen2() {
     const dispatch = useDispatch();
 
     const handleNameChange = (event) => {
+
         setleaderName(event.target.value);
         //console.log("Leader Name:", text)
     };
@@ -14,10 +15,12 @@ function GameScreen2() {
     const updatePlayerName = async () => {
         try {
             const response = await axios.post('http://localhost:8000/api/setup/updatePlayer', {
-                    playerNames: leaderName
+                    playerName: leaderName,
             });
 
-                setleaderName(response.data.playerNames);
+            const updateName = response.data.playerName;
+                setleaderName(updateName);
+
                 dispatch({
                     type: "updatePlayerName",
                     payload: { playerName: leaderName},
@@ -25,13 +28,15 @@ function GameScreen2() {
 
                 console.log("Player Name :", response.data.playerName)
                 console.log("Status Code:", response.status)
+
         } catch (error) {
             console.error('Error updating player name:', error);
         }
     };
 
-    const buttonClick = () => {
+    const buttonClick = (e) => {
         updatePlayerName();
+        e.preventDefault();
         window.location.href = "/GameScreen3"
     }
 

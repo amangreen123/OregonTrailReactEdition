@@ -8,12 +8,28 @@ const gameData =  require("../Models/gameData");
 const startGameData = gameData.getgameData()
 
 
+// exports.saveGameData = function(req, res) {
+//     const playerName = req.body.playerName;
+//     startGameData.playerNames = [playerName];
+//     startGameData.playerNames = startGameData.playerNames.concat(req.body.playerNames);
+//     console.log("Player Names: ", startGameData.playerNames);
+//     startGameData.playerProfession = req.body.playerProfession;
+//     console.log("Player Profession: ", startGameData.playerProfession);
+//     startGameData.playerStatus = ["Alive", "Alive", "Alive", "Alive", "Alive"];
+//     startGameData.playerMoney = req.body.playerMoney;
+//     startGameData.startMonth = req.body.startMonth;
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(startGameData);
+// }
+
 exports.saveGameData = function(req, res) {
     startGameData.playerNames = [req.body.playerName];
     startGameData.playerNames = startGameData.playerNames.concat(req.body.playerNames);
     console.log("req.body:", req.body);
     console.log("req.body.playerName:", req.body.playerName);
     console.log("req.body.playerNames:", req.body.playerNames);
+    console.log("Player Names: ", startGameData.playerNames);
+    console.log("Player Profession: ", startGameData.playerProfession);
     startGameData.playerProfession = req.body.playerProfession;
     startGameData.playerStatus = ["Alive", "Alive", "Alive", "Alive", "Alive"];
     startGameData.playerMoney = req.body.playerMoney;

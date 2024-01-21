@@ -44,12 +44,9 @@ app.route('/api/getAllPaces')
     .get(gameController.paces);
 app.route('/api/terrain')
     .get(gameController.newterrain);
-//app.route('/api/setup/screen/:id')
-   // .get(setupController.getGameScreen);
 app.route('/api/setup/updatePlayer')
     .get(setupController.saveGameData)
     .post(setupController.saveGameData)
-    .put(setupController.saveGameData);
 
 
 app.get('/', function (req, res) {

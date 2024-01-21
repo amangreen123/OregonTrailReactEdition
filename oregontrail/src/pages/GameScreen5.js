@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSelector} from "react-redux";
+import axios from "axios";
 
 
 const GameScreen5 = () => {
@@ -8,9 +9,6 @@ const GameScreen5 = () => {
     const groupNames = useSelector((state) => state.groupNames);
     const startMonth = useSelector((state) => state.startMonth);
     console.log("Redux State:", useSelector((state) => state));
-    console.log("Player Profession:", playerProfession);
-
-
     return (
         <div>
             <p>Here is the information you put in.</p>

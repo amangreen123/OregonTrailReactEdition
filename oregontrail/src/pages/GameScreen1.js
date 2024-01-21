@@ -31,14 +31,20 @@ const GameScreen1 = () => {
             console.log("StatusCode:",response.status);
             console.log("Response:", response.data);
 
+            dispatch({
+                type: "updatePlayerData",
+                payload: { playerProfession: response.data.playerProfession, playerMoney: response.data.playerMoney },
+            });
 
         } catch (error) {
             console.error("Error fetching setup data:", error);
         }
     };
     useEffect(() => {
-        updatePlayerData(playerProfession);
-    }, [playerProfession]);
+        if(playerProfession !== "" && playerMoney !== 0){
+            updatePlayerData();
+        }
+    }, [playerProfession, playerMoney]);
 
     const handleProfession = (e) => {
         switch (e) {
@@ -55,10 +61,10 @@ const GameScreen1 = () => {
                 setPlayerMoney(0);
                 break;
         }
-        dispatch({
-            type: "updatePlayerData",
-            payload: { playerProfession: e},
-        });
+        // dispatch({
+        //     type: "updatePlayerData",
+        //     payload: { playerProfession: e},
+        // });
         setPlayerProfession(e);
         //dispatch({type: "updatePlayerData", payload: {playerProfession: playerProfession, playerMoney: playerMoney}})
     }

@@ -62,6 +62,7 @@ function Trail() {
                 image: response.data.currentTerrain.imageUrl
             });
             setShowResetGame(false);
+            console.log("Response", response);
             console.log("Weather", response.data.currentWeather);
             console.log("Terrain:", response.data.currentTerrain.imageUrl);
         } catch (error) {
@@ -107,11 +108,12 @@ function Trail() {
         <div className={"trail"} style={{backgroundImage: `url(${gameState.image})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center", position: "relative", zIndex: -1}}>
             <h1>Oregon Trail</h1>
             <div className="player-info">
-                <p>Player Names: {playerName}</p>
+                <p>Leader Name: {gameState.playerNames[0]}</p>
+                <p>Group Names: {groupNames}</p>
                 <p>Player Status: {gameState.playerStatus[0]}</p>
                 <p>Player Profession: {playerProfession}</p>
                 <p>Player Money: {gameState.playerMoney}</p>
-                <p>Start Month: {gameState.startMonth}</p>
+                <p>Start Month: {startMonth}</p>
                 <p>Group Health: {gameState.groupHealth}</p>
                 <p>Miles Traveled: {gameState.milesTraveled}</p>
                 <p>Days On Trail: {gameState.daysOnTrail}</p>
