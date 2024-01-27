@@ -1,30 +1,48 @@
 import React, { useEffect, useState} from "react";
 import "./setup.css";
 import bg from "./images/gettyimages-3090888-2.jpg";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import GameScreen1 from "./pages/GameScreen1";
 import GameScreen2 from "./pages/GameScreen2";
 import GameScreen3 from "./pages/GameScreen3";
 import GameScreen4 from "./pages/GameScreen4";
 import GameScreen5 from "./pages/GameScreen5";
 
-
-///This is the setup page of the app
-//It is the first page that is rendered when the app is started
-//It displays a message and a button to start the game
-//The message is fetched from the server
 function SetUp() {
+    const [page, setPage] = useState(1);
 
-    //how to add that ca
+    const nextPage = () => {
+        setPage((prevPage) => Math.min(prevPage + 1, 5)); // Limit to a maximum of 5
+    };
+
+    const previousPage = () => {
+        setPage((prevPage) => Math.max(prevPage - 1, 1)); // Ensure at least 1
+    };
+
+    const renderPage = () => {
+        switch (page) {
+            case 1:
+                return <GameScreen1 />;
+            case 2:
+                return <GameScreen2 />;
+            case 3:
+                return <GameScreen3 />;
+            case 4:
+                return <GameScreen4 />;
+            case 5:
+                return <GameScreen5 />;
+            default:
+                return <GameScreen1 />;
+        }
+    };
 
     return (
         <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>
             <h1>SETUP</h1>
-            <h2><GameScreen1></GameScreen1></h2>
-            <div id="data"/>
+            <div id="data">{renderPage()}</div>
         </div>
     );
 }
 
-
 export default SetUp;
+
+

@@ -39,8 +39,10 @@ exports.setupPlayerData = function(req, res) {
             startGameData.playerMoney = req.body.playerMoney
             startGameData.startMonth = req.body.startMonth;
         }
+          
         res.setHeader('Content-Type', 'application/json');
         res.send(startGameData);
+
     });
 }
 
