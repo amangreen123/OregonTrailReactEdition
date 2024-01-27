@@ -1,6 +1,5 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import axios from "axios";
 
 
 const GameScreen5 = () => {
@@ -23,7 +22,7 @@ const GameScreen5 = () => {
                     <li>{groupNames[3]}</li>
                 </ul>
                 </li>
-                <li>Starting Month:{startMonth}</li>
+                <li>Starting Month: {startMonth}</li>
             </ul>
         </div>
     );

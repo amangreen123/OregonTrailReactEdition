@@ -2,12 +2,9 @@ const terrain = require("./terrain");
 const  weather = require("./weather");
 const  pace = require("./pace");
 
-// gameData class
-// This class is used to store the game data
-
 
  const gameData = {
-    playerNames: [],// name of group members
+    playerNames: [""],// name of group members
     playerStatus: ["Alive", "Alive", "Alive", "Alive", "Alive"],//checks if player is alive or dead
     playerProfession: "",//role of the leader
     playerMoney: 0 ,//money the player has
@@ -22,7 +19,6 @@ const  pace = require("./pace");
 }
 
 exports.getgameData = () => {
-
     return structuredClone(gameData);
 }
 

@@ -14,8 +14,8 @@ function GameScreen2() {
 
     const updatePlayerName = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/api/setup/updatePlayer', {
-                    playerName: leaderName,
+            const response = await axios.put('http://localhost:8000/api/setup/createPlayer', {
+                    playerName: [leaderName],
             });
 
             const updateName = response.data.playerName;
@@ -30,13 +30,19 @@ function GameScreen2() {
                 console.log("Status Code:", response.status)
 
         } catch (error) {
+
+            if(error.response.status === 400){
+                return Promise.reject(error);
+            }
             console.error('Error updating player name:', error);
         }
+
+
     };
 
     const buttonClick = (e) => {
         updatePlayerName();
-        e.preventDefault();
+        //e.preventDefault();
         window.location.href = "/GameScreen3"
     }
 

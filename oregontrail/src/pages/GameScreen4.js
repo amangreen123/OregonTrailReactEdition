@@ -9,7 +9,7 @@ const GameScreen4 = () => {
     const updateMonth = async (event) => {
         let month = event.target.id; // Use event.target.id to get the selected month
         try {
-            const response = await axios.post('http://localhost:8000/api/setup/updatePlayer', {
+            const response = await axios.put('http://localhost:8000/api/setup/createPlayer', {
                 startMonth: month,
             });
 

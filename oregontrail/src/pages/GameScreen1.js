@@ -12,17 +12,10 @@ const GameScreen1 = () => {
     const dispatch = useDispatch();
 
     console.log("Redux State:", useSelector((state) => state));
-    //update the playerProfession state variable
-    //update the playerMoney state variable
-    //update the playerProfession state variable in the redux store
-    //update the playerMoney state variable in the redux store
-
-    //can you write a function that will do the axios and the dispatch to display the info on gamescreen 5?
-    //how to use axios post with redux to display the info on gamescreen 5?
 
     const updatePlayerData = async () => {
         try {
-          const response = await axios.post("http://localhost:8000/api/setup/updatePlayer", {
+          const response = await axios.put("http://localhost:8000/api/setup/createPlayer", {
               playerProfession: playerProfession,
               playerMoney: playerMoney,
           });
@@ -42,7 +35,7 @@ const GameScreen1 = () => {
     };
     useEffect(() => {
         if(playerProfession !== "" && playerMoney !== 0){
-            updatePlayerData();
+            updatePlayerData().then(r => console.log("Updated Player Data"));
         }
     }, [playerProfession, playerMoney]);
 
@@ -61,26 +54,13 @@ const GameScreen1 = () => {
                 setPlayerMoney(0);
                 break;
         }
-        // dispatch({
-        //     type: "updatePlayerData",
-        //     payload: { playerProfession: e},
-        // });
         setPlayerProfession(e);
-        //dispatch({type: "updatePlayerData", payload: {playerProfession: playerProfession, playerMoney: playerMoney}})
     }
 
-    //make a button appear when the user clicks on one of the options
-    //when the user clicks on the button, the button will take them to the next screen
-    //the button will also update the playerProfession state variable
-    //the button will also update the playerMoney state variable
-
     const playerSubmit = () => {
-        //navigate to the next screen
         console.log(playerProfession);
         console.log(playerMoney);
     }
-
-
 
     return (
         <div>

@@ -1,7 +1,4 @@
-// this is the server file for the oregon trail game
-// this file will be used to connect to the database and to the client side
-// this file will also be used to run the server and to run the game
-
+// Purpose: Server for Oregon Trail Game
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -21,12 +18,12 @@ toptenList.topTen();
 const topTenController = require("./Controllers/topTenController");
 const gameController = require("./Controllers/gameController");
 const setupController = require("./Controllers/setupController");
-const {post} = require("axios");
 
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json({type:'application/json'}));
-app.use(bodyParser.json());
+
+
 app.get("/message", (req, res) => {
     res.json({ message: "Welcome to the Oregon Trail" });
 });
@@ -44,10 +41,8 @@ app.route('/api/getAllPaces')
     .get(gameController.paces);
 app.route('/api/terrain')
     .get(gameController.newterrain);
-app.route('/api/setup/updatePlayer')
-    .get(setupController.saveGameData)
-    .post(setupController.saveGameData)
-
+app.route('/api/setup/createPlayer')
+    .put(setupController.setupPlayerData)
 
 app.get('/', function (req, res) {
     res.sendFile('index.html', {root: './client/views' })

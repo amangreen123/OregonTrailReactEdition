@@ -55,11 +55,11 @@ exports.resetGame = function(req, res) {
 
     startGameData.playerStatus = ["", "", "", "", ""];
 
-    startGameData.playerProfession = [""];
+    startGameData.playerProfession = "";
 
     startGameData.playerMoney = 0;
 
-    startGameData.startMonth =[""];
+    startGameData.startMonth ="";
 
     res.setHeader('Content-Type', 'application/json');
     res.send(startGameData)
@@ -72,8 +72,11 @@ exports.updateGame = function(req, res) {
 
     startGameData.paces = pace.getAllPaces();
 
+
     startGameData.groupHealth += startGameData.paces.healthChange;
 
+    //why is miles traveled being null?
+    console.log("miles traveled: ", startGameData.milesTraveled);
     startGameData.milesTraveled = startGameData.milesTraveled + (startGameData.currentWeather.miles * startGameData.currentPace.miles);
 
     startGameData.groupHealth += startGameData.currentPace.healthChange;
