@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import "../components/global.css";
 import {useDispatch} from "react-redux";
 import axios from 'axios';
+import bg from "../images/gettyimages-3090888-2.jpg";
 
 function GameScreen2() {
     const [leaderName, setleaderName] = useState('');
@@ -47,8 +49,8 @@ function GameScreen2() {
     }
 
     return (
-        <div>
-            <p>What is the name of the leader?</p>
+        <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>
+            <h1>What is the name of the leader?</h1>
             <label>
                 Leader Name:
                 <input onChange={(event)=>{

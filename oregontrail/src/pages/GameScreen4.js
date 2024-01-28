@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import bg from "../images/gettyimages-3090888-2.jpg";
 
 const GameScreen4 = () => {
     const [startMonth, setStartMonth] = useState("");
@@ -45,7 +46,7 @@ const GameScreen4 = () => {
     }
 
     return (
-        <div>
+        <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>
             <p>Which month would you like to leave</p>
             <ol id="setupQuestions2">
                 <li id="March" onClick={updateMonth}>March</li>

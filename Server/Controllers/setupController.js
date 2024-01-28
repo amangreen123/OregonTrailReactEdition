@@ -7,7 +7,7 @@ const pg = require('pg').Pool;
 const db = new pg({
     user: 'postgres',
     host: 'localhost',
-    database: 'oregontrail',
+    database: 'oregontrail_data',
     password: 'Cyberpunk2077',
     port: 5432,
 });
@@ -19,11 +19,16 @@ exports.setupPlayerData = function(req, res) {
     const playerProfession = req.body.playerProfession;
     const playerMoney = req.body.playerMoney;
     const startMonth = req.body.startMonth;
+    const groupmembers = req.body.playerNames;
 
     const query = {
-        text: 'INSERT INTO playerdata(playername, playerprofession, playermoney, startmonth) VALUES($1, $2, $3, $4)',
-        values: [playerName, playerProfession, playerMoney, startMonth],
+        //text: 'INSERT INTO playerdata(playername, playerprofession, playermoney, startmonth, groupmembers) VALUES($1, $2, $3, $4, $5) ON CONFLICT (playername) DO UPDATE SET playername = $1, playerprofession = $2, playermoney = $3, startmonth = $4, groupmembers = $5',
+        //text: 'INSERT INTO playerdata(playername, playerprofession, playermoney, startmonth, groupmembers) VALUES($1, $2, $3, $4, $5) RETURNING *',
+        //text: 'INSERT INTO playerdata(playername, playerprofession, playermoney, startmonth, groupmembers) VALUES($1, $2, $3, $4, $5)',
+
+        
     }
+
 
     db.query(query, (err, dbRes) => {
         if (err) {
@@ -39,7 +44,7 @@ exports.setupPlayerData = function(req, res) {
             startGameData.playerMoney = req.body.playerMoney
             startGameData.startMonth = req.body.startMonth;
         }
-          
+
         res.setHeader('Content-Type', 'application/json');
         res.send(startGameData);
 

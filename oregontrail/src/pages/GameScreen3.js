@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import {useDispatch,useSelector} from "react-redux";
+import bg from "../images/gettyimages-3090888-2.jpg";
 
 const GameScreen3 = () => {
 
@@ -66,7 +67,7 @@ const GameScreen3 = () => {
     }
 
     return (
-        <div>
+        <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>
             <p>What are the names of the Wagon Party</p>
             Player Name: <input name="player1" type="text" onChange={handleGroupNameChange}/><br/>
             Player Name: <input name="player2" type="text" onChange={handleGroupNameChange}/><br/>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSelector} from "react-redux";
+import bg from "../images/gettyimages-3090888-2.jpg";
 
 
 const GameScreen5 = () => {
@@ -9,7 +10,7 @@ const GameScreen5 = () => {
     const startMonth = useSelector((state) => state.startMonth);
     console.log("Redux State:", useSelector((state) => state));
     return (
-        <div>
+        <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>
             <p>Here is the information you put in.</p>
             <ul>
                 <li>Leader's Profession: {playerProfession}</li>

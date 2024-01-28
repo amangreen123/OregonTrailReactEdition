@@ -3,7 +3,6 @@ import "../components/global.css";
 import {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import axios from "axios";
-import Navigation from "../components/Navigation";
 
 const GameScreen1 = () => {
 
@@ -63,7 +62,7 @@ const GameScreen1 = () => {
     }
 
     return (
-        <div>
+        <div >
             <p>Choose your Profession.</p>
             <p>You may:</p>
             <ol id="setupQuestions1">
@@ -74,7 +73,6 @@ const GameScreen1 = () => {
             </ol>
             <div>You Have Chosen {playerProfession} You have this Amount of Money {playerMoney}</div>
             <button onClick={event => window.location.href="/GameScreen2"}> Next Page </button>
-            <Navigation />
         </div>
     );
 };
