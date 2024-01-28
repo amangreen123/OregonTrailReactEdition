@@ -17,6 +17,7 @@ const oregonTrailReducer = (state = initialState, action) => {
         return {
             ...state,
             playerProfession: action.payload.playerProfession,
+            playerMoney: action.payload.playerMoney,
         };
     }
     if (action.type === "updatePlayerName") {

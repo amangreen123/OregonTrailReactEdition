@@ -2,7 +2,7 @@ import React from 'react';
 import "../components/global.css";
 import {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
-import axios from "axios";
+
 
 const GameScreen1 = () => {
 
@@ -13,30 +13,17 @@ const GameScreen1 = () => {
     console.log("Redux State:", useSelector((state) => state));
 
     const updatePlayerData = async () => {
-        try {
-          const response = await axios.put("http://localhost:8000/api/setup/createPlayer", {
-              playerProfession: playerProfession,
-              playerMoney: playerMoney,
-          });
-            console.log("Player Profession:", response.data.playerProfession);
-            console.log("Player Money:", response.data.playerMoney);
-            console.log("StatusCode:",response.status);
-            console.log("Response:", response.data);
+        dispatch({
+            type: "updatePlayerData",
+            payload: {playerProfession: playerProfession, playerMoney: playerMoney},
+        });
+    }
 
-            dispatch({
-                type: "updatePlayerData",
-                payload: { playerProfession: response.data.playerProfession, playerMoney: response.data.playerMoney },
-            });
-
-        } catch (error) {
-            console.error("Error fetching setup data:", error);
-        }
-    };
     useEffect(() => {
-        if(playerProfession !== "" && playerMoney !== 0){
-            updatePlayerData().then(r => console.log("Updated Player Data"));
+        if(playerProfession !== "" && playerMoney !== 0) {
+            updatePlayerData();
         }
-    }, [playerProfession, playerMoney]);
+    }, [playerProfession, playerMoney, dispatch]);
 
     const handleProfession = (e) => {
         switch (e) {
@@ -57,8 +44,11 @@ const GameScreen1 = () => {
     }
 
     const playerSubmit = () => {
-        console.log(playerProfession);
-        console.log(playerMoney);
+        if (playerProfession === "") {
+            alert("Please select a profession")
+            return;
+        }
+        updatePlayerData();
     }
 
     return (

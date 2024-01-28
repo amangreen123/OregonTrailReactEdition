@@ -9,9 +9,7 @@ function GameScreen2() {
     const dispatch = useDispatch();
 
     const handleNameChange = (event) => {
-
         setleaderName(event.target.value);
-        //console.log("Leader Name:", text)
     };
 
     const updatePlayerName = async () => {

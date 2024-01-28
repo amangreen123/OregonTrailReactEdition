@@ -14,85 +14,73 @@ const db = new pg({
 
 db.connect();
 
-exports.setupPlayerData = function(req, res) {
+exports.setupPlayerData = function (req, res) {
     const playerName = req.body.playerName;
     const playerProfession = req.body.playerProfession;
     const playerMoney = req.body.playerMoney;
     const startMonth = req.body.startMonth;
     const groupmembers = req.body.playerNames;
 
-    // const query = {
-    //     //text: 'INSERT INTO playerdata(playername, playerprofession, playermoney, startmonth, groupmembers) VALUES($1, $2, $3, $4, $5) ON CONFLICT (playername) DO UPDATE SET playername = $1, playerprofession = $2, playermoney = $3, startmonth = $4, groupmembers = $5',
-    //     text: 'INSERT INTO playerdata(playername, playerprofession, playermoney, startmonth, groupmembers) VALUES($1, $2, $3, $4, $5) RETURNING *',
-    //     //text: 'INSERT INTO playerdata(playername, playerprofession, playermoney, startmonth, groupmembers) VALUES($1, $2, $3, $4, $5)',
-    //     //text: 'UPDATE playerdata SET playername = $1, playerprofession = $2, playermoney = $3, startmonth = $4, groupmembers = $5 WHERE playername = $1 RETURNING *',
-    //     values: [playerName, playerProfession, playerMoney, startMonth, groupmembers]
-    // }
 
     const existingRowQuery = {
         text: 'SELECT * FROM playerdata WHERE playername = $1',
         values: [playerName]
-    }
+    };
 
     db.query(existingRowQuery, (err, dbRes) => {
         if (err) {
-            console.log(err.stack)
+            console.error(err.stack);
+            res.status(500).send('Error checking existing player data');
         } else {
-            if(dbRes.rows.length > 0){
+            if (dbRes.rows.length > 0) {
                 console.log("Player exists, updating row");
+                //ROW EXISTS, UPDATE ROW
                 const updateQuery = {
-                    text: 'UPDATE playerdata SET playername = $1, playerprofession = $2, playermoney = $3, startmonth = $4, groupmembers = $5 WHERE playername = $1 RETURNING *',
+                    text: 'UPDATE playerdata SET playerprofession = $2, playermoney = $3, startmonth = $4, groupmembers = $5 WHERE playername = $1 RETURNING *',
                     values: [playerName, playerProfession, playerMoney, startMonth, groupmembers]
-                }
-                db.query(updateQuery, (err, dbRes) => {
-                    if (err) {
-                        console.log(err.stack)
-                    } else {
-                        console.log(dbRes.rows)
-                        startGameData.playerNames = [playerName];
-                        startGameData.playerNames = startGameData.playerNames.concat(req.body.playerNames);
-                        console.log("Player Names: ", startGameData.playerNames);
-                        startGameData.playerProfession = req.body.playerProfession;
-                        console.log("Player Profession: ", startGameData.playerProfession);
-                        startGameData.playerStatus = ["Alive", "Alive", "Alive", "Alive", "Alive"];
-                        startGameData.playerMoney = req.body.playerMoney
-                        startGameData.startMonth = req.body.startMonth;
-                    }
+                };
+
+                db.query(updateQuery, (err, updateRes) => {
+                    handleQueryResult(err, updateRes, res);
                 });
             } else {
+                //ROW DOES NOT EXIST, CREATE ROW
                 console.log("Player does not exist, creating new row");
                 const insertQuery = {
                     text: 'INSERT INTO playerdata(playername, playerprofession, playermoney, startmonth, groupmembers) VALUES($1, $2, $3, $4, $5) RETURNING *',
                     values: [playerName, playerProfession, playerMoney, startMonth, groupmembers]
-                }
-                db.query(insertQuery,updateQuery);
+                };
+
+                db.query(insertQuery, (err, insertRes) => {
+                    handleQueryResult(err, insertRes, res);
+                });
             }
         }
     });
 
-    function updateQuery(err, dbRes){
-        if (err){
-            console.log(err.stack)
-            dbRes.status(500).send('Error updating player data');
-        }else{
-            console.log(dbRes.rows)
+    function handleQueryResult(err, dbRes, res) {
+        if (err) {
+            console.error(err.stack);
+            res.status(500).send('Error processing player data');
+        } else {
+            console.log(dbRes.rows);
+            startGameData.playerNames = [playerName];
+            startGameData.playerNames = startGameData.playerNames.concat(req.body.playerNames);
+            console.log("Player Names: ", startGameData.playerNames);
+            startGameData.playerProfession = req.body.playerProfession;
+            console.log("Player Profession: ", startGameData.playerProfession);
+            startGameData.playerStatus = ["Alive", "Alive", "Alive", "Alive", "Alive"];
+            startGameData.playerMoney = req.body.playerMoney;
+            startGameData.startMonth = req.body.startMonth;
+
+            res.setHeader('Content-Type', 'application/json');
+            res.send(startGameData);
+        }
     }
+};
 
 
-        res.setHeader('Content-Type', 'application/json');
-        res.send(startGameData);
-}
-}
 
-
-// db.query("SELECT * FROM playerdata", (err, res) => {
-//    if (err) {
-//         console.log(err.stack)
-//     } else {
-//          console.log(res.rows)
-//    }
-//     db.end();
-//  });
 
 // const requiredFields = ['playerNames','playerProfession', 'playerMoney', 'startMonth'];
 // const missingFields = requiredFields.filter(field => !startGameData[field]);
