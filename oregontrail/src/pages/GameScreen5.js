@@ -19,16 +19,24 @@ const GameScreen5 = () => {
                 playerProfession: playerProfession,
                 playerMoney: playerMoney,
                 playerName: playerName,
-                groupNames: groupNames,
+                playerNames: Array.from(groupNames),//converts object to array
                 startMonth: startMonth,
             };
+            console.log("Player Data:", playerData);
+
             const response = await axios.put("http://localhost:8000/api/setup/createPlayer", playerData);
-            } catch (error) {
-            console.error("Error fetching setup data:", error);
+
+            if (response.status === 200) {
+                //window.location.href = "/trail";
+                console.log("Player data updated successfully");
+            }else {
+                console.error("Error updating player data", response.status);
+            }
+
+        } catch (error) {
+            console.error("Error updating player data", error);
         }
     };
-
-
 
     return (
         <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>

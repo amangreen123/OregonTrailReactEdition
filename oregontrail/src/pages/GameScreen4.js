@@ -9,16 +9,15 @@ const GameScreen4 = () => {
 
     const updateMonth = (event) => {
         const month = event.target.id;
-
-        dispatch({
-            type: 'updateStartMonth',
-            payload: { startMonth: month },
-        });
+        setStartMonth(month); // Update the local state
     };
 
     useEffect(() => {
         if (startMonth !== '') {
-            updateMonth();
+            dispatch({
+                type: 'updateStartMonth',
+                payload: { startMonth },
+            });
         }
     }, [startMonth, dispatch]);
 
@@ -27,21 +26,11 @@ const GameScreen4 = () => {
             alert('Please select a month');
             return;
         }
-        updateMonth();
         window.location.href = '/GameScreen5';
     };
 
     return (
-        <div
-            className="setup"
-            style={{
-                backgroundImage: `url(${bg})`,
-                backgroundRepeat: 'no-repeat',
-                height: '1000px',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-            }}
-        >
+        <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: 'no-repeat', height: '1000px', backgroundSize: 'cover', backgroundPosition: 'center',}}>
             <p>Which month would you like to leave</p>
             <ol id="setupQuestions2">
                 <li id="March" onClick={updateMonth}>

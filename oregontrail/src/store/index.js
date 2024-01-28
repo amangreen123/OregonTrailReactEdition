@@ -1,11 +1,6 @@
 import {createStore} from "redux";
 
-const initialState = { playerName: "", groupNames: {
-        player1: "",
-        player2: "",
-        player3: "",
-        player4: "",
-    },
+const initialState = { playerName: "", groupNames: [], playerMoney: 0,
     Month: "",
     playerProfession: ""
 };
@@ -40,9 +35,6 @@ const oregonTrailReducer = (state = initialState, action) => {
     }
     return state;
 };
-
-// const store = createStore(oregonTrailReducer , window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(
-// ));
 
 const loadState = () => {
     try {
