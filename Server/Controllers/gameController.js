@@ -35,6 +35,7 @@ exports.allWeather = function(req,res){
 }
 
 
+
 exports.resetGame = function(req, res) {
 //resets all game data
     startGameData.groupHealth = 100;
@@ -65,11 +66,11 @@ exports.updateGame = async function (req, res) {
         startGameData.currentTerrain = await terrain.getRandomTerrain();
 
         const terrainToWeatherMap = {
-            "Plains": weather.getPlainWeather(),
-            "Mountains": weather.getMountainWeather(),
-            "Desert": weather.getDesertWeather(),
-            "Forest": weather.getForestWeather(),
-            "Grassland": weather.getGrasslandWeather()
+            Plains: weather.getPlainWeather(),
+            Mountains: weather.getMountainWeather(),
+            Desert: weather.getDesertWeather(),
+            Forest: weather.getForestWeather(),
+            Grassland: weather.getGrasslandWeather(),
         };
 
         // Get the selected pace from the client
@@ -86,67 +87,48 @@ exports.updateGame = async function (req, res) {
             return;
         }
 
-        // Set the current pace in the game data
+        // Update specific properties in the game data based on selected pace
+        startGameData.groupHealth += selectedPaceData.healthChange;
+        startGameData.milesTraveled += startGameData.currentWeather.miles * selectedPaceData.miles;
         startGameData.currentPace = selectedPaceData;
 
         startGameData.currentWeather = weather.getRandomWeather(terrainToWeatherMap[startGameData.currentTerrain.name]);
 
-        startGameData.groupHealth += selectedPaceData.healthChange;
-
-        startGameData.milesTraveled = startGameData.milesTraveled + (startGameData.currentWeather.miles * selectedPaceData.miles);
-
-        startGameData.groupHealth += selectedPaceData.healthChange;
-
+        // Determine and update message based on game progress
         if (startGameData.milesTraveled > 500 && startGameData.daysOnTrail < 45) {
             startGameData.message = "You Won!";
         } else {
-            startGameData.message = "";
-        }
+            if (startGameData.daysOnTrail < 45) {
+                startGameData.daysOnTrail += 1;
+            } else {
+                startGameData.message = "Your party is lost in the snowy mountains and has eaten each other.";
+            }
 
-        // Every time the game updates, a day is recorded
-        if (startGameData.daysOnTrail < 45) {
-            startGameData.daysOnTrail += 1;
-        } else {
-            startGameData.message = "Your party is lost in the snowy mountains and has eaten each other.";
-        }
-
-        // If health goes over 100, don't allow it
-        if (startGameData.groupHealth > 100) {
-            startGameData.groupHealth = 100;
-        }
-
-        // Determine message based on group health
-        if (startGameData.groupHealth <= 100 && startGameData.groupHealth >= 80) {
-            startGameData.message = "good";
-        } else if (startGameData.groupHealth < 80 && startGameData.groupHealth >= 50) {
-            startGameData.message = "fair";
-        } else if (startGameData.groupHealth < 50 && startGameData.groupHealth >= 20) {
-            startGameData.message = "poor";
-
-            for (let i = 0; i < 5; i++) {
-                const chance = Math.floor(Math.random() * 100) + 1;
-
-                if (chance <= 3) {
+            // Update group health and message based on health status
+            if (startGameData.groupHealth > 100) {
+                startGameData.groupHealth = 100;
+            } else if (startGameData.groupHealth <= 100 && startGameData.groupHealth >= 80) {
+                startGameData.message = "good";
+            } else if (startGameData.groupHealth < 80 && startGameData.groupHealth >= 50) {
+                startGameData.message = "fair";
+            } else if (startGameData.groupHealth < 50 && startGameData.groupHealth >= 20) {
+                startGameData.message = "poor";
+                // Update player status based on chance
+                for (let i = 0; i < 5; i++) {
+                    const chance = Math.floor(Math.random() * 100) + 1;
+                    if (chance <= 3) {
+                        startGameData.playerStatus[i] = "Dead";
+                    }
+                }
+            } else {
+                startGameData.message = "Everyone is dead";
+                for (let i = 0; i < 5; i++) {
                     startGameData.playerStatus[i] = "Dead";
                 }
             }
-        } else if (startGameData.groupHealth < 20 && startGameData.groupHealth > 0) {
-            startGameData.message = "very poor";
-
-            for (let i = 0; i < 5; i++) {
-                const chance = Math.floor(Math.random() * 100) + 1;
-                if (chance <= 10) {
-                    startGameData.playerStatus[i] = "Dead";
-                }
-            }
-        } else {
-            startGameData.message = "Everyone is dead";
-            for (let i = 0; i < 5; i++) {
-                startGameData.playerStatus[i] = "Dead";
-            }
         }
 
-        res.setHeader('Content-Type', 'application/json');
+        res.setHeader("Content-Type", "application/json");
         res.send(startGameData);
     } catch (error) {
         console.error("Error updating game data:", error);

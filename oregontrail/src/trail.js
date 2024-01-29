@@ -55,6 +55,11 @@ function Trail() {
     };
 
     const updateGame = async () => {
+        if (!isPaceSelected) {
+            alert("Please select a pace");
+            return;
+        }
+
         try {
             const response = await axios.get("http://localhost:8000/api/updateGame", {
                 params: {
@@ -71,15 +76,10 @@ function Trail() {
                 milesTraveled: updatedGameState.milesTraveled,
                 daysOnTrail: updatedGameState.daysOnTrail,
                 message: updatedGameState.message,
-                playerNames: updatedGameState.playerNames,
-                playerStatus: updatedGameState.playerStatus,
-                playerProfession: updatedGameState.playerProfession,
-                playerMoney: updatedGameState.playerMoney,
-                startMonth: updatedGameState.startMonth,
-                pace: updatedGameState.pace,
                 weatherConditions: updatedGameState.currentWeather.type,
                 terrain: updatedGameState.currentTerrain.name,
                 image: updatedGameState.currentTerrain.imageUrl,
+                pace: updatedGameState.pace,
             }));
 
             setShowResetGame(false);
@@ -121,21 +121,23 @@ function Trail() {
                 },
             });
 
-            setGameState({
+            // Update specific properties of gameState instead of replacing the entire object
+            setGameState((prevState) => ({
+                ...prevState,
                 groupHealth: response.data.groupHealth,
                 milesTraveled: response.data.milesTraveled,
                 daysOnTrail: response.data.daysOnTrail,
                 message: response.data.message,
-                playerNames: response.data.playerNames,
-                playerStatus: response.data.playerStatus,
-                playerProfession: response.data.playerProfession,
-                playerMoney: response.data.playerMoney,
-                startMonth: response.data.startMonth,
-                pace: response.data.pace,
+                // Preserve player names and professions
+                playerNames: prevState.playerNames,
+                playerProfession: prevState.playerProfession,
+                playerMoney: prevState.playerMoney,
+                startMonth: prevState.startMonth,
+                pace: "", // Reset selected pace
                 weatherConditions: response.data.currentWeather.type,
                 terrain: response.data.currentTerrain.name,
                 image: response.data.currentTerrain.imageUrl,
-            });
+            }));
 
             setShowResetGame(true);
 
@@ -146,9 +148,17 @@ function Trail() {
     };
 
     return (
-        <div className="trail" style={{ backgroundImage: `url(${gameState.image})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center", position: "relative", zIndex: -1 }}>
+        <div className="trail" style={{
+            backgroundImage: `url(${gameState.image})`,
+            backgroundRepeat: "no-repeat",
+            height: "1000px",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "relative",
+            zIndex: -1
+        }}>
             <h1>Oregon Trail</h1>
-            {gameState.playerNames?.length >= 1 && (
+            {gameState.playerNames?.length >= 5 && (
                 <div>
                     <p>Leader Name: {gameState.playerNames[0]}</p>
                     <p>Player Names: {gameState.playerNames.slice(1).join(", ")}</p>
@@ -158,7 +168,7 @@ function Trail() {
             <p>Player Profession: {gameState.playerProfession}</p>
             <p>Player Money: {gameState.playerMoney}</p>
             <p>Start Month: {gameState.startMonth}</p>
-            <p>Pace: {gameState.pace} </p>
+            <p>Pace: {isPaceSelected ? gameState.pace : "Select a pace"} </p>
             <p>Group Health: {gameState.groupHealth}</p>
             <p>Miles Traveled: {gameState.milesTraveled}</p>
             <p>Days On Trail: {gameState.daysOnTrail}</p>
