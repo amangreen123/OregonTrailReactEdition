@@ -14,6 +14,47 @@ const db = new pg({
 
 db.connect();
 
+exports.getgameData = function(req, res)
+{
+    try {
+        const response = db.query('SELECT * FROM playerdata ORDER BY id DESC LIMIT 1', (error, result) => {
+
+            if (error) {
+                console.error("Error fetching player data:", error);
+                res.status(500).send({
+                    message: "Error fetching player data",
+                });
+            } else {
+                console.log("Player data fetched successfully");
+                const initialGameState = result.rows[0];
+
+                const groupMembersArray = initialGameState.groupmembers.split(",").map(name => name.trim());
+                startGameData.playerNames = [
+                    initialGameState.playername,
+                    ...groupMembersArray
+                ];
+
+                console.log("Player Names: ", startGameData.playerNames);
+
+                startGameData.playerProfession = initialGameState.playerprofession;
+                startGameData.playerMoney = initialGameState.playermoney;
+                startGameData.startMonth = initialGameState.startmonth;
+                startGameData.playerStatus =["Alive", "Alive", "Alive", "Alive"];
+
+                res.setHeader('Content-Type', 'application/json');
+                res.status(200).send(startGameData);
+            }
+        }
+        );
+    } catch (error) {
+        console.error("Error fetching player data:", error);
+        res.status(500).send({
+            message: "Error fetching player data",
+        });
+    }
+
+};
+
 exports.setupPlayerData = function (req, res) {
     const playerName = req.body.playerName;
     const playerProfession = req.body.playerProfession;

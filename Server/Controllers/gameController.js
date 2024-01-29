@@ -34,12 +34,6 @@ exports.allWeather = function(req,res){
     res.send(weather.newWeather())
 }
 
-exports.getgameData = function(req, res) {
-    res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Access-Control-Allow-Origin', "*");
-    res.send(startGameData);
-}
-
 
 exports.resetGame = function(req, res) {
 //resets all game data
@@ -53,21 +47,20 @@ exports.resetGame = function(req, res) {
 
     startGameData.playerNames = ["", "", "", "", ""];
 
-    startGameData.playerStatus = ["", "", "", "", ""];
+    startGameData.playerStatus = ["Alive", "Alive", "Alive", "Alive", "Alive"];
 
     startGameData.playerProfession = "";
 
     startGameData.playerMoney = 0;
 
-    startGameData.startMonth ="";
+    startGameData.startMonth = "";
 
     res.setHeader('Content-Type', 'application/json');
     res.send(startGameData)
 }
 
-exports.updateGame = function(req, res) {
-
-    //Ensures randomization of terrain and weather
+exports.updateGame = function (req, res) {
+    // Ensure randomization of terrain and weather
     startGameData.currentTerrain = terrain.getRandomTerrain();
 
     const terrainToWeatherMap = {
@@ -76,76 +69,74 @@ exports.updateGame = function(req, res) {
         "Desert": weather.getDesertWeather(),
         "Forest": weather.getForestWeather(),
         "Grassland": weather.getGrasslandWeather()
-    }
+    };
+
+    // Get the selected pace from the client
+    const selectedPace = req.query.pace;
+
+    // Use the selected pace to retrieve the corresponding pace data
+    const selectedPaceData = pace.getAllPaces().find(p => p.name === selectedPace);
+
+    // Set the current pace in the game data
+    startGameData.currentPace = selectedPaceData;
 
     startGameData.currentWeather = weather.getRandomWeather(terrainToWeatherMap[startGameData.currentTerrain.name]);
 
-    startGameData.paces = pace.getAllPaces();
-    console.log("The current pace" + startGameData.paces.name)
+    startGameData.groupHealth += selectedPaceData.healthChange;
 
-    startGameData.groupHealth += startGameData.paces.healthChange;
+    startGameData.milesTraveled = startGameData.milesTraveled + (startGameData.currentWeather.miles * selectedPaceData.miles);
 
-    startGameData.milesTraveled = startGameData.milesTraveled + (startGameData.currentWeather.miles * startGameData.currentPace.miles);
+    startGameData.groupHealth += selectedPaceData.healthChange;
 
-    startGameData.groupHealth += startGameData.currentPace.healthChange;
-
-    if(startGameData.milesTraveled > 500 && startGameData.daysOnTrail < 45 ) {
-
-        startGameData.message = "You Won!"
-
+    if (startGameData.milesTraveled > 500 && startGameData.daysOnTrail < 45) {
+        startGameData.message = "You Won!";
     } else {
         startGameData.message = "";
     }
-    // every time the game updates a day is recorded
+
+    // Every time the game updates, a day is recorded
     if (startGameData.daysOnTrail < 45) {
         startGameData.daysOnTrail += 1;
     } else {
         startGameData.message = "Your party is lost in the snowy mountains and has eaten each other.";
     }
 
-    //if health happens to go over dont allow it
-    if (startGameData.groupHealth > 100){
+    // If health goes over 100, don't allow it
+    if (startGameData.groupHealth > 100) {
         startGameData.groupHealth = 100;
-    } else {
     }
 
-    if (startGameData.groupHealth <= 100 && startGameData.groupHealth >= 80){
-
+    // Determine message based on group health
+    if (startGameData.groupHealth <= 100 && startGameData.groupHealth >= 80) {
         startGameData.message = "good";
-
-    } else if (startGameData.groupHealth < 80 && startGameData.groupHealth >= 50){
+    } else if (startGameData.groupHealth < 80 && startGameData.groupHealth >= 50) {
         startGameData.message = "fair";
-
-    } else if (startGameData.groupHealth < 50 && startGameData.groupHealth >= 20){
-
+    } else if (startGameData.groupHealth < 50 && startGameData.groupHealth >= 20) {
         startGameData.message = "poor";
 
-        for (i = 0; i < 5; i++){
-            var chance = Math.floor(Math.random() * 100) + 1;
+        for (let i = 0; i < 5; i++) {
+            const chance = Math.floor(Math.random() * 100) + 1;
 
-            if (chance <= 3){
+            if (chance <= 3) {
                 startGameData.playerStatus[i] = "Dead";
-            } else{
             }
         }
-
-    } else if (startGameData.groupHealth < 20 && startGameData.groupHealth > 0){
+    } else if (startGameData.groupHealth < 20 && startGameData.groupHealth > 0) {
         startGameData.message = "very poor";
 
-        for (i = 0; i < 5; i++){
+        for (let i = 0; i < 5; i++) {
             const chance = Math.floor(Math.random() * 100) + 1;
-            if (chance <= 10){
+            if (chance <= 10) {
                 startGameData.playerStatus[i] = "Dead";
-            } else {
             }
         }
-    }else{
+    } else {
         startGameData.message = "Everyone is dead";
-        for (i = 0; i < 5; i++){
+        for (let i = 0; i < 5; i++) {
             startGameData.playerStatus[i] = "Dead";
         }
-
     }
+
     res.setHeader('Content-Type', 'application/json');
     res.send(startGameData);
-}
+};

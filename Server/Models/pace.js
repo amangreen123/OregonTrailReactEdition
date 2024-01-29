@@ -16,8 +16,6 @@ paces.push(new allPaces("Resting",0,5));
 
 function currentPace (){
 
-    return paces[Math.floor(Math.random()*paces.length)];
+    return paces;
 }
-exports.getAllPaces = function() {
-    return currentPace();
-}
+exports.getAllPaces = currentPace;

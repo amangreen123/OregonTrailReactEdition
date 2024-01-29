@@ -32,7 +32,7 @@ app.route('/api/topTen')
     .get(topTenController.getCurrentScores)
     .post(topTenController.saveTopScore)
 app.route('/api/setup/player')
-    .get(gameController.getgameData);
+    .get(setupController.getgameData);
 app.route('/api/updateGame')
     .get(gameController.updateGame);
 app.route('/api/resetGame')
