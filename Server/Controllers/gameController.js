@@ -66,17 +66,25 @@ exports.resetGame = function(req, res) {
 }
 
 exports.updateGame = function(req, res) {
+
+    //Ensures randomization of terrain and weather
     startGameData.currentTerrain = terrain.getRandomTerrain();
 
-    startGameData.currentWeather = weather.getRandomWeather();
+    const terrainToWeatherMap = {
+        "Plains": weather.getPlainWeather(),
+        "Mountains": weather.getMountainWeather(),
+        "Desert": weather.getDesertWeather(),
+        "Forest": weather.getForestWeather(),
+        "Grassland": weather.getGrasslandWeather()
+    }
+
+    startGameData.currentWeather = weather.getRandomWeather(terrainToWeatherMap[startGameData.currentTerrain.name]);
 
     startGameData.paces = pace.getAllPaces();
-
+    console.log("The current pace" + startGameData.paces.name)
 
     startGameData.groupHealth += startGameData.paces.healthChange;
 
-    //why is miles traveled being null?
-    console.log("miles traveled: ", startGameData.milesTraveled);
     startGameData.milesTraveled = startGameData.milesTraveled + (startGameData.currentWeather.miles * startGameData.currentPace.miles);
 
     startGameData.groupHealth += startGameData.currentPace.healthChange;

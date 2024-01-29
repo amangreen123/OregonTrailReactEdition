@@ -27,7 +27,7 @@ const GameScreen5 = () => {
             const response = await axios.put("http://localhost:8000/api/setup/createPlayer", playerData);
 
             if (response.status === 200) {
-                //window.location.href = "/trail";
+                window.location.href = "/trail";
                 console.log("Player data updated successfully");
             }else {
                 console.error("Error updating player data", response.status);
