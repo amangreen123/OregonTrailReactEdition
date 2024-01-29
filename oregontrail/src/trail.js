@@ -83,6 +83,7 @@ function Trail() {
                 startMonth: prevState.startMonth,
                 playerProfession: prevState.playerProfession,
                 playerMoney: prevState.playerMoney,
+                playerStatus: updatedGameState.playerStatus,
             }));
 
             setShowResetGame(false);
@@ -148,22 +149,6 @@ function Trail() {
                 terrain: "",
                 image: "",
             });
-            // setGameState((prevState) => ({
-            //     ...prevState,
-            //     groupHealth: response.data.groupHealth,
-            //     milesTraveled: response.data.milesTraveled,
-            //     daysOnTrail: response.data.daysOnTrail,
-            //     message: response.data.message,
-            //     // Preserve player names and professions
-            //     playerNames: prevState.playerNames,
-            //     playerProfession: prevState.playerProfession,
-            //     playerMoney: prevState.playerMoney,
-            //     startMonth: prevState.startMonth,
-            //     pace: "", // Reset selected pace
-            //     weatherConditions: response.data.currentWeather.type,
-            //     terrain: response.data.currentTerrain.name,
-            //     image: response.data.currentTerrain.imageUrl,
-            // }));
 
             setShowResetGame(true);
             window.location.href = "http://localhost:3000/";
@@ -184,7 +169,7 @@ function Trail() {
                     <p>Player Names: {gameState.playerNames.slice(1).join(", ")}</p>
                 </div>
             )}
-            <p className>Player Status: {gameState.playerStatus}</p>
+            <p>Player Status: {gameState.playerStatus}</p>
             <p>Player Profession: {gameState.playerProfession}</p>
             <p>Player Money: {gameState.playerMoney}</p>
             <p>Start Month: {gameState.startMonth}</p>

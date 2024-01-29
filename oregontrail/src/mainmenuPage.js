@@ -13,10 +13,12 @@ function MainmenuPage (){
 
 
     return(
+        //make the background cover the whole page
+        //make the background image not repeat
         <div className="App" style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
             <body>
             <ol>
-                <h1>This is the beginning of amazing journey...</h1>
+                <h1 className= "App">This is the beginning of amazing journey...</h1>
                 <h1>Of The Oregon Trail</h1>
                 <h1>Choose one of the Options</h1>
                 <p>1. Travel the trail</p>
