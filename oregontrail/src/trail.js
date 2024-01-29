@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./trail.css";
 
+
 function Trail() {
     const initialState = {
         groupHealth: 100,
@@ -66,33 +67,29 @@ function Trail() {
                     pace: selectedPace,
                 },
             });
-
-            const updatedGameState = response.data;
-
             setGameState({
-                groupHealth: updatedGameState.data.groupHealth,
-                milesTraveled: updatedGameState.data.milesTraveled,
-                daysOnTrail: updatedGameState.data.daysOnTrail,
-                message: updatedGameState.data.message,
-                playerNames: updatedGameState.data.playerNames,
-                playerStatus: updatedGameState.data.playerStatus,
-                playerProfession: updatedGameState.data.playerProfession,
-                playerMoney: updatedGameState.data.playerMoney,
-                startMonth: updatedGameState.data.startMonth,
-                pace: updatedGameState.data.pace,
-                weatherConditions: updatedGameState.data.currentWeather.type,
-                terrain: updatedGameState.data.currentTerrain.name,
-                image: updatedGameState.data.currentTerrain.imageUrl,
+                groupHealth: response.data.groupHealth,
+                milesTraveled: response.data.milesTraveled,
+                daysOnTrail: response.data.daysOnTrail,
+                message: response.data.message,
+                playerNames: response.data.playerNames,
+                playerStatus: response.data.playerStatus,
+                playerProfession: response.data.playerProfession,
+                playerMoney: response.data.playerMoney,
+                startMonth: response.data.startMonth,
+                pace: response.data.pace,
+                weatherConditions: response.data.currentWeather.type,
+                terrain: response.data.currentTerrain.name,
+                image: response.data.currentTerrain.imageUrl,
             });
+
             setShowResetGame(false);
-            console.log("PlayerStatus", updatedGameState.data.playerStatus);
-            console.log("Weather", updatedGameState.data.currentWeather);
-            console.log("Terrain:", updatedGameState.data.currentTerrain.imageUrl);
-            console.log("Pace:", updatedGameState.data.pace);
         } catch (error) {
             console.error("Error fetching game data:", error);
+            console.log("Error", error.response);
         }
     };
+
 
     const handlePaceClick = () => {
         if (isPaceSelected) {
@@ -173,7 +170,7 @@ function Trail() {
             {gameState.playerNames?.length >= 5 && (
                 <div>
                     <p>Leader Name: {gameState.playerNames[0]}</p>
-                    <p>Group Members: {gameState.playerNames.slice(1, 5).join(" ")}</p>
+                    <p>Group Members: {gameState.playerNames.slice(1, 5).join("")}</p>
                 </div>
             )}
             <p>Player Status: {gameState.playerStatus}</p>

@@ -73,10 +73,16 @@ exports.updateGame = function (req, res) {
 
     // Get the selected pace from the client
     const selectedPace = req.query.pace;
-
+    console.log("Selected Pace:", selectedPace);
     // Use the selected pace to retrieve the corresponding pace data
     const selectedPaceData = pace.getAllPaces().find(p => p.name === selectedPace);
+    console.log("Selected Pace Data:", selectedPaceData);
 
+    if(selectedPaceData === undefined) {
+        console.error("Error: Selected Pace not found");
+        res.status(400).json({ error: "Selected Pace not found" });
+        return;
+    }
     // Set the current pace in the game data
     startGameData.currentPace = selectedPaceData;
 
