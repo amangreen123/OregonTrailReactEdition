@@ -29,7 +29,7 @@ function Trail() {
         fetchPlayerData();
     }, []);
 
-    onst fetchPlayerData = async () => {
+    const fetchPlayerData = async () => {
         try {
             const response = await axios.get("http://localhost:8000/api/setup/player");
             const initialGameState = response.data;
@@ -95,6 +95,7 @@ function Trail() {
             console.error("Error updating game:", error);
         }
     };
+
 
     const handlePaceClick = () => {
         if (isPaceSelected) {

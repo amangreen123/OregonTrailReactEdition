@@ -11,7 +11,7 @@ pace.getAllPaces();
 const terrain = require("./Models/terrain");
 terrain.newTerrain();
 const weather = require("./Models/weather");
-weather.newWeather();
+weather.getRandomWeather();
 const toptenList = require("./Models/topTen");
 toptenList.topTen();
 
@@ -43,6 +43,8 @@ app.route('/api/terrain')
     .get(gameController.newterrain);
 app.route('/api/setup/createPlayer')
     .put(setupController.setupPlayerData)
+app.route('/api/weather')
+    .get(gameController.randomWeather);
 
 app.get('/', function (req, res) {
     res.sendFile('index.html', {root: './client/views' })

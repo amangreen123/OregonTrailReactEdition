@@ -60,39 +60,34 @@ exports.resetGame = function(req, res) {
     res.send(startGameData)
 }
 
-exports.updateGame = async function (req, res) {
-    try {
-        // Ensure randomization of terrain and weather
-        startGameData.currentTerrain = await terrain.getRandomTerrain();
+exports.updateGame =  function (req, res) {
+        try {
+            // Ensure randomization of terrain and weather
+            startGameData.currentTerrain = terrain.getRandomTerrain();
+            startGameData.currentWeather = weather.getRandomWeather();
 
-        const terrainToWeatherMap = {
-            Plains: weather.getPlainWeather(),
-            Mountains: weather.getMountainWeather(),
-            Desert: weather.getDesertWeather(),
-            Forest: weather.getForestWeather(),
-            Grassland: weather.getGrasslandWeather(),
-        };
+            const terrainToWeatherMap = {
+                Plains: weather.getPlainWeather(),
+                Mountains: weather.getMountainWeather(),
+                Desert: weather.getDesertWeather(),
+                Forest: weather.getForestWeather(),
+                Grassland: weather.getGrasslandWeather(),
+            };
 
-        // Get the selected pace from the client
-        const selectedPace = req.query.pace;
-        console.log("Selected Pace:", selectedPace);
+            // Get the selected pace from the client
+            const selectedPace = req.query.pace;
 
-        // Use the selected pace to retrieve the corresponding pace data
-        const selectedPaceData = pace.getAllPaces().find(p => p.name === selectedPace);
-        console.log("Selected Pace Data:", selectedPaceData);
+            // Use the selected pace to retrieve the corresponding pace data
+            const selectedPaceData = pace.getAllPaces().find(p => p.name === selectedPace);
 
-        if (selectedPaceData === undefined) {
-            console.error("Error: Selected Pace not found");
-            res.status(400).json({ error: "Selected Pace not found" });
-            return;
-        }
+            // Update miles traveled based on selected pace
+            startGameData.milesTraveled += selectedPaceData && selectedPaceData.miles || 0;
 
-        // Update specific properties in the game data based on selected pace
-        startGameData.groupHealth += selectedPaceData.healthChange;
-        startGameData.milesTraveled += startGameData.currentWeather.miles * selectedPaceData.miles;
-        startGameData.currentPace = selectedPaceData;
 
-        startGameData.currentWeather = weather.getRandomWeather(terrainToWeatherMap[startGameData.currentTerrain.name]);
+            // Update specific properties in the game data based on selected pace
+            startGameData.groupHealth += selectedPaceData && selectedPaceData.healthChange || 0;
+            startGameData.currentPace = selectedPaceData;
+            startGameData.currentWeather = weather.getRandomWeather(terrainToWeatherMap[startGameData.currentTerrain.name]);
 
         // Determine and update message based on game progress
         if (startGameData.milesTraveled > 500 && startGameData.daysOnTrail < 45) {
@@ -134,4 +129,5 @@ exports.updateGame = async function (req, res) {
         console.error("Error updating game data:", error);
         res.status(500).json({ error: "Internal Server Error" });
     }
-};
+}
+
