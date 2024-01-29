@@ -1,9 +1,24 @@
-.trail{
-    background-color: #f2f2f2;
+body {
+    background-color: #c9b59d; /* Light brown background color */
+    margin: 0;
+}
+
+.trail {
+    background-color: #f4e1c1; /* Light beige background for the game area */
     padding: 20px;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Old West', cursive; /* Use a western-style font */
     text-align: center;
+}
+
+.game-header {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white; /* Change text color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+    letter-spacing: 2px; /* Increase letter spacing for a vintage look */
+    text-transform: uppercase; /* Uppercase letters for boldness */
 }
 
 .player-info {
@@ -12,7 +27,7 @@
 
 .game-map {
     height: 200px;
-    background-color: #d9d9d9;
+    background-color: #c0a18c; /* Light brown for the game map */
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
@@ -22,13 +37,13 @@
 .game-controls {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 .game-control-button {
-    background-color: #4CAF50;
+    background-color: #8B4513; /* Saddle Brown color for buttons */
     border: none;
-    color: white;
+    color: white; /* Change text color to white */
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -40,5 +55,5 @@
 }
 
 .game-control-button:hover {
-    background-color: #3e8e41;
+    background-color: #634937; /* Slightly darker brown on hover */
 }

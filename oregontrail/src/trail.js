@@ -29,14 +29,14 @@ function Trail() {
         fetchPlayerData();
     }, []);
 
-    const fetchPlayerData = async () => {
+    onst fetchPlayerData = async () => {
         try {
             const response = await axios.get("http://localhost:8000/api/setup/player");
             const initialGameState = response.data;
 
             setGameState({
                 groupHealth: initialGameState.groupHealth,
-                milesTraveled: initialGameState.milesTraveled,
+                milesTraveled: initialGameState.milesTraveled,  // Ensure correct assignment here
                 daysOnTrail: initialGameState.daysOnTrail,
                 message: initialGameState.message,
                 playerNames: initialGameState.playerNames,
@@ -80,11 +80,17 @@ function Trail() {
                 terrain: updatedGameState.currentTerrain.name,
                 image: updatedGameState.currentTerrain.imageUrl,
                 pace: updatedGameState.pace,
+                startMonth: prevState.startMonth,
+                playerProfession: prevState.playerProfession,
+                playerMoney: prevState.playerMoney,
             }));
 
             setShowResetGame(false);
 
             console.log("Updated Game State:", updatedGameState);
+            console.log("Game State:", gameState);
+            console.log("pace:", selectedPace);
+
         } catch (error) {
             console.error("Error updating game:", error);
         }
@@ -97,6 +103,10 @@ function Trail() {
             alert("Please select a pace");
         }
     };
+
+    const handleQuit = () => {
+        window.location.href = "http://localhost:3000/";
+    }
 
     const getPace = async (newPace) => {
         setSelectedPace(newPace);
@@ -121,25 +131,41 @@ function Trail() {
                 },
             });
 
-            // Update specific properties of gameState instead of replacing the entire object
-            setGameState((prevState) => ({
-                ...prevState,
-                groupHealth: response.data.groupHealth,
-                milesTraveled: response.data.milesTraveled,
-                daysOnTrail: response.data.daysOnTrail,
-                message: response.data.message,
-                // Preserve player names and professions
-                playerNames: prevState.playerNames,
-                playerProfession: prevState.playerProfession,
-                playerMoney: prevState.playerMoney,
-                startMonth: prevState.startMonth,
-                pace: "", // Reset selected pace
-                weatherConditions: response.data.currentWeather.type,
-                terrain: response.data.currentTerrain.name,
-                image: response.data.currentTerrain.imageUrl,
-            }));
+            //How to reset the game state to the initial state
+            setGameState({
+                groupHealth: 100,
+                milesTraveled: 0,
+                daysOnTrail: 0,
+                message: "",
+                playerNames: [],
+                playerStatus: "",
+                playerProfession: "",
+                playerMoney: 0,
+                startMonth: "",
+                pace: "",
+                weatherConditions: "",
+                terrain: "",
+                image: "",
+            });
+            // setGameState((prevState) => ({
+            //     ...prevState,
+            //     groupHealth: response.data.groupHealth,
+            //     milesTraveled: response.data.milesTraveled,
+            //     daysOnTrail: response.data.daysOnTrail,
+            //     message: response.data.message,
+            //     // Preserve player names and professions
+            //     playerNames: prevState.playerNames,
+            //     playerProfession: prevState.playerProfession,
+            //     playerMoney: prevState.playerMoney,
+            //     startMonth: prevState.startMonth,
+            //     pace: "", // Reset selected pace
+            //     weatherConditions: response.data.currentWeather.type,
+            //     terrain: response.data.currentTerrain.name,
+            //     image: response.data.currentTerrain.imageUrl,
+            // }));
 
             setShowResetGame(true);
+            window.location.href = "http://localhost:3000/";
 
             console.log("Reset Game State:", response.data);
         } catch (error) {
@@ -148,42 +174,41 @@ function Trail() {
     };
 
     return (
-        <div className="trail" style={{
-            backgroundImage: `url(${gameState.image})`,
-            backgroundRepeat: "no-repeat",
-            height: "1000px",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            position: "relative",
-            zIndex: -1
-        }}>
+        <div className="trail" style={{backgroundImage: `url(${gameState.image})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center", position: "relative", zIndex: -1}}>
+            <div className="game-header">
             <h1>Oregon Trail</h1>
             {gameState.playerNames?.length >= 5 && (
                 <div>
-                    <p>Leader Name: {gameState.playerNames[0]}</p>
+                    <p >Leader Name: {gameState.playerNames[0]}</p>
                     <p>Player Names: {gameState.playerNames.slice(1).join(", ")}</p>
                 </div>
             )}
-            <p>Player Status: {gameState.playerStatus}</p>
+            <p className>Player Status: {gameState.playerStatus}</p>
             <p>Player Profession: {gameState.playerProfession}</p>
             <p>Player Money: {gameState.playerMoney}</p>
             <p>Start Month: {gameState.startMonth}</p>
-            <p>Pace: {isPaceSelected ? gameState.pace : "Select a pace"} </p>
+            <p>Pace: {isPaceSelected ? selectedPace : "Select a pace"} </p>
             <p>Group Health: {gameState.groupHealth}</p>
             <p>Miles Traveled: {gameState.milesTraveled}</p>
             <p>Days On Trail: {gameState.daysOnTrail}</p>
             <p>Message: {gameState.message}</p>
+            </div>
+
             <div className="game-map">
                 <p>{gameState.terrain}</p>
                 <p>&nbsp;&nbsp;</p>
                 <p>{gameState.weatherConditions}</p>
             </div>
+
             <div className="game-controls">
                 <button className="game-control-button" onClick={handlePaceClick}>
                     Travel Trail
                 </button>
                 <button className="game-control-button" onClick={resetGame}>
                     Reset Game
+                </button>
+                <button className="game-control-button" onClick={handleQuit}>
+                    Quit Game
                 </button>
                 <div className="game-controls-pace">
                     <button className="game-control-button" onClick={() => getPace("Steady")}>
