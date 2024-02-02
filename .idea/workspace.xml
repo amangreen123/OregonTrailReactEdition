@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Sortscore.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Sortscore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +254,9 @@
       <workItem from="1706241032369" duration="66938000" />
       <workItem from="1706653183004" duration="239000" />
       <workItem from="1706842304906" duration="683000" />
-      <workItem from="1706888201028" duration="634000" />
+      <workItem from="1706888201028" duration="1591000" />
+      <workItem from="1706889906703" duration="9000" />
+      <workItem from="1706891240835" duration="1440000" />
     </task>
     <servers />
   </component>
