@@ -6,20 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Controllers/gameController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/gameController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Controllers/setupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/setupController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Models/gameData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Models/gameData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Models/pace.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Models/pace.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/oregontrailServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/oregontrailServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen2.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen3.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen4.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/setup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +25,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -49,47 +41,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.localhost:3000.executor": "Debug",
-    "Jest.Axios to adding Professions and Money.executor": "Run",
-    "Jest.Test  Leader Name.executor": "Run",
-    "Jest.Test Add Leader Name.executor": "Run",
-    "Jest.Test Group Names.Test Group Names.executor": "Run",
-    "Jest.Test Group Names.executor": "Run",
-    "Jest.Test Update Start Month.executor": "Run",
-    "Jest.Test creatPlayere API.executor": "Run",
-    "Jest.Test createPlayer.Test createPlayer.executor": "Run",
-    "Jest.Test createPlayer.executor": "Run",
-    "Jest.Test the Setup Player Model.executor": "Run",
-    "Node.js.Server.executor": "Debug",
-    "Node.js.Unnamed.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/aaron/Downloads/World+Capital+Quiz",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/Users/aaron/Desktop/OregonTrail/oregontrail/node_modules/react-scripts",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Debug",
-    "npm.start.executor": "Debug",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Debug&quot;,
+    &quot;Jest.Axios to adding Professions and Money.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Test  Leader Name.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Test Add Leader Name.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Test Group Names.Test Group Names.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Test Group Names.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Test Update Start Month.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Test creatPlayere API.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Test createPlayer.Test createPlayer.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Test createPlayer.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Test the Setup Player Model.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Server.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.Unnamed.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.trail.js.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aaron/Downloads/World+Capital+Quiz&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/aaron/Desktop/OregonTrail/oregontrail/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Debug&quot;,
+    &quot;npm.start.executor&quot;: &quot;Debug&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\pages" />
@@ -99,7 +92,7 @@
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\music" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Test createPlayer">
+  <component name="RunManager" selected="JavaScript Debug.localhost:3000">
     <configuration name="Test  Leader Name" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/oregontrail/node_modules/react-scripts" />
@@ -160,7 +153,7 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="localhost:8000" type="JavascriptDebugType">
+    <configuration name="localhost:3000" type="JavascriptDebugType" uri="http://localhost:3000/trail">
       <method v="2" />
     </configuration>
     <configuration name="Server" type="NodeJSConfigurationType" path-to-js-file="Server/oregontrailServer.js" working-dir="$PROJECT_DIR$">
@@ -170,7 +163,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.localhost:8000" />
+      <item itemvalue="JavaScript Debug.localhost:3000" />
       <item itemvalue="Jest.Test  Leader Name" />
       <item itemvalue="Jest.Test Add Leader Name" />
       <item itemvalue="Jest.Test Update Start Month" />
@@ -256,7 +249,10 @@
       <workItem from="1705982014170" duration="11712000" />
       <workItem from="1706238724969" duration="18000" />
       <workItem from="1706238753373" duration="2257000" />
-      <workItem from="1706241032369" duration="5682000" />
+      <workItem from="1706241032369" duration="66938000" />
+      <workItem from="1706653183004" duration="239000" />
+      <workItem from="1706842304906" duration="683000" />
+      <workItem from="1706888201028" duration="634000" />
     </task>
     <servers />
   </component>

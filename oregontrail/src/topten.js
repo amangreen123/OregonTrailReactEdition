@@ -4,7 +4,6 @@ import "./topten..css"
 import Fader from "./components/Fader";
 import Navigation from "./components/Navigation";
 import sortScore from "./components/Sortscore";
-import { useState } from "react";
 
 //this is the topten page of the app
 //it is the page that is rendered when the topten button is clicked

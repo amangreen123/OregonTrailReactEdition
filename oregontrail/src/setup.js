@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, {useState} from "react";
 import "./setup.css";
 import bg from "./images/gettyimages-3090888-2.jpg";
 import GameScreen1 from "./pages/GameScreen1";
@@ -9,14 +9,6 @@ import GameScreen5 from "./pages/GameScreen5";
 
 function SetUp() {
     const [page, setPage] = useState(1);
-
-    const nextPage = () => {
-        setPage((prevPage) => Math.min(prevPage + 1, 5)); // Limit to a maximum of 5
-    };
-
-    const previousPage = () => {
-        setPage((prevPage) => Math.max(prevPage - 1, 1)); // Ensure at least 1
-    };
 
     const renderPage = () => {
         switch (page) {
