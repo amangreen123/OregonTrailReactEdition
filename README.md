@@ -5,8 +5,9 @@
 Recreation of the classic game Oregon Trail
 ```
 
+## Technologies
+
 ```
-## Technologies Used
 - React
 - Jest
 - Express
@@ -20,8 +21,9 @@ git clone and cd into the OregonTrailReactEdition directory
 
 ```
 
+## The Backend
 ```
-The Backend
+
 - cd into the backend directory file and run the following commands 
 - npm install pg express
 - npm run dev
@@ -29,6 +31,7 @@ The Backend
 Should be running on localhost:8000
 ```
 
+## The Frontend
 ```
 The Frontend
 - cd into the frontend directory and run the following commands
