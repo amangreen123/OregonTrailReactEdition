@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
 
+
 const gameData = require("./Models/gameData");
 gameData.getgameData();
 const pace = require("./Models/pace");
@@ -66,3 +67,5 @@ app.get('/trail', function (req, res) {
 app.listen(8000, () => {
     console.log(`Server is running on port 8000.`);
 });
+
+module.exports = app;
