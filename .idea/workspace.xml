@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Sortscore.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Sortscore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Test/oregontrailServer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Test/oregontrailServer.test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,15 +46,19 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Debug&quot;,
     &quot;Jest.Axios to adding Professions and Money.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.GET /api/setup/player.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.PUT /api/setup/createPlayer.executor&quot;: &quot;Run&quot;,
     &quot;Jest.Test  Leader Name.executor&quot;: &quot;Run&quot;,
     &quot;Jest.Test Add Leader Name.executor&quot;: &quot;Run&quot;,
     &quot;Jest.Test Group Names.Test Group Names.executor&quot;: &quot;Run&quot;,
     &quot;Jest.Test Group Names.executor&quot;: &quot;Run&quot;,
     &quot;Jest.Test Update Start Month.executor&quot;: &quot;Run&quot;,
     &quot;Jest.Test creatPlayere API.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Test createPlayer (1).executor&quot;: &quot;Run&quot;,
     &quot;Jest.Test createPlayer.Test createPlayer.executor&quot;: &quot;Run&quot;,
     &quot;Jest.Test createPlayer.executor&quot;: &quot;Run&quot;,
     &quot;Jest.Test the Setup Player Model.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Test the setupController.executor&quot;: &quot;Run&quot;,
     &quot;Node.js.Server.executor&quot;: &quot;Debug&quot;,
     &quot;Node.js.Unnamed.executor&quot;: &quot;Debug&quot;,
     &quot;Node.js.trail.js.executor&quot;: &quot;Debug&quot;,
@@ -71,11 +73,11 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/aaron/Desktop/OregonTrail/oregontrail/node_modules/react-scripts&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/aaron/Desktop/OregonTrail/Server/node_modules/jest&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;npm.dev.executor&quot;: &quot;Debug&quot;,
     &quot;npm.start.executor&quot;: &quot;Debug&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;JavaScript.Libraries&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -87,57 +89,45 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aaron\Desktop\OregonTrail\Server" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\pages" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\components" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\Server\node_modules\call-bind" />
-      <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\music" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.localhost:3000">
-    <configuration name="Test  Leader Name" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.GET /api/setup/player">
+    <configuration name="GET /api/setup/player" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/oregontrail/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$/oregontrail" />
+      <jest-package value="$PROJECT_DIR$/Server/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/Server" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/oregontrail/src/Test/GameScreens.test.js" />
+      <test-file value="$PROJECT_DIR$/Server/Test/oregontrailServer.test.js" />
       <test-names>
-        <test-name value="Test  Leader Name" />
+        <test-name value="GET /api/setup/player" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test Add Leader Name" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="PUT /api/setup/createPlayer" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/oregontrail/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$/oregontrail" />
+      <jest-package value="$PROJECT_DIR$/Server/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/Server" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/oregontrail/src/Test/GameScreens.test.js" />
+      <test-file value="$PROJECT_DIR$/Server/Test/oregontrailServer.test.js" />
       <test-names>
-        <test-name value="Test Add Leader Name" />
+        <test-name value="PUT /api/setup/createPlayer" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test Update Start Month" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Test createPlayer (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/oregontrail/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$/oregontrail" />
+      <jest-package value="$PROJECT_DIR$/Server/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/Server" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/oregontrail/src/Test/GameScreens.test.js" />
-      <test-names>
-        <test-name value="Test Update Start Month" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Test createPlayer" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/oregontrail/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$/oregontrail" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/oregontrail/src/Test/GameScreens.test.js" />
+      <test-file value="$PROJECT_DIR$/Server/Test/GameScreens.test.js" />
       <test-names>
         <test-name value="Test createPlayer" />
       </test-names>
@@ -155,6 +145,18 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="Test the setupController" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/Server/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/Server" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/Server/Test/oregontrailServer.test.js" />
+      <test-names>
+        <test-name value="Test the setupController" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="localhost:3000" type="JavascriptDebugType" uri="http://localhost:3000/trail">
       <method v="2" />
     </configuration>
@@ -166,20 +168,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.localhost:3000" />
-      <item itemvalue="Jest.Test  Leader Name" />
-      <item itemvalue="Jest.Test Add Leader Name" />
-      <item itemvalue="Jest.Test Update Start Month" />
-      <item itemvalue="Jest.Test createPlayer" />
+      <item itemvalue="Jest.GET /api/setup/player" />
+      <item itemvalue="Jest.PUT /api/setup/createPlayer" />
+      <item itemvalue="Jest.Test createPlayer (1)" />
       <item itemvalue="Jest.Test the Setup Player Model" />
+      <item itemvalue="Jest.Test the setupController" />
       <item itemvalue="Node.js.Server" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.Test createPlayer" />
+        <item itemvalue="Jest.GET /api/setup/player" />
+        <item itemvalue="Jest.Test the setupController" />
+        <item itemvalue="Jest.PUT /api/setup/createPlayer" />
+        <item itemvalue="Jest.Test createPlayer (1)" />
         <item itemvalue="Jest.Test the Setup Player Model" />
-        <item itemvalue="Jest.Test Add Leader Name" />
-        <item itemvalue="Jest.Test  Leader Name" />
-        <item itemvalue="Jest.Test Update Start Month" />
       </list>
     </recent_temporary>
   </component>
@@ -257,6 +259,11 @@
       <workItem from="1706888201028" duration="1591000" />
       <workItem from="1706889906703" duration="9000" />
       <workItem from="1706891240835" duration="1440000" />
+      <workItem from="1715838792801" duration="8264000" />
+      <workItem from="1715920496128" duration="18000" />
+      <workItem from="1716855954382" duration="3000" />
+      <workItem from="1717450279288" duration="9000" />
+      <workItem from="1717554753992" duration="554000" />
     </task>
     <servers />
   </component>

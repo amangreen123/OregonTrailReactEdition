@@ -80,9 +80,16 @@ describe('PUT /api/setup/createPlayer', () => {
 
 describe('GET /api/setup/player', () => {
     it('Responds with player data and 200 status code', async () => {
-
+        const res = await request(app)
+            .get('/api/setup/Player')
+            .expect('Content-Type', /json/)
+            .expect(200);
+        expect(res.body).toEqual(playerData);
     });
+
 });
+
+
 
 
 
