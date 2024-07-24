@@ -14,7 +14,6 @@ function MainmenuPage (){
 
     return(
         //make the background cover the whole page
-        //make the background image not repeat
         <div className="App" style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
             <body>
             <ol>
