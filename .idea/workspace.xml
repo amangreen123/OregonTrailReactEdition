@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.81952494.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.81952494.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.81952494.js.map" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +287,7 @@
       <workItem from="1721767730720" duration="3000" />
       <workItem from="1721768014969" duration="4588000" />
       <workItem from="1721775404547" duration="15214000" />
-      <workItem from="1721797588546" duration="3309000" />
+      <workItem from="1721797588546" duration="4160000" />
     </task>
     <servers />
   </component>
