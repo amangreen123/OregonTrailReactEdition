@@ -14,8 +14,7 @@ function MainmenuPage (){
 
     return(
         //make the background cover the whole page
-        <div className="App" style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
-            <body>
+        <div className="App" style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
             <ol>
                 <h1 className= "App">This is the beginning of amazing journey...</h1>
                 <h1>Of The Oregon Trail</h1>
@@ -25,7 +24,6 @@ function MainmenuPage (){
                 <p>3. See the Oregon Top 10</p>
                 <p>4. Turn Sound (Off / On)</p>
             </ol>
-            </body>
              <Navigation />
         </div>
     );
