@@ -61,7 +61,7 @@ function Trail() {
         }
 
         try {
-            const response = await axios.get("http://localhost:8000/api/updateGame", {
+            const response = await axios.get("https://agoregontrail.org/api/updateGame", {
                 params: {
                     ...gameState,
                     pace: selectedPace,

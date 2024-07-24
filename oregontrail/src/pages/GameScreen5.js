@@ -24,7 +24,7 @@ const GameScreen5 = () => {
             };
             console.log("Player Data:", playerData);
 
-            const response = await axios.put("http://localhost:8000/api/setup/createPlayer", playerData);
+            const response = await axios.put("https://agoregontrail.org/api/setup/createPlayer", playerData);
 
             if (response.status === 200) {
                 window.location.href = "/trail";
