@@ -82,7 +82,6 @@ exports.setupPlayerData = function (req, res) {
         if (error) {
             console.error("Error adding player data", error);
             res.status(500).send({
-                message: "Error adding player data",
                 stack: error.stack,
             });
         } else {
