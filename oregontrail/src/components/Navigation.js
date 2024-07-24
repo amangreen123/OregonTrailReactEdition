@@ -14,13 +14,13 @@ const Navigation = (event) => {
          if (event.key === " ") {
             window.location.href = "/mainmenu"
          }
-         if (event.key === "3" && window.location.href === "http://localhost:3000/mainmenu" ) {
+         if (event.key === "3" && window.location.href === "https://agoregontrail.org/mainmenu" ) {
             window.location.href = "/topten"
          }
-          if (event.key === "2" && window.location.href === "http://localhost:3000/mainmenu") {
+          if (event.key === "2" && window.location.href === "https://agoregontrail.org/mainmenu") {
              window.location.href = "/setup"
           }
-          if (event.key === "1" && window.location.href === "http://localhost:3000/mainmenu") {
+          if (event.key === "1" && window.location.href === "https://agoregontrail.org/mainmenu") {
              window.location.href = "/trail"
           }
        };
