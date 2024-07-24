@@ -15,7 +15,7 @@ function HomePage () {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
-        fetch("https://agoregontrail.org/api/message")
+        fetch("https://localhost:8000/api/Message")
             .then((res) => res.json())
             .then((data) => setMessage(data.message));
     }, []);
