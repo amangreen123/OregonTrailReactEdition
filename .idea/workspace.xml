@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.0f73decf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.0f73decf.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.0f73decf.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/trail.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trail.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

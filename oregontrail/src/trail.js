@@ -163,7 +163,8 @@ function Trail() {
         <div className="trail" style={{backgroundImage: `url(${gameState.image})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center", position: "relative", zIndex: -1}}>
             <div className="game-header">
             <h1>Oregon Trail</h1>
-            {gameState.playerNames?.length >= 5 && (
+
+            {gameState.playerNames?.length >= 4 && (
                 <div>
                     <p>Leader Name: {gameState.playerNames[0]}</p>
                     <p>Player Names: {gameState.playerNames.slice(1).join(", ")}</p>
