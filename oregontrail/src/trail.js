@@ -31,7 +31,7 @@ function Trail() {
 
     const fetchPlayerData = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/api/setup/player");
+            const response = await axios.get("https://agoregontrail.org/api/getPlayerData");
             const initialGameState = response.data;
 
             setGameState({
