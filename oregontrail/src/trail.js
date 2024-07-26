@@ -107,13 +107,13 @@ function Trail() {
     };
 
     const handleQuit = () => {
-        window.location.href = "http://localhost:3000/";
+        window.location.href = "https://agoregontrail.org/mainmenu";
     }
 
     const getPace = async (newPace) => {
         setSelectedPace(newPace);
         try {
-            const response = await axios.get("http://localhost:8000/api/getAllPaces", {
+            const response = await axios.get("https://agoregontrail.org/api/getAllPaces", {
                 params: {
                     pace: newPace,
                 },
@@ -127,7 +127,7 @@ function Trail() {
 
     const resetGame = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/api/resetGame", {
+            const response = await axios.get("https://agoregontrail.org/api/resetGame", {
                 params: {
                     ...initialState,
                 },
@@ -151,9 +151,9 @@ function Trail() {
             });
 
             setShowResetGame(true);
-            window.location.href = "http://localhost:3000/";
-
+            window.location.href = "https://agoregontrail.org/";
             console.log("Reset Game State:", response.data);
+
         } catch (error) {
             console.error("Error resetting game:", error);
         }
@@ -165,7 +165,7 @@ function Trail() {
             <h1>Oregon Trail</h1>
             {gameState.playerNames?.length >= 5 && (
                 <div>
-                    <p >Leader Name: {gameState.playerNames[0]}</p>
+                    <p>Leader Name: {gameState.playerNames[0]}</p>
                     <p>Player Names: {gameState.playerNames.slice(1).join(", ")}</p>
                 </div>
             )}

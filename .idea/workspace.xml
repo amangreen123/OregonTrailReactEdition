@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Controllers/gameController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/gameController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Models/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Models/weather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/oregontrailServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/oregontrailServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/images/trail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.0f73decf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.0f73decf.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.0f73decf.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/trail.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trail.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,12 +172,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.localhost:3000" />
       <item itemvalue="Jest.GET /api/setup/player" />
       <item itemvalue="Jest.PUT /api/setup/createPlayer" />
       <item itemvalue="Jest.Test createPlayer (1)" />
       <item itemvalue="Jest.Test the Setup Player Model" />
       <item itemvalue="Jest.Test the setupController" />
-      <item itemvalue="JavaScript Debug.localhost:3000" />
       <item itemvalue="Node.js.Server" />
     </list>
     <recent_temporary>
@@ -289,7 +291,7 @@
       <workItem from="1721775404547" duration="15214000" />
       <workItem from="1721797588546" duration="4675000" />
       <workItem from="1721840647613" duration="394000" />
-      <workItem from="1721955909434" duration="239000" />
+      <workItem from="1721955909434" duration="1163000" />
     </task>
     <servers />
   </component>
