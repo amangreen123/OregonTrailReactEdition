@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Controllers/gameController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controllers/gameController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Models/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Models/weather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/oregontrailServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/oregontrailServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/images/trail.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,12 +170,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.localhost:3000" />
       <item itemvalue="Jest.GET /api/setup/player" />
       <item itemvalue="Jest.PUT /api/setup/createPlayer" />
       <item itemvalue="Jest.Test createPlayer (1)" />
       <item itemvalue="Jest.Test the Setup Player Model" />
       <item itemvalue="Jest.Test the setupController" />
+      <item itemvalue="JavaScript Debug.localhost:3000" />
       <item itemvalue="Node.js.Server" />
     </list>
     <recent_temporary>
@@ -283,7 +287,9 @@
       <workItem from="1721767730720" duration="3000" />
       <workItem from="1721768014969" duration="4588000" />
       <workItem from="1721775404547" duration="15214000" />
-      <workItem from="1721797588546" duration="4368000" />
+      <workItem from="1721797588546" duration="4675000" />
+      <workItem from="1721840647613" duration="394000" />
+      <workItem from="1721955909434" duration="239000" />
     </task>
     <servers />
   </component>

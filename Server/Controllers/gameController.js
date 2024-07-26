@@ -90,8 +90,9 @@ exports.updateGame =  function (req, res) {
             startGameData.currentWeather = weather.getRandomWeather(terrainToWeatherMap[startGameData.currentTerrain.name]);
 
         // Determine and update message based on game progress
-        if (startGameData.milesTraveled > 500 && startGameData.daysOnTrail < 45) {
+        if (startGameData.milesTraveled > 500 && startGameData.daysOnTrail < 45 && startGameData.groupHealth > 0) {
             startGameData.message = "You Won!";
+
         } else {
             if (startGameData.daysOnTrail < 45) {
                 startGameData.daysOnTrail += 1;
@@ -102,15 +103,19 @@ exports.updateGame =  function (req, res) {
             // Update group health and message based on health status
             if (startGameData.groupHealth > 100) {
                 startGameData.groupHealth = 100;
+
+                startGameData.message = "excellent";
             } else if (startGameData.groupHealth <= 100 && startGameData.groupHealth >= 80) {
                 startGameData.message = "good";
             } else if (startGameData.groupHealth < 80 && startGameData.groupHealth >= 50) {
                 startGameData.message = "fair";
             } else if (startGameData.groupHealth < 50 && startGameData.groupHealth >= 20) {
                 startGameData.message = "poor";
+
                 // Update player status based on chance
                 for (let i = 0; i < 5; i++) {
                     const chance = Math.floor(Math.random() * 100) + 1;
+
                     if (chance <= 3) {
                         startGameData.playerStatus[i] = "Dead";
                     }

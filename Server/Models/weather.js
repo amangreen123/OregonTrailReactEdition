@@ -63,6 +63,7 @@ grasslandWeather.push(new weather(11, "Heavy Fog", -3, .5, .05));
 
 exports.getRandomWeather = function (terrain) {
     let terrainWeather;
+
     switch (terrain) {
         case 'plain':
             terrainWeather = plainWeather;
