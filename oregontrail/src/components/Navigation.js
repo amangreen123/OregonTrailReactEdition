@@ -7,9 +7,8 @@ const Navigation = (event) => {
    let a = document.getElementsByClassName(id);
    a.tabIndex = '0';
 
-   a.onkeydown = (event) => { event.target.focus()}
-
     useEffect(() => {
+
        const handleKeyPress = (event) => {
          if (event.key === " ") {
             window.location.href = "/mainmenu"
@@ -29,9 +28,6 @@ const Navigation = (event) => {
           document.removeEventListener("keydown", handleKeyPress);
        };
     }, []);
-
-
-
 }
 
 

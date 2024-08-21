@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/Navigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/trail.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trail.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -286,6 +288,10 @@
       <workItem from="1721797588546" duration="4675000" />
       <workItem from="1721840647613" duration="394000" />
       <workItem from="1721955909434" duration="1163000" />
+      <workItem from="1722014869663" duration="409000" />
+      <workItem from="1722361580480" duration="4495000" />
+      <workItem from="1722887088270" duration="491000" />
+      <workItem from="1722955848414" duration="2782000" />
     </task>
     <servers />
   </component>
