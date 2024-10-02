@@ -167,12 +167,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.localhost:3000" />
       <item itemvalue="Jest.GET /api/setup/player" />
       <item itemvalue="Jest.PUT /api/setup/createPlayer" />
       <item itemvalue="Jest.Test createPlayer (1)" />
       <item itemvalue="Jest.Test the Setup Player Model" />
       <item itemvalue="Jest.Test the setupController" />
-      <item itemvalue="JavaScript Debug.localhost:3000" />
       <item itemvalue="Node.js.Server" />
     </list>
     <recent_temporary>
