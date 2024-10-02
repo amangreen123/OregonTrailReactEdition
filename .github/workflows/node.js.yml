@@ -1,35 +1,27 @@
-name: CI/CD
-
+name: Deployment
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+    branches:
+      - master
 jobs:
-  build-and-deploy:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v1
         with:
-          node-version: '18.x'
-          cache: 'npm'
+          node-version: '12.x'
       - run: npm ci
       - run: npm run build --if-present
-
-      - name: Deploy to server
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          echo "$SSH_PRIVATE_KEY" > keyfile
-          chmod 600 keyfile
-          scp -i keyfile -r -o StrictHostKeyChecking=no ./build/* root@agoregontrail.org:/var/www/site/build
-          ssh -i keyfile -o StrictHostKeyChecking=no root@agoregontrail.org '
-            sudo systemctl restart nginx
-          '
-          rm keyfile
-
+          CI: false
+      - name: Copy folder content recursively to vps
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: build
+          remote: /var/www/html/build
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
