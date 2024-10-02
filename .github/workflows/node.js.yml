@@ -28,7 +28,7 @@ jobs:
       - run: npm run build --if-present
       - run: npm test
       - name: Deploy to server
-        uses: amangreen123/OregonTrailReactEdition
+        uses: amangreen123/OregonTrailReactEdition@main
         with:
           local: build
           remote: /var/www/html/build
