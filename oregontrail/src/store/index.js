@@ -19,6 +19,7 @@ const oregonTrailReducer = (state = initialState, action) => {
         return {
             ...state,
             playerName: action.payload.playerName,
+            
         };
     }
     if (action.type === "updateGroupNames") {

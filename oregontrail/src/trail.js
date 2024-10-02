@@ -153,7 +153,6 @@ function Trail() {
             setShowResetGame(true);
             window.location.href = "https://agoregontrail.org/mainmenu";
             console.log("Reset Game State:", response.data);
-
         } catch (error) {
             console.error("Error resetting game:", error);
         }
