@@ -28,7 +28,7 @@ jobs:
       - run: npm run build --if-present
       - run: npm test
       - name: Deploy to server
-        uses: amangreen123/github-action-scp@release
+        uses: amangreen123/OregonTrailReactEdition
         with:
           local: build
           remote: /var/www/html/build

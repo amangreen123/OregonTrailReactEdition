@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/node.js.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/node.js.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/trail.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trail.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +298,7 @@
       <workItem from="1727722740714" duration="1872000" />
       <workItem from="1727801560762" duration="1033000" />
       <workItem from="1727821773801" duration="2539000" />
-      <workItem from="1727833704943" duration="1232000" />
+      <workItem from="1727833704943" duration="1300000" />
     </task>
     <servers />
   </component>
