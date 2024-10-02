@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReadME.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadME.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/oregontrailServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/oregontrailServer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/css/main.fd98d606.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/build/static/css/main.fd98d606.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.c25acb5f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.c25acb5f.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/build/static/js/main.c25acb5f.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/HomePage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -26,7 +26,7 @@ app.use(bodyParser.json({type:'application/json'}));
 
 
 app.get("/api/message", (req, res) => {
-    res.json({ message: "Welcome to the Oregon Trail!!!" });
+    res.json({ message: "Welcome to the Oregon Trail!" });
 });
 
 app.route('/api/topTen')
