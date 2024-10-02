@@ -29,7 +29,6 @@ jobs:
           scp -i keyfile -r -o StrictHostKeyChecking=no ./build/* root@agoregontrail.org:/var/www/site/build
           ssh -i keyfile -o StrictHostKeyChecking=no root@agoregontrail.org '
             sudo systemctl restart nginx
-            # Add any other commands you need to run on the server
           '
           rm keyfile
 
