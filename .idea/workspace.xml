@@ -167,12 +167,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.localhost:3000" />
       <item itemvalue="Jest.GET /api/setup/player" />
       <item itemvalue="Jest.PUT /api/setup/createPlayer" />
       <item itemvalue="Jest.Test createPlayer (1)" />
       <item itemvalue="Jest.Test the Setup Player Model" />
       <item itemvalue="Jest.Test the setupController" />
+      <item itemvalue="JavaScript Debug.localhost:3000" />
       <item itemvalue="Node.js.Server" />
     </list>
     <recent_temporary>
@@ -299,7 +299,8 @@
       <workItem from="1727722740714" duration="1872000" />
       <workItem from="1727801560762" duration="1033000" />
       <workItem from="1727821773801" duration="2539000" />
-      <workItem from="1727833704943" duration="2264000" />
+      <workItem from="1727833704943" duration="3847000" />
+      <workItem from="1727841829397" duration="285000" />
     </task>
     <servers />
   </component>
