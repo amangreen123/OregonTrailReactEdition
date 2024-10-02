@@ -3,8 +3,5 @@
     "axios": "^1.5.1",
     "react-sound": "^1.2.0",
     "react": "^16.2.0"
-  },
-  "start": "node server/index.js",
-  "dev": "nodemon oregontrailServer.js",
-  "test": "jest"
+  }
 }
