@@ -151,9 +151,8 @@ function Trail() {
             });
 
             setShowResetGame(true);
-            window.location.href = "https://agoregontrail.org/";
+            window.location.href = "https://agoregontrail.org/mainmenu";
             console.log("Reset Game State:", response.data);
-
         } catch (error) {
             console.error("Error resetting game:", error);
         }
@@ -163,13 +162,10 @@ function Trail() {
         <div className="trail" style={{backgroundImage: `url(${gameState.image})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center", position: "relative", zIndex: -1}}>
             <div className="game-header">
             <h1>Oregon Trail</h1>
-
-            {gameState.playerNames?.length >= 4 && (
-                <div>
+                <div className="trail">
                     <p>Leader Name: {gameState.playerNames[0]}</p>
                     <p>Player Names: {gameState.playerNames.slice(1).join(", ")}</p>
                 </div>
-            )}
             <p>Player Status: {gameState.playerStatus}</p>
             <p>Player Profession: {gameState.playerProfession}</p>
             <p>Player Money: {gameState.playerMoney}</p>
