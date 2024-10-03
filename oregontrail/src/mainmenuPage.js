@@ -20,7 +20,7 @@ function MainmenuPage (){
                 <h1>Of The Oregon Trail</h1>
                 <h1>Choose one of the Options</h1>
                 <p>1. Travel the trail</p>
-                <p>2. Learn about the trail</p>
+                <p>2. Set up for the trail</p>
                 <p>3. See the Oregon Top 10</p>
                 <p>4. Turn Sound (Off / On)</p>
             </ol>
