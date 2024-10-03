@@ -23,7 +23,7 @@ function HomePage () {
     return(
     <div className="App" style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
         <h1>{message}</h1>
-        <h2 className="h2"><Fader text={"PRESS SPACEBAR TO START!"}></Fader></h2>
+        <h2 className="h2"><Fader text={"PRESS SPACEBAR TO START!!!"}></Fader></h2>
         <Navigation />
     </div>
     );
