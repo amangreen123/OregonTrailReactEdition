@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 import { useGameStates } from './trailComponents/TrailGameState'
 import { PlayerInfo } from './trailComponents/PlayerInfo'
@@ -29,7 +28,8 @@ const initialState = {
 function Trail() {
 
     const navigate = useNavigate();
-    const { gameState, selectedPace, setSelectedPace, updateTrail, resetTrail} = useGameStates(initialState);
+    const {gameState, selectedPace, setSelectedPace, updateTrail, resetTrail} = useGameStates(initialState);
+
 
     const handlePaceClick = (pace) => {
        setSelectedPace(pace);
@@ -39,9 +39,16 @@ function Trail() {
         navigate('/mainmenu')
     }
 
+    //console.log("Current terrain:", gameState.currentTerrain.name);
+    //console.log("Current weather:", gameState.currentWeather.type);
+    //console.log("Current terrain:", gameState.currentTerrain.imageUrl);
+
+    //console.log("Current gameState:", gameState);
+
+
     return (
         <div className="trail" style={{
-            backgroundImage: `url(${gameState.image})`,
+            backgroundImage: `url(${gameState})`,
             backgroundRepeat: "no-repeat",
             height: "1000px",
             backgroundSize: "cover",
@@ -54,9 +61,11 @@ function Trail() {
                 <TrailStatus gameState={gameState} pace={selectedPace}/>
             </div>
 
-            <div className="game-map">
-                <TrailTerrain message={gameState.message} weather={gameState.weatherConditions} terrain={gameState.terrain}/>
-            </div>
+            <TrailTerrain
+                terrain={gameState.terrain}
+                weather={gameState.weather}
+                image={gameState.image}
+            />
 
             <div className="game-controls">
                 <button className="game-control-button" onClick={updateTrail}>
@@ -68,6 +77,7 @@ function Trail() {
                 <button className="game-control-button" onClick={handleQuit}>
                     Quit Game
                 </button>
+
                 <div className="game-controls-pace">
                     <button className="game-control-button" onClick={() => handlePaceClick("Steady")}>
                         Steady
@@ -83,6 +93,7 @@ function Trail() {
                     </button>
                 </div>
             </div>
+
         </div>
     );
 }

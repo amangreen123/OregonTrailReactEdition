@@ -8,12 +8,10 @@ export const useGameStates = (initialState) => {
     const [selectedPace, setSelectedPace] = useState("");
 
     useEffect(() => {
-
         getPlayerData().then(data => setGameState(data));
     }, []);
 
     const updateTrail = async () => {
-
         if (!selectedPace) {
             alert('Please Select Pace');
             return;

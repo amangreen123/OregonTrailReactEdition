@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/oregontrail/src/Services.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/Services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/trail.css" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/trail.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/trailComponents/PlayerInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trailComponents/PlayerInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/trailComponents/TrailGameState.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trailComponents/TrailGameState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/trailComponents/TrailTerrain.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trailComponents/TrailTerrain.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +37,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="autoscrollToSource" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -43,52 +48,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Debug&quot;,
-    &quot;Jest.Axios to adding Professions and Money.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.GET /api/setup/player.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.PUT /api/setup/createPlayer.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Test  Leader Name.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Test Add Leader Name.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Test Group Names.Test Group Names.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Test Group Names.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Test Update Start Month.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Test creatPlayere API.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Test createPlayer (1).executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Test createPlayer.Test createPlayer.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Test createPlayer.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Test the Setup Player Model.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Test the setupController.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.Server.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.Unnamed.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.trail.js.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aaron/Desktop/OregonTrail&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/aaron/Desktop/OregonTrail/Server/node_modules/jest&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Debug&quot;,
-    &quot;npm.start.executor&quot;: &quot;Debug&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.localhost:3000.executor": "Debug",
+    "Jest.Axios to adding Professions and Money.executor": "Run",
+    "Jest.GET /api/setup/player.executor": "Debug",
+    "Jest.PUT /api/setup/createPlayer.executor": "Run",
+    "Jest.Test  Leader Name.executor": "Run",
+    "Jest.Test Add Leader Name.executor": "Run",
+    "Jest.Test Group Names.Test Group Names.executor": "Run",
+    "Jest.Test Group Names.executor": "Run",
+    "Jest.Test Update Start Month.executor": "Run",
+    "Jest.Test creatPlayere API.executor": "Run",
+    "Jest.Test createPlayer (1).executor": "Run",
+    "Jest.Test createPlayer.Test createPlayer.executor": "Run",
+    "Jest.Test createPlayer.executor": "Run",
+    "Jest.Test the Setup Player Model.executor": "Run",
+    "Jest.Test the setupController.executor": "Run",
+    "Node.js.Server.executor": "Debug",
+    "Node.js.Unnamed.executor": "Debug",
+    "Node.js.trail.js.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/aaron/Desktop/OregonTrail - Copy",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/Users/aaron/Desktop/OregonTrail/Server/node_modules/jest",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Debug",
+    "npm.start.executor": "Debug",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail" />
@@ -98,7 +103,7 @@
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\components" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.GET /api/setup/player">
+  <component name="RunManager" selected="JavaScript Debug.localhost:3000">
     <configuration name="GET /api/setup/player" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/Server/node_modules/jest" />
@@ -304,7 +309,8 @@
       <workItem from="1727833704943" duration="3847000" />
       <workItem from="1727841829397" duration="2784000" />
       <workItem from="1728000393991" duration="8912000" />
-      <workItem from="1728013031677" duration="4081000" />
+      <workItem from="1728013031677" duration="4107000" />
+      <workItem from="1728017240924" duration="6127000" />
     </task>
     <servers />
   </component>
