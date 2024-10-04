@@ -13,9 +13,13 @@ import Navigation from "./components/Navigation";
 function HomePage () {
 
     const [message, setMessage] = useState("");
+    const apiUrl = process.env.REACT_APP_API_URL;
+    //http://localhost:8000/api/message
+    //`${apiUrl}/message`
+    console.log("URL Value " + apiUrl);
 
     useEffect(() => {
-        fetch("https://agoregontrail.org/api/Message")
+        fetch(`${apiUrl}/message`)
             .then((res) => res.json())
             .then((data) => setMessage(data.message));
     }, []);

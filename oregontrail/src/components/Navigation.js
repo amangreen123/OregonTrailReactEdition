@@ -1,35 +1,35 @@
 import {useEffect } from "react";
 
-const Navigation = (event) => {
-   console.log( "You pressed a key: " + event.key)
+import { useNavigate, useLocation } from 'react-router-dom';
 
-   let id = 'outer';
-   let a = document.getElementsByClassName(id);
-   a.tabIndex = '0';
+const Navigation = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
+        const handleKeyPress = (event) => {
+            switch (event.key) {
+                case " ":
+                    navigate("/mainmenu");
+                    break;
+                case "3":
+                    if (location.pathname === "/mainmenu") navigate("/topten");
+                    break;
+                case "2":
+                    if (location.pathname === "/mainmenu") navigate("/setup");
+                    break;
+                case "1":
+                    if (location.pathname === "/mainmenu") navigate("/trail");
+                    break;
+            }
+        };
 
-       const handleKeyPress = (event) => {
-         if (event.key === " ") {
-            window.location.href = "/mainmenu"
-         }
-         if (event.key === "3" && window.location.href === "https://agoregontrail.org/mainmenu" ) {
-            window.location.href = "/topten"
-         }
-          if (event.key === "2" && window.location.href === "https://agoregontrail.org/mainmenu") {
-             window.location.href = "/setup"
-          }
-          if (event.key === "1" && window.location.href === "https://agoregontrail.org/mainmenu") {
-             window.location.href = "/trail"
-          }
-       };
-       document.addEventListener("keydown", handleKeyPress);
-       return () => {
-          document.removeEventListener("keydown", handleKeyPress);
-       };
-    }, []);
-}
+        document.addEventListener("keydown", handleKeyPress);
+        return () => document.removeEventListener("keydown", handleKeyPress);
+    }, [navigate, location]);
 
+    return null;
+};
 
 
 export default Navigation

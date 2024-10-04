@@ -24,6 +24,7 @@ function Trail() {
     const [selectedPace, setSelectedPace] = useState("");
 
     const isPaceSelected = !!selectedPace;
+    const apiUrl = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         fetchPlayerData();
@@ -31,7 +32,7 @@ function Trail() {
 
     const fetchPlayerData = async () => {
         try {
-            const response = await axios.get("https://agoregontrail.org/api/getPlayerData");
+            const response = await axios.get(`${apiUrl}/setup/Player`)
             const initialGameState = response.data;
 
             setGameState({
@@ -61,7 +62,7 @@ function Trail() {
         }
 
         try {
-            const response = await axios.get("https://agoregontrail.org/api/updateGame", {
+            const response = await axios.get(`${apiUrl}/updateGame`, {
                 params: {
                     ...gameState,
                     pace: selectedPace,
@@ -107,13 +108,14 @@ function Trail() {
     };
 
     const handleQuit = () => {
-        window.location.href = "https://agoregontrail.org/mainmenu";
+        window.location.href = `${apiUrl}/mainmenu`;
+
     }
 
     const getPace = async (newPace) => {
         setSelectedPace(newPace);
         try {
-            const response = await axios.get("https://agoregontrail.org/api/getAllPaces", {
+            const response = await axios.get(` ${apiUrl}/getAllPaces`, {
                 params: {
                     pace: newPace,
                 },
@@ -127,7 +129,7 @@ function Trail() {
 
     const resetGame = async () => {
         try {
-            const response = await axios.get("https://agoregontrail.org/api/resetGame", {
+            const response = await axios.get(`${apiUrl}/resetGame`, {
                 params: {
                     ...initialState,
                 },
@@ -151,7 +153,7 @@ function Trail() {
             });
 
             setShowResetGame(true);
-            window.location.href = "https://agoregontrail.org/mainmenu";
+            window.location.href = `${apiUrl}/mainmenu`;
             console.log("Reset Game State:", response.data);
         } catch (error) {
             console.error("Error resetting game:", error);

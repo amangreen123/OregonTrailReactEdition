@@ -5,11 +5,13 @@ import axios from "axios";
 
 
 const GameScreen5 = () => {
+
     const playerProfession = useSelector((state) =>  state.playerProfession);
     const playerName = useSelector((state) => state.playerName);
     const groupNames = useSelector((state) => state.groupNames);
     const startMonth = useSelector((state) => state.startMonth);
     const playerMoney = useSelector((state) => state.playerMoney);
+    const apiUrl = process.env.REACT_APP_API_URL;
 
     console.log("Redux State:", useSelector((state) => state));
 
@@ -24,7 +26,7 @@ const GameScreen5 = () => {
             };
             console.log("Player Data:", playerData);
 
-            const response = await axios.put("https://agoregontrail.org/api/setup/createPlayer", playerData);
+            const response = await axios.put( `${apiUrl}/setup/createPlayer`, playerData);
 
             if (response.status === 200) {
                 window.location.href = "/trail";
