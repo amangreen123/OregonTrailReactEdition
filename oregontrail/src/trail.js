@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./trail.css";
 
+import {useNavigate} from "react-router-dom";
+
 function Trail() {
     const initialState = {
         groupHealth: 100,
@@ -18,6 +20,8 @@ function Trail() {
         terrain: "",
         image: "",
     };
+
+    const navigate = useNavigate();
 
     const [gameState, setGameState] = useState({ ...initialState });
     const [showResetGame, setShowResetGame] = useState(false);
@@ -108,14 +112,13 @@ function Trail() {
     };
 
     const handleQuit = () => {
-        window.location.href = `${apiUrl}/mainmenu`;
-
+        navigate('/mainmenu')
     }
 
     const getPace = async (newPace) => {
         setSelectedPace(newPace);
         try {
-            const response = await axios.get(` ${apiUrl}/getAllPaces`, {
+            const response = await axios.get(`${apiUrl}/getAllPaces`, {
                 params: {
                     pace: newPace,
                 },
@@ -153,7 +156,7 @@ function Trail() {
             });
 
             setShowResetGame(true);
-            window.location.href = `${apiUrl}/mainmenu`;
+            navigate('/mainmenu');
             console.log("Reset Game State:", response.data);
         } catch (error) {
             console.error("Error resetting game:", error);
