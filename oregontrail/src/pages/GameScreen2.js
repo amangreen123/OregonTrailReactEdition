@@ -1,44 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import "../components/global.css";
-import { useDispatch } from "react-redux";
-import bg from "../images/gettyimages-3090888-2.jpg";
+"use client"
 
-function GameScreen2() {
-    const [leaderName, setLeaderName] = useState('');
-    const dispatch = useDispatch();
+import { useState, useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { motion } from "framer-motion"
+import "../components/global.css"
 
-    const handleNameChange = (event) => {
-        setLeaderName(event.target.value);
-    };
+function GameScreen2({ onNext }) {
+    const [leaderName, setLeaderName] = useState("")
+    const dispatch = useDispatch()
 
     const updatePlayerName = () => {
         dispatch({
             type: "updatePlayerName",
             payload: { playerName: leaderName },
-        });
+        })
     }
 
     useEffect(() => {
         if (leaderName !== "") {
-            updatePlayerName();
+            updatePlayerName()
         }
-    }, [leaderName, dispatch]);
+    }, [leaderName, updatePlayerName]) // Added updatePlayerName to dependencies
 
-    const buttonClick = () => {
-        updatePlayerName();
-        window.location.href = "/GameScreen3";
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (leaderName.trim() === "") {
+            alert("Please enter a name for the leader")
+            return
+        }
+        updatePlayerName()
+        onNext()
     }
 
     return (
-        <div className="setup" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center" }}>
-            <h1>What is the name of the leader?</h1>
-            <label>
-                Leader Name:
-                <input onChange={(event) => handleNameChange(event)} type="text" value={leaderName} />
-            </label>
-            <button className="button-1" id="page1sub" onClick={buttonClick}>Next Page</button>
-        </div>
-    );
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <h2 className="screen-title">What is the name of the leader?</h2>
+            <form onSubmit={handleSubmit}>
+                <label className="input-label">
+                    Leader Name:
+                    <input
+                        type="text"
+                        value={leaderName}
+                        onChange={(e) => setLeaderName(e.target.value)}
+                        className="text-input"
+                    />
+                </label>
+                <button type="submit" className="next-button">
+                    Next
+                </button>
+            </form>
+        </motion.div>
+    )
 }
 
-export default GameScreen2;
+export default GameScreen2
+

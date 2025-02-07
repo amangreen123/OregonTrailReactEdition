@@ -1,10 +1,7 @@
 import axios from "axios";
-import {useState} from "react";
 
-const ChoosePace = async (newPace) => {
-
+const ChoosePace = async (newPace, setSelectedPace) => {
     const apiUrl = process.env.REACT_APP_API_URL;
-    const [selectedPace, setSelectedPace] = useState("");
 
     setSelectedPace(newPace);
 
@@ -16,10 +13,11 @@ const ChoosePace = async (newPace) => {
         });
 
         console.log("Pace Data:", response.data);
+        return response.data;
     } catch (error) {
         console.error("Error fetching Pace data:", error);
+        throw error;
     }
 };
-
 
 export default ChoosePace;

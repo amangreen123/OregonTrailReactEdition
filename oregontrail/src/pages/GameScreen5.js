@@ -1,65 +1,57 @@
-import React from 'react';
-import {useSelector} from "react-redux";
-import bg from "../images/gettyimages-3090888-2.jpg";
-import axios from "axios";
-
+import { useSelector } from "react-redux"
+import { motion } from "framer-motion"
+import axios from "axios"
+import "../components/global.css"
 
 const GameScreen5 = () => {
-
-    const playerProfession = useSelector((state) =>  state.playerProfession);
-    const playerName = useSelector((state) => state.playerName);
-    const groupNames = useSelector((state) => state.groupNames);
-    const startMonth = useSelector((state) => state.startMonth);
-    const playerMoney = useSelector((state) => state.playerMoney);
-    const apiUrl = process.env.REACT_APP_API_URL;
-
-    console.log("Redux State:", useSelector((state) => state));
+    const { playerProfession, playerName, groupNames, startMonth, playerMoney } = useSelector((state) => state)
+    const apiUrl = process.env.REACT_APP_API_URL
 
     const updateAllPlayerData = async () => {
         try {
             const playerData = {
-                playerProfession: playerProfession,
-                playerMoney: playerMoney,
-                playerName: playerName,
-                playerNames: Array.from(groupNames),//converts object to array
-                startMonth: startMonth,
-            };
-            console.log("Player Data:", playerData);
-
-            const response = await axios.put( `${apiUrl}/setup/createPlayer`, playerData);
-
-            if (response.status === 200) {
-                window.location.href = "/trail";
-                console.log("Player data updated successfully");
-            }else {
-                console.error("Error updating player data", response.status);
+                playerProfession,
+                playerMoney,
+                playerName,
+                playerNames: Array.from(groupNames),
+                startMonth,
             }
 
+            const response = await axios.put(`${apiUrl}/setup/createPlayer`, playerData)
+
+            if (response.status === 200) {
+                window.location.href = "/trail"
+                console.log("Player data updated successfully")
+            } else {
+                console.error("Error updating player data", response.status)
+            }
         } catch (error) {
-            console.error("Error updating player data", error);
+            console.error("Error updating player data", error)
         }
-    };
+    }
 
     return (
-        <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat", height: "1000px", backgroundSize: "cover", backgroundPosition: "center",}}>
-            <p>Here is the information you put in.</p>
-            <ul>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <h2 className="screen-title">Review Your Information</h2>
+            <ul className="review-list">
                 <li>Leader's Profession: {playerProfession}</li>
-                <li>Leader's Money: {playerMoney}</li>
+                <li>Leader's Money: ${playerMoney}</li>
                 <li>Leader's Name: {playerName}</li>
-                <li>Party Members:
-                <ul>
-                    <li>{groupNames[0]}</li>
-                    <li>{groupNames[1]}</li>
-                    <li>{groupNames[2]}</li>
-                    <li>{groupNames[3]}</li>
-                </ul>
+                <li>
+                    Party Members:
+                    <ul>
+                        {groupNames.map((name, index) => (
+                            <li key={index}>{name}</li>
+                        ))}
+                    </ul>
                 </li>
                 <li>Starting Month: {startMonth}</li>
-                <button className="button-1" id="page1sub" onClick={updateAllPlayerData} >Start Game</button>
             </ul>
-        </div>
-    );
-};
+            <button className="start-button" onClick={updateAllPlayerData}>
+                Start Game
+            </button>
+        </motion.div>
+    )
+}
 
-export default GameScreen5;
+export default GameScreen5

@@ -1,76 +1,71 @@
-import React from 'react';
-import "../components/global.css";
-import {useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
+import { useState, useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { motion } from "framer-motion"
+import "../components/global.css"
 
+const GameScreen1 = ({ onNext }) => {
+    const [playerProfession, setPlayerProfession] = useState("")
+    const [playerMoney, setPlayerMoney] = useState(0)
+    const dispatch = useDispatch()
 
-const GameScreen1 = () => {
-
-    const [playerProfession, setPlayerProfession] = useState("");
-    const [playerMoney, setPlayerMoney] = useState(0);
-    const dispatch = useDispatch();
-
-    console.log("Redux State:", useSelector((state) => state));
-
-    const updatePlayerData = async () => {
+    const updatePlayerData = () => {
         dispatch({
             type: "updatePlayerData",
-            payload: {playerProfession: playerProfession, playerMoney: playerMoney},
-        });
+            payload: { playerProfession, playerMoney },
+        })
     }
 
     useEffect(() => {
-        if(playerProfession !== "" && playerMoney !== 0) {
-            updatePlayerData();
+        if (playerProfession !== "" && playerMoney !== 0) {
+            updatePlayerData()
         }
-    }, [playerProfession, playerMoney, dispatch]);
+    }, [playerProfession, playerMoney, updatePlayerData]) // Added updatePlayerData to dependencies
 
-    const handleProfession = (e) => {
-        switch (e) {
-            case "Banker":
-                setPlayerMoney(2000);
-                break;
-            case "Carpenter":
-                setPlayerMoney(1500);
-                break;
-            case "Farmer":
-                setPlayerMoney(1000);
-                break;
-            default:
-                setPlayerMoney(0);
-                break;
-        }
-        setPlayerProfession(e);
+    const handleProfession = (profession) => {
+        const moneyMap = { Banker: 2000, Carpenter: 1500, Farmer: 1000 }
+        setPlayerMoney(moneyMap[profession] || 0)
+        setPlayerProfession(profession)
     }
 
     const playerSubmit = () => {
         if (playerProfession === "") {
             alert("Please select a profession")
-            return;
+            return
         }
-        updatePlayerData();
+        updatePlayerData()
+        onNext()
     }
 
     const differencesMenuItem = () => {
         alert("Banker: Starts with $2000, Carpenter: Starts with $1500, Farmer: Starts with $1000")
-        return;
-
     }
 
     return (
-        <div >
-            <p>Choose your Profession.</p>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <h2 className="screen-title">Choose your Profession</h2>
             <p>You may:</p>
-            <ol id="setupQuestions1">
-                <li id="bankerMenuItem" onClick={() => handleProfession("Banker")} onChange={playerSubmit}>Be a banker from Boston </li>
-                <li id="carpenterMenuItem" onClick={() => handleProfession("Carpenter")} onChange={playerSubmit}>Be a carpenter from Ohio</li>
-                <li id="farmerMenuItem" onClick={() => handleProfession("Farmer")} onChange={playerSubmit}>Be a farmer from Illinois</li>
-                <li id="differencesMenuItem" onClick={() => differencesMenuItem()}>Find out the differences between the choices</li>
-            </ol>
-            <div>You Have Chosen {playerProfession} You have this Amount of Money {playerMoney}</div>
-            <button onClick={event => window.location.href="/GameScreen2"}> Next Page </button>
-        </div>
-    );
-};
+            <ul className="profession-list">
+                {["Banker", "Carpenter", "Farmer"].map((profession) => (
+                    <li
+                        key={profession}
+                        onClick={() => handleProfession(profession)}
+                        className={`profession-item ${playerProfession === profession ? "selected" : ""}`}
+                    >
+                        Be a {profession.toLowerCase()} from{" "}
+                        {profession === "Banker" ? "Boston" : profession === "Carpenter" ? "Ohio" : "Illinois"}
+                    </li>
+                ))}
+                <li onClick={differencesMenuItem} className="profession-item info">
+                    Find out the differences between the choices
+                </li>
+            </ul>
+            <p className="selection-info">You have chosen: {playerProfession || "None"}</p>
+            <p className="selection-info">Your starting money: ${playerMoney}</p>
+            <button className="next-button" onClick={playerSubmit}>
+                Next
+            </button>
+        </motion.div>
+    )
+}
 
-export default GameScreen1;
+export default GameScreen1

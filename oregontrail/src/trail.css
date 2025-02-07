@@ -1,64 +1,42 @@
-body {
-    background-color: #c9b59d; /* Light brown background color */
-    margin: 0;
-}
-
 .trail {
-    background-color: #f4e1c1; /* Light beige background for the game area */
+    background-color: #f4e1c1;
+    min-height: 100vh;
+    font-family: "Old West", cursive;
+    color: #3c2f2f;
+}
+
+.game-container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    box-sizing: border-box;
-    font-family: 'Old West', cursive; /* Use a western-style font */
-    text-align: center;
 }
 
-.game-header {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: white; /* Change text color to white */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
-    letter-spacing: 2px; /* Increase letter spacing for a vintage look */
-    text-transform: uppercase; /* Uppercase letters for boldness */
-}
-
-.player-info {
-    margin-bottom: 20px;
-}
-
-.game-map {
-    height: 200px;
-    background-color: #c0a18c; /* Light brown for the game map */
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+.player-info,
+.trail-status,
+.trail-terrain,
 .game-controls {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.game-control-button {
-    background-color: #8B4513; /* Saddle Brown color for buttons */
-    border: none;
-    color: white; /* Change text color to white */
-    padding: 10px 20px;
+h2,
+h3 {
+    color: #8b4513;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 5px;
+    margin-top: 0;
 }
 
-.game-control-button:hover {
-    background-color: #634937; /* Slightly darker brown on hover */
+.info-grid,
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
 }
 
-.game-terrain {
+.trail-terrain {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,9 +45,106 @@ body {
 .terrain-image {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
 .terrain-info {
-    text-align: left;
+    text-align: center;
 }
+
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pace-controls {
+    margin-bottom: 20px;
+}
+
+.pace-controls h3 {
+    color: #8b4513;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pace-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pace-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.game-control-button {
+    background-color: #8b4513;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.game-control-button:hover {
+    background-color: #634937;
+}
+
+.game-control-button.selected {
+    background-color: #4caf50;
+}
+
+.game-control-button.primary {
+    background-color: #4caf50;
+}
+
+.game-control-button.warning {
+    background-color: #ffa500;
+}
+
+.game-control-button.danger {
+    background-color: #ff0000;
+}
+
+.loading,
+.error {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.error {
+    color: #ff0000;
+}
+
+@media (max-width: 768px) {
+    .info-grid,
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+    .pace-buttons {
+        flex-direction: column;
+    }
+
+    .game-control-button {
+        width: 100%;
+    }
+}
+

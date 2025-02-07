@@ -1,21 +1,25 @@
-import React from "react";
-
-
-export const PlayerInfo = ({gameState}) => (
-
-    <div className="game-header">
-        <h1>Oregon Trail</h1>
-        <div className="trail">
-            <p>Leader Name: {gameState.playerNames[0]}</p>
-            <p>Player Names: {gameState.playerNames.slice(1).join(", ")}</p>
+export const PlayerInfo = ({ leader, party, profession, money, startMonth, status }) => (
+    <div className="player-info">
+        <h2>Oregon Trail</h2>
+        <div className="info-grid">
+            <div>
+                <strong>Leader:</strong> {leader || 'Not set'}
+            </div>
+            <div>
+                <strong>Party:</strong> {party?.join(", ") || 'Not set'}
+            </div>
+            <div>
+                <strong>Profession:</strong> {profession || 'Not set'}
+            </div>
+            <div>
+                <strong>Money:</strong> ${money || 0}
+            </div>
+            <div>
+                <strong>Start Month:</strong> {startMonth || 'Not set'}
+            </div>
+            <div>
+                <strong>Status:</strong> {Array.isArray(status) ? status.join(', ') : (status || 'Not set')}
+            </div>
         </div>
-        <p>Player Status: {gameState.playerStatus}</p>
-        <p>Player Profession: {gameState.playerProfession}</p>
-        <p>Player Money: {gameState.playerMoney}</p>
-        <p>Start Month: {gameState.startMonth}</p>
-        <p>Group Health: {gameState.groupHealth}</p>
-        <p>Miles Traveled: {gameState.milesTraveled}</p>
-        <p>Days On Trail: {gameState.daysOnTrail}</p>
-        <p>Message: {gameState.message}</p>
     </div>
 );

@@ -1,59 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import bg from '../images/gettyimages-3090888-2.jpg';
+import { useState, useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { motion } from "framer-motion"
+import "../components/global.css"
 
-const GameScreen4 = () => {
-    const [startMonth, setStartMonth] = useState('');
-    const dispatch = useDispatch();
-    const reduxState = useSelector((state) => state);
+const GameScreen4 = ({ onNext }) => {
+    const [startMonth, setStartMonth] = useState("")
+    const dispatch = useDispatch()
 
-    const updateMonth = (event) => {
-        const month = event.target.id;
-        setStartMonth(month); // Update the local state
-    };
+    const updateMonth = (month) => {
+        setStartMonth(month)
+    }
 
     useEffect(() => {
-        if (startMonth !== '') {
+        if (startMonth !== "") {
             dispatch({
-                type: 'updateStartMonth',
+                type: "updateStartMonth",
                 payload: { startMonth },
-            });
+            })
         }
-    }, [startMonth, dispatch]);
+    }, [startMonth, dispatch])
 
-    const buttonClick = () => {
-        if (startMonth === '') {
-            alert('Please select a month');
-            return;
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (startMonth === "") {
+            alert("Please select a month")
+            return
         }
-        window.location.href = '/GameScreen5';
-    };
+        onNext()
+    }
+
+    const months = ["March", "April", "May", "June", "July"]
 
     return (
-        <div className="setup" style={{backgroundImage: `url(${bg})`, backgroundRepeat: 'no-repeat', height: '1000px', backgroundSize: 'cover', backgroundPosition: 'center',}}>
-            <p>Which month would you like to leave</p>
-            <ol id="setupQuestions2">
-                <li id="March" onClick={updateMonth}>
-                    March
-                </li>
-                <li id="April" onClick={updateMonth}>
-                    April
-                </li>
-                <li id="May" onClick={updateMonth}>
-                    May
-                </li>
-                <li id="June" onClick={updateMonth}>
-                    June
-                </li>
-                <li id="July" onClick={updateMonth}>
-                    July
-                </li>
-            </ol>
-            <button className="button-1" id="page1sub" onClick={buttonClick}>
-                Next Page
-            </button>
-        </div>
-    );
-};
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <h2 className="screen-title">Which month would you like to leave?</h2>
+            <form onSubmit={handleSubmit}>
+                <ul className="month-list">
+                    {months.map((month) => (
+                        <li
+                            key={month}
+                            onClick={() => updateMonth(month)}
+                            className={`month-item ${startMonth === month ? "selected" : ""}`}
+                        >
+                            {month}
+                        </li>
+                    ))}
+                </ul>
+                <button type="submit" className="next-button">
+                    Next
+                </button>
+            </form>
+        </motion.div>
+    )
+}
 
-export default GameScreen4;
+export default GameScreen4

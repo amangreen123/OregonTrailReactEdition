@@ -1,101 +1,83 @@
-import React, { useState, useEffect } from "react";
-
-import { useGameStates } from './trailComponents/TrailGameState'
-import { PlayerInfo } from './trailComponents/PlayerInfo'
-import { TrailStatus } from './trailComponents/TrailStatus'
-import { TrailTerrain } from './trailComponents/TrailTerrain'
-
+import React from 'react';
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useGameStates } from "./trailComponents/useGameStates";
+import { PlayerInfo } from "./trailComponents/PlayerInfo";
+import { TrailStatus } from "./trailComponents/TrailStatus";
+import { TrailTerrain } from "./trailComponents/TrailTerrain";
+import ErrorBoundary from "./trailComponents/ErrorBoundary";
 import "./trail.css";
 
-import {useNavigate} from "react-router-dom";
-
-const initialState = {
-    groupHealth: 100,
-    milesTraveled: 0,
-    daysOnTrail: 0,
-    message: "",
-    playerNames: [],
-    playerStatus: "",
-    playerProfession: "",
-    playerMoney: 0,
-    startMonth: "",
-    pace: "",
-    weatherConditions: "",
-    terrain: "",
-    image: "",
-};
-
-function Trail() {
-
+const Trail = () => {
     const navigate = useNavigate();
-    const {gameState, selectedPace, setSelectedPace, updateTrail, resetTrail} = useGameStates(initialState);
-
+    const { gameState, selectedPace, setSelectedPace, updateTrail, resetTrail, isLoading, error } = useGameStates();
 
     const handlePaceClick = (pace) => {
-       setSelectedPace(pace);
+        setSelectedPace(pace);
     };
 
     const handleQuit = () => {
-        navigate('/mainmenu')
-    }
-
-    //console.log("Current terrain:", gameState.currentTerrain.name);
-    //console.log("Current weather:", gameState.currentWeather.type);
-    //console.log("Current terrain:", gameState.currentTerrain.imageUrl);
-
-    //console.log("Current gameState:", gameState);
-
+        navigate("/mainmenu");
+    };
 
     return (
-        <div className="trail" style={{
-            backgroundImage: `url(${gameState})`,
-            backgroundRepeat: "no-repeat",
-            height: "1000px",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            position: "relative",
-            zIndex: -1
-        }}>
-            <div className="game-header">
-                <PlayerInfo gameState={gameState}/>
-                <TrailStatus gameState={gameState} pace={selectedPace}/>
-            </div>
-
-            <TrailTerrain
-                terrain={gameState.terrain}
-                weather={gameState.weather}
-                image={gameState.image}
-            />
-
-            <div className="game-controls">
-                <button className="game-control-button" onClick={updateTrail}>
-                    Travel Trail
-                </button>
-                <button className="game-control-button" onClick={resetTrail}>
-                    Reset Game
-                </button>
-                <button className="game-control-button" onClick={handleQuit}>
-                    Quit Game
-                </button>
-
-                <div className="game-controls-pace">
-                    <button className="game-control-button" onClick={() => handlePaceClick("Steady")}>
-                        Steady
-                    </button>
-                    <button className="game-control-button" onClick={() => handlePaceClick("Strenuous")}>
-                        Strenuous
-                    </button>
-                    <button className="game-control-button" onClick={() => handlePaceClick("Grueling")}>
-                        Grueling
-                    </button>
-                    <button className="game-control-button" onClick={() => handlePaceClick("Resting")}>
-                        Resting
-                    </button>
+        <ErrorBoundary>
+            <motion.div className="trail" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                <div className="game-container">
+                    <PlayerInfo
+                        leader={gameState.playerNames?.[0]}
+                        party={gameState.playerNames?.slice(1)}
+                        profession={gameState.playerProfession}
+                        money={gameState.playerMoney}
+                        startMonth={gameState.startMonth}
+                        status={gameState.playerStatus}
+                    />
+                    <TrailStatus
+                        health={gameState.groupHealth}
+                        milesTraveled={gameState.milesTraveled}
+                        daysOnTrail={gameState.daysOnTrail}
+                        pace={gameState.currentPace?.name || selectedPace}
+                    />
+                    <TrailTerrain
+                        terrain={gameState.currentTerrain?.name || gameState.terrain}
+                        weather={gameState.currentWeather?.type || gameState.weather?.weatherConditions}
+                        image={gameState.currentTerrain?.imageUrl || gameState.image}
+                    />
+                    <div className="game-controls">
+                        <div className="pace-controls">
+                            <h3>Set Pace</h3>
+                            <div className="pace-buttons">
+                                {["Steady", "Strenuous", "Grueling", "Resting"].map((pace) => (
+                                    <button
+                                        key={pace}
+                                        className={`game-control-button ${selectedPace === pace ? "selected" : ""}`}
+                                        onClick={() => handlePaceClick(pace)}
+                                        disabled={isLoading || selectedPace === pace}
+                                    >
+                                        {pace}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="action-controls">
+                            <button className="game-control-button primary" onClick={updateTrail} disabled={isLoading}>
+                                Travel Trail
+                            </button>
+                            <button className="game-control-button warning" onClick={resetTrail} disabled={isLoading}>
+                                Reset Game
+                            </button>
+                            <button className="game-control-button danger" onClick={handleQuit} disabled={isLoading}>
+                                Quit Game
+                            </button>
+                        </div>
+                    </div>
+                    {isLoading && <p className="loading">Loading...</p>}
+                    {error && <p className="error">{error}</p>}
+                    {gameState.message && <p className="game-message">{gameState.message}</p>}
                 </div>
-            </div>
-
-        </div>
+            </motion.div>
+        </ErrorBoundary>
     );
-}
+};
 
 export default Trail;

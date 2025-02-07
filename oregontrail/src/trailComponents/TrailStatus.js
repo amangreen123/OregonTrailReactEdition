@@ -1,10 +1,19 @@
-import React from "react";
-
-export const TrailStatus = ({gameState,pace}) => (
-    <div className="game-header">
-        <p>Pace: {pace || "Select a pace"}</p>
-        <p>Group Health: {gameState.groupHealth}</p>
-        <p>Miles Traveled: {gameState.milesTraveled}</p>
-        <p>Days On Trail: {gameState.daysOnTrail}</p>
+export const TrailStatus = ({ health, milesTraveled, daysOnTrail, pace }) => (
+    <div className="trail-status">
+        <h3>Trail Status</h3>
+        <div className="status-grid">
+            <div>
+                <strong>Pace:</strong> {pace || "Select a pace"}
+            </div>
+            <div>
+                <strong>Health:</strong> {health}%
+            </div>
+            <div>
+                <strong>Miles:</strong> {milesTraveled}
+            </div>
+            <div>
+                <strong>Days:</strong> {daysOnTrail}
+            </div>
+        </div>
     </div>
 );

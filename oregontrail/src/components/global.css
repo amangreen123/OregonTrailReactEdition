@@ -1,51 +1,94 @@
-.global {
-    background-color: black;
-    padding: 20px;
+/* Add these styles to your existing global.css file */
+
+.screen-title {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
 }
 
-h1 {
-    font-size: 40px;
-    color: firebrick;
-    margin-bottom: 30px;
+.profession-list,
+.month-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
 }
 
-p{
-    font-size: 40px;
-    color: black;
-    margin-bottom: 30px;
-}
-
-h2{
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-    font-size: 40px;
-    color: white;
-    font-weight: bold;
-}
-
-button {
-    background-color: brown;
-    border: none;
-    color: beige;
-    font-size: 20px;
-    padding: 10px 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+.profession-item,
+.month-item {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: green;
+.profession-item:hover,
+.month-item:hover,
+.profession-item.selected,
+.month-item.selected {
+    background-color: #45a049;
 }
 
-#selectedOption{
-    font-size: 20px;
-    width: 75px;
-    background-color: red;
+.profession-item.info {
+    background-color: #2196f3;
 }
 
-#data {
-    font-size: 40px;
-    color: gold;
+.profession-item.info:hover {
+    background-color: #1e88e5;
 }
+
+.selection-info {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.input-label {
+    display: block;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.text-input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: none;
+    border-radius: 3px;
+}
+
+.next-button,
+.start-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.next-button:hover,
+.start-button:hover {
+    background-color: #45a049;
+}
+
+.review-list {
+    color: #fff;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.review-list li {
+    margin-bottom: 0.5rem;
+}
+
+.review-list ul {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+}
+

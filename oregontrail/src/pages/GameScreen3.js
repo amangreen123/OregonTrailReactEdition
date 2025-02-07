@@ -1,85 +1,73 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import bg from '../images/gettyimages-3090888-2.jpg';
+import { useState, useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { motion } from "framer-motion"
+import "../components/global.css"
 
-const GameScreen3 = () => {
+const GameScreen3 = ({ onNext }) => {
     const [groupNames, setGroupNames] = useState({
-        player1: '',
-        player2: '',
-        player3: '',
-        player4: '',
-    });
+        player1: "",
+        player2: "",
+        player3: "",
+        player4: "",
+    })
 
-    const dispatch = useDispatch();
-    const reduxState = useSelector((state) => state);
-    console.log('Redux State:', reduxState);
+    const dispatch = useDispatch()
 
     const updateGroupName = () => {
         dispatch({
-            type: 'updateGroupNames',
+            type: "updateGroupNames",
             payload: {
-                playerNames: [
-                    groupNames.player1,
-                    groupNames.player2,
-                    groupNames.player3,
-                    groupNames.player4,
-                ],
+                playerNames: Object.values(groupNames),
             },
-        });
-    };
+        })
+    }
 
     useEffect(() => {
-        if (
-            groupNames.player1 !== '' &&
-            groupNames.player2 !== '' &&
-            groupNames.player3 !== '' &&
-            groupNames.player4 !== ''
-        ) {
-            updateGroupName();
+        if (Object.values(groupNames).every((name) => name !== "")) {
+            updateGroupName()
         }
-    }, [groupNames, dispatch]);
+    }, [groupNames, updateGroupName]) // Added updateGroupName to dependencies
 
     const handleGroupNameChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target
         setGroupNames((prev) => ({
             ...prev,
             [name]: value,
-        }));
-    };
+        }))
+    }
 
-    const buttonClick = () => {
-        if (
-            groupNames.player1 === '' ||
-            groupNames.player2 === '' ||
-            groupNames.player3 === '' ||
-            groupNames.player4 === ''
-        ) {
-            alert('Please enter a name for each player');
-            return;
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (Object.values(groupNames).some((name) => name.trim() === "")) {
+            alert("Please enter a name for each player")
+            return
         }
-        updateGroupName();
-        window.location.href = '/GameScreen4';
-    };
+        updateGroupName()
+        onNext()
+    }
 
     return (
-        <div
-            className="setup"
-            style={{
-                backgroundImage: `url(${bg})`,
-                backgroundRepeat: 'no-repeat',
-                height: '1000px',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-            }}
-        >
-            <p>What are the names of the Wagon Party</p>
-            Player Name: <input name="player1" type="text" onChange={handleGroupNameChange} /><br />
-            Player Name: <input name="player2" type="text" onChange={handleGroupNameChange} /><br />
-            Player Name: <input name="player3" type="text" onChange={handleGroupNameChange} /><br />
-            Player Name: <input name="player4" type="text" onChange={handleGroupNameChange} /><br />
-            <input type="button" className="button-1" id="page2sub" value="Next" onClick={buttonClick} />
-        </div>
-    );
-};
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <h2 className="screen-title">What are the names of the Wagon Party?</h2>
+            <form onSubmit={handleSubmit}>
+                {Object.keys(groupNames).map((player, index) => (
+                    <label key={player} className="input-label">
+                        Player {index + 1} Name:
+                        <input
+                            name={player}
+                            type="text"
+                            onChange={handleGroupNameChange}
+                            value={groupNames[player]}
+                            className="text-input"
+                        />
+                    </label>
+                ))}
+                <button type="submit" className="next-button">
+                    Next
+                </button>
+            </form>
+        </motion.div>
+    )
+}
 
-export default GameScreen3;
+export default GameScreen3

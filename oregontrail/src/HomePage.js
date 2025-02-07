@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from "react";
-import bg from "./images/gettyimages-3090888-2.jpg";
+import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
+import bg from "./images/gettyimages-3090888-2.jpg"
+import "./HomePage.css"
 import Fader from "./components/Fader";
 import Navigation from "./components/Navigation";
 
@@ -10,27 +13,40 @@ import Navigation from "./components/Navigation";
 //The button is a link to the main menu page
 //The background image is a picture of the Oregon Trail
 //The background image is from https://www.gettyimages.com/detail/photo/oregon-trail-high-res-stock-photography/3090888?adppopup=true
-function HomePage () {
 
-    const [message, setMessage] = useState("");
-    const apiUrl = process.env.REACT_APP_API_URL;
-    //http://localhost:8000/api/message
-    //`${apiUrl}/message`
-    console.log("URL Value " + apiUrl);
+function HomePage() {
+    const [message, setMessage] = useState("")
+    const apiUrl = process.env.REACT_APP_API_URL
 
     useEffect(() => {
         fetch(`${apiUrl}/message`)
             .then((res) => res.json())
-            .then((data) => setMessage(data.message));
-    }, []);
+            .then((data) => setMessage(data.message))
+    }, [apiUrl])
 
-    return(
-    <div className="App" style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
-        <h1>{message}</h1>
-        <h2 className="h2"><Fader text={"PRESS SPACEBAR TO START!!!"}></Fader></h2>
-        <Navigation />
-    </div>
-    );
+    return (
+        <div className="home-page" style={{ backgroundImage: `url(${bg})` }}>
+            <div className="content">
+                <motion.h1
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="title"
+                >
+                    {message}
+                </motion.h1>
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                    <Link to="/mainmenu" className="start-button">
+                        Press to Start
+                    </Link>
+                </motion.div>
+            </div>
+        </div>
+    )
 }
 
 export default HomePage

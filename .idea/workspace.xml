@@ -5,11 +5,108 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e1e593a-ddf4-4b1e-b9ed-f9b3d2065248" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/oregontrail/src/ErrorBoundary.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oregontrail/src/trailComponents/useGameStates.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/Services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/loose-envify" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/loose-envify.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/loose-envify.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/js-tokens/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/js-tokens/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/js-tokens/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/js-tokens/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/js-tokens/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/cli.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/loose-envify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/replace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/object-assign/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/object-assign/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/object-assign/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/object-assign/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/checkPropTypes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/factoryWithThrowingShims.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/factoryWithTypeCheckers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/lib/ReactPropTypesSecret.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/lib/has.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/prop-types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/prop-types.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/build-info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/cjs/react-is.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/cjs/react-is.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/umd/react-is.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/umd/react-is.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-sound/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-sound/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-sound/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-sound/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-sound/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-sound/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-sound/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/build-info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/jsx-dev-runtime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/jsx-runtime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/umd/react.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/umd/react.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/umd/react.profiling.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/license.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/script/soundmanager2-jsmin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/script/soundmanager2-nodebug-jsmin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/script/soundmanager2-nodebug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/script/soundmanager2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/swf/soundmanager2.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/swf/soundmanager2_debug.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/swf/soundmanager2_flash9.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/swf/soundmanager2_flash9_debug.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/soundmanager2/swf/soundmanager2_flash_xdomain.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/API/Services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/components/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/components/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/mainmenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/mainmenu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/mainmenuPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen2.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen3.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen4.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/pages/GameScreen5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/setup.css" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/setup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/setup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/trail.css" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/trail.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oregontrail/src/trailComponents/TrailGameState.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trailComponents/TrailGameState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/trailComponents/ChoosePace.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trailComponents/ChoosePace.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/trailComponents/PlayerInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trailComponents/PlayerInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/trailComponents/TrailGameState.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oregontrail/src/trailComponents/TrailStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trailComponents/TrailStatus.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oregontrail/src/trailComponents/TrailTerrain.js" beforeDir="false" afterPath="$PROJECT_DIR$/oregontrail/src/trailComponents/TrailTerrain.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +118,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -74,7 +171,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/aaron/Desktop/OregonTrail - Copy",
+    "last_opened_file_path": "C:/Users/aaron/Desktop/OregonTrail",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -94,13 +191,21 @@
     ]
   }
 }]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\API" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\Server" />
       <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\pages" />
-      <recent name="C:\Users\aaron\Desktop\OregonTrail\oregontrail\src\components" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.localhost:3000">
@@ -310,7 +415,14 @@
       <workItem from="1727841829397" duration="2784000" />
       <workItem from="1728000393991" duration="8912000" />
       <workItem from="1728013031677" duration="4107000" />
-      <workItem from="1728017240924" duration="6127000" />
+      <workItem from="1728017240924" duration="6154000" />
+      <workItem from="1728070430470" duration="1305000" />
+      <workItem from="1728330338595" duration="346000" />
+      <workItem from="1728330700461" duration="200000" />
+      <workItem from="1728331083161" duration="129000" />
+      <workItem from="1728331219516" duration="661000" />
+      <workItem from="1729045847934" duration="113000" />
+      <workItem from="1738887493160" duration="5575000" />
     </task>
     <servers />
   </component>

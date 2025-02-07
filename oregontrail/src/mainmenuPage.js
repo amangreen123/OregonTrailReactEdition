@@ -1,33 +1,52 @@
-import React from "react";
+import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
+import bg from "./images/gettyimages-3090888-2.jpg"
 import "./mainmenu.css"
-import bg from "./images/gettyimages-3090888-2.jpg";
-import Navigation from "./components/Navigation";
 
-//This is the main menu page of the app
-//It is the first page that is rendered when the app is started
-//It displays a message and a button to start the game
-//The message is fetched from the server
-//The button is a link to the main menu page
-//The background image is a picture of the Oregon Trail
-function MainmenuPage (){
+function MainMenuPage() {
+    const menuItems = [
+        { text: "Travel the trail", link: "/trail" },
+        { text: "Set up for the trail", link: "/setup" },
+        { text: "See the Oregon Top 10", link: "/topten" },
+        { text: "Turn Sound (Off / On)", link: "#", onClick: () => console.log("Toggle sound") },
+    ]
 
-
-    return(
-        //make the background cover the whole page
-        <div className="App" style={{ backgroundImage:`url(${bg})`,backgroundRepeat:"repeat",height: '1000px',backgroundSize:"cover",backgroundPosition:"center"}}>
-            <ol>
-                <h1 className= "App">This is the beginning of amazing journey...</h1>
-                <h1>Of The Oregon Trail</h1>
-                <h1>Choose one of the Options</h1>
-                <p>1. Travel the trail</p>
-                <p>2. Set up for the trail</p>
-                <p>3. See the Oregon Top 10</p>
-                <p>4. Turn Sound (Off / On)</p>
-            </ol>
-             <Navigation />
+    return (
+        <div className="main-menu" style={{ backgroundImage: `url(${bg})` }}>
+            <div className="menu-content">
+                <motion.h1
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="menu-title"
+                >
+                    The Oregon Trail
+                </motion.h1>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="menu-subtitle"
+                >
+                    Choose your next adventure
+                </motion.p>
+                <motion.ul
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="menu-list"
+                >
+                    {menuItems.map((item, index) => (
+                        <motion.li key={index} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                            <Link to={item.link} onClick={item.onClick} className="menu-item">
+                                {item.text}
+                            </Link>
+                        </motion.li>
+                    ))}
+                </motion.ul>
+            </div>
         </div>
-    );
-
+    )
 }
 
-export default MainmenuPage
+export default MainMenuPage
